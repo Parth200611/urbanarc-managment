@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menubottomnevigationadminHome"
+        android:title="Home"
+        android:icon="@drawable/baseline_home_24"
+        />
+  <item
+        android:id="@+id/menubottomnevigationadminmanageorder"
+        android:title="Orders"
+        android:icon="@drawable/baseline_all_inbox_24"
+        />
+  <item
+        android:id="@+id/menubottomnevigationmanageaccount"
+        android:title="Users"
+        android:icon="@drawable/baseline_manage_accounts_24"
+        />
+
+
+
+</menu>

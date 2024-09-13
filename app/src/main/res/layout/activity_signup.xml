@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signupActivity"
+    android:background="@drawable/signupbackground1">
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/ivSignuplogo"
+        android:src="@drawable/applogo"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="90dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSignuptitle"
+        android:text="URBANARC"
+        android:textSize="26sp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+
+        />
+    <TextView
+        android:id="@+id/tvSignupSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Making Space Livable"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvSignuptitle"
+        android:layout_marginStart="170dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvSignupcustomer"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:layout_marginTop="180dp"
+        app:cardCornerRadius="8dp"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/ivSignupcustomer"
+                android:src="@drawable/signupcustomer"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSignupcustomertitle"
+                android:text="CUSTOMER"
+                android:textSize="20sp"
+                android:layout_marginStart="78dp"
+                android:layout_marginTop="28dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSignupcustomertext"
+                android:text="Join as a Customer – Dive into a world of shopping! Track orders, explore new products, and enjoy a personalized experience"
+                android:layout_below="@id/ivSignupcustomer"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvSignupshopkeeper"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:layout_marginTop="345dp"
+        app:cardCornerRadius="8dp"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/ivSignupshopkeepr"
+                android:src="@drawable/signupshopkeeper"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSignupshopkeepertitle"
+                android:text="SHOPKEEPER"
+                android:textSize="20sp"
+                android:layout_marginStart="78dp"
+                android:layout_marginTop="28dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSignupshopkeepertext"
+                android:text="Enter as a Shopkeeper – Take charge of your store! Manage inventory, process sales, and keep your shop running smoothly"
+                android:layout_below="@id/ivSignupshopkeepr"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+
+                />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvSignupother"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:layout_marginTop="510dp"
+        app:cardCornerRadius="8dp"
+
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSignupothertitle"
+                android:text="OTHER"
+                android:textSize="20sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="28dp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSignupothertext"
+                android:text="Sign in as Other – For unique roles and special access. Whether you’re an admin or Delivery partner, get the tools you need here"
+                android:layout_below="@id/tvSignupothertitle"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/splashbackground"
+    tools:context=".splashscreen">
+
+    <ImageView
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:id="@+id/ivSplashapplogo"
+    android:src="@drawable/applogo"
+            android:layout_marginTop="335dp"
+            android:layout_marginStart="90dp"
+            />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSplashtitle"
+        android:text="URBANARC"
+        android:textSize="26sp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="340dp"
+        android:textStyle="bold"
+
+        />
+    <TextView
+        android:id="@+id/tvSplashSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Making Space Livable"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvSplashtitle"
+        android:layout_marginStart="170dp"
+        />
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

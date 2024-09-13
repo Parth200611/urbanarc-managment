@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbackground"
+    tools:context=".loginforshopkeeperActivity">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/ivLoginshopapplogo"
+            android:src="@drawable/applogo"
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="90dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvLoginshoptitle"
+            android:text="URBANARC"
+            android:textSize="26sp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="160dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+
+            />
+        <TextView
+            android:id="@+id/tvLoginshopSlogan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:text="Making Space Livable"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_below="@+id/tvLoginshoptitle"
+            android:layout_marginStart="170dp"
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvLoginshopSlogan"
+            android:layout_marginTop="70dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvloginshopwelcome"
+                    android:text="Welcome To URBANARC !"
+                    android:textSize="20sp"
+                    android:textColor="@color/green"
+                    android:fontFamily="@font/adlam_display"
+                    android:gravity="center"
+                    android:layout_marginTop="26dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvloginshopmessages"
+                    android:text="Explort your produts all over world"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="Username, email, phone no"
+                    android:background="@drawable/shape"
+                    android:padding="10dp"
+                    android:inputType="text"
+                    android:id="@+id/etloginshopusername"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="Password"
+                    android:background="@drawable/shape"
+                    android:padding="10dp"
+                    android:inputType="textPassword"
+                    android:id="@+id/etloginshoppassword"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/cbLoginshopshowpassword"
+                        android:text="Show Password"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="8dp"
+                        android:backgroundTintMode="@color/yellow"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvLoginshopForgottenpassword"
+                        android:text="Forgotten Password?"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/blue"
+                        />
+
+                </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnloginshoplogin"
+                    android:text="Log In"
+                    android:background="@color/yellow"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/white"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnShopkeeperlogingoogleshopkeeper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/common_google_signin_btn_text_dark_normal"
+                    android:text="Google Log IN"
+                    android:textColor="@color/white" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvloginshopneewuser"
+                    android:text="Don't have account? | Sign up"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/blue"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="By using Solemates,you agree to our Terms and Condition and Policy if any problem contact www.urbanarc.com"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/gray"
+                    android:layout_marginStart="60dp"
+                    android:textSize="8dp"
+                    android:textAlignment="center"
+                    android:layout_marginEnd="60dp"
+                    />
+
+
+
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+

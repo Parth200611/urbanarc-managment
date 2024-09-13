@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcomebackground"
+    tools:context=".welcomescreenActivity">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+
+<com.denzcoskun.imageslider.ImageSlider
+    android:layout_width="match_parent"
+    android:layout_height="380dp"
+    app:iss_auto_cycle="true"
+    android:id="@+id/imagesliderwelcome"
+    app:iss_delay="2000"
+    app:iss_period="2000"
+    app:iss_no_dots="true"
+
+    />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvwelcomeTitle"
+        android:text="Welcome To URBANARC !"
+        android:layout_marginTop="500dp"
+        android:textSize="26sp"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvwelcomeMessage"
+        android:text="Exciting times ahead: exclusive offers, insider tips, and much more, are all coming your way.
+Stay tuned!"
+        android:layout_marginTop="545dp"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="60dp"
+        android:textColor="@color/white"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvwelcomeNext"
+        android:text="Next"
+        android:layout_marginTop="670dp"
+        android:textSize="16sp"
+        android:layout_marginStart="290dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/baseline_arrow_forward_24"
+        android:drawablePadding="3dp"
+        />
+
+
+
+
+</RelativeLayout>

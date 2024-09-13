@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548163049825",
+    "project_id": "urbanarc-96863",
+    "storage_bucket": "urbanarc-96863.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548163049825:android:03bda537dd3f4e6f870d20",
+        "android_client_info": {
+          "package_name": "com.example.urbanarc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBilrQ50zqafKprRcATaIpU44QtgbRdLXM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
