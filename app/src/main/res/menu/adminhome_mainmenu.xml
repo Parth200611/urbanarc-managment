@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/menumainmenuuserhomenewoffers"
-        android:title="New Offers"
-        android:icon="@drawable/baseline_discount_24"
-        /> <item
-    android:id="@+id/menumainmenuuserhomemyorders"
-    android:title="My Orders"
-    android:icon="@drawable/baseline_all_inbox_24"
-    /> <item
-    android:id="@+id/menumainmenuuserhomewishlist"
-    android:title="Wishlist"
-    android:icon="@drawable/baseline_favorite_24"
-    /> <item
-    android:id="@+id/menumainmenuuserhomemyprofil"
-    android:title="My Profil"
-    android:icon="@drawable/baseline_person_24"
-    /> <item
-    android:id="@+id/menumainmenuuserhomeaboutus"
-    android:title="About us"
-    android:icon="@drawable/baseline_info_outline_24"
-    />
-    <item
-        android:id="@+id/menumainmenuuserhomehelp"
-        android:title="Help"
-        android:icon="@drawable/baseline_help_24"
-        />
+
 
 </menu>
