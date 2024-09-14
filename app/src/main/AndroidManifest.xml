@@ -16,6 +16,9 @@
         android:theme="@style/Theme.URBANARC"
         tools:targetApi="31">
         <activity
+            android:name=".userMyprofilActivity"
+            android:exported="false" />
+        <activity
             android:name=".shopkeeperpasswordupdationverificationActivity"
             android:exported="false" />
         <activity
@@ -27,7 +30,7 @@
         <activity
             android:name=".ShopkeeperhomeActivity"
             android:exported="false"
-            android:theme="@style/showactionbar"/>
+            android:theme="@style/showactionbar" />
         <activity
             android:name=".shopkeeperregisterverificationActivity"
             android:exported="false" />
@@ -50,11 +53,11 @@
         <activity
             android:name=".deliveryhomeActivity"
             android:exported="false"
-            android:theme="@style/showactionbar"/>
+            android:theme="@style/showactionbar" />
         <activity
             android:name=".adminhomeActivity"
             android:exported="false"
-            android:theme="@style/showactionbar"/>
+            android:theme="@style/showactionbar" />
         <activity
             android:name=".shopkeeperregistrationActivity"
             android:exported="false" />

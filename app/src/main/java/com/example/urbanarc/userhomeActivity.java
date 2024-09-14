@@ -1,7 +1,10 @@
 package com.example.urbanarc;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
@@ -48,6 +51,34 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
         }else if(item.getItemId()==R.id.menuUserhomebottomnavigationCart){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,userMycartFragment).commit();
         }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.userhome_mainmenu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.menumainmenuuserhomenewoffers){
+
+        }else if (item.getItemId()==R.id.menumainmenuuserhomemyorders){
+
+        } else if (item.getItemId() == R.id.menumainmenuuserhomewishlist) {
+
+        } else if (item.getItemId() == R.id.menumainmenuuserhomemyprofil) {
+            Intent i = new Intent(userhomeActivity.this,userMyprofilActivity.class);
+            startActivity(i);
+
+        } else if (item.getItemId() == R.id.menumainmenuuserhomeaboutus) {
+
+        } else if (item.getItemId() == R.id.menumainmenuuserhomehelp) {
+
+        }
+
         return true;
     }
 }

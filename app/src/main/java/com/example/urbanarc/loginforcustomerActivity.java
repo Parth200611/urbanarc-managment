@@ -169,6 +169,7 @@ GoogleSignInClient googleSignInClient;
                         progressDialog.dismiss();
                         Intent i = new Intent(loginforcustomerActivity.this,userhomeActivity.class);
                         startActivity(i);
+                        finish();
                     }else{
                         progressDialog.dismiss();
                         Toast.makeText(loginforcustomerActivity.this, "Password or Username wrong", Toast.LENGTH_SHORT).show();
