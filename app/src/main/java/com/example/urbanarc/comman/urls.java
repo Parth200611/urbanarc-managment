@@ -13,6 +13,7 @@ public class urls {
     public static String Shopkeeperlogin=address+"shopkeeperdataforlogin.php";
     public static String Shopkeepernumbercheck=address+"shopkeepernumbercheckforupdation.php";
     public static String Shopkeeperpasswordupdate=address+"shopkeeperpasswordupdate.php";
+    public static String Usermyprofil=address+"userdataformyprofil.php";
 
 
 }

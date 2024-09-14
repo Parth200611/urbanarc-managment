@@ -2,7 +2,9 @@ package com.example.urbanarc;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -10,7 +12,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,6 +44,8 @@ public class loginforcustomerActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
 GoogleSignInOptions googleSignInOptions;
 GoogleSignInClient googleSignInClient;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,11 @@ GoogleSignInClient googleSignInClient;
         setContentView(R.layout.activity_loginforcustomer);
         getWindow().setNavigationBarColor(ContextCompat.getColor(loginforcustomerActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(loginforcustomerActivity.this,R.color.logincolor));
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(loginforcustomerActivity.this);
+        editor = preferences.edit();
+
+
 
         etusername = findViewById(R.id.etloginusername);
         etpassword = findViewById(R.id.etloginpassword);
@@ -168,6 +176,7 @@ GoogleSignInClient googleSignInClient;
                     if (status.equals("1")){
                         progressDialog.dismiss();
                         Intent i = new Intent(loginforcustomerActivity.this,userhomeActivity.class);
+                        editor.putString("username",etusername.getText().toString()).commit();
                         startActivity(i);
                         finish();
                     }else{
