@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/menuAdminmainmenuUsers"
+        android:title="Users List"
+        android:icon="@drawable/baseline_person_24"
+        />
+    <item
+        android:id="@+id/menuAdminmainmenuShopkeeper"
+        android:title="Shopkeper List"
+        android:icon="@drawable/baseline_shopping_bag_24"
+        />
+    <item
+        android:id="@+id/menuAdminmainmenuDelivery"
+        android:title="Delivery boys List"
+        android:icon="@drawable/baseline_delivery_dining_24"
+        />
+    <item
+        android:id="@+id/menuAdminmainmenufeedback"
+        android:title="Feedback"
+        android:icon="@drawable/baseline_feedback_24"
+        /><item
+        android:id="@+id/menuAdminmainmenuReport"
+        android:title="Report"
+        android:icon="@drawable/baseline_report_24"
+        />
+    <item
+        android:id="@+id/menuAdminmainmenuMyprofil"
+        android:title="My Profil"
+        android:icon="@drawable/baseline_person_24"
+        />
+
 
 </menu>

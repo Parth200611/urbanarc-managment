@@ -2,7 +2,9 @@ package com.example.urbanarc;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -33,12 +35,18 @@ public class loginforadminActivity extends AppCompatActivity {
     TextView tvdeliveryboy;
     Button btnlogin;
     ProgressDialog progressDialog;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_loginforadmin);
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(loginforadminActivity.this);
+        editor = preferences.edit();
+
         getWindow().setNavigationBarColor(ContextCompat.getColor(loginforadminActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(loginforadminActivity.this,R.color.green));
 
@@ -110,6 +118,7 @@ public class loginforadminActivity extends AppCompatActivity {
                     if (status.equals("1")){
                         progressDialog.dismiss();
                         Intent i = new Intent(loginforadminActivity.this,adminhomeActivity.class);
+                        editor.putString("username",etusername.getText().toString()).commit();
                         startActivity(i);
                     }else{
                         progressDialog.dismiss();
