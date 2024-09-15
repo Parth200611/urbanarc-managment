@@ -95,6 +95,14 @@ public class userMyprofilActivity extends AppCompatActivity {
                 }
             });
         }
+        tveditdetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(userMyprofilActivity.this,userEditprofilActivity.class);
+                startActivity(i);
+
+            }
+        });
 
 
 
