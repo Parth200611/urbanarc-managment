@@ -29,11 +29,10 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class adminMyprofilActivity extends AppCompatActivity {
-
-    CircleImageView civadminprofilimage;
-    TextView tvname,tvemailid,tvmobileno,tvusername,tvlogout;
-
+public class deliveryMyprofilActivity extends AppCompatActivity {
+    CircleImageView cvdeliveryprofilimage;
+    TextView tvname,tvemail,tvmobileno,tvusername,tvlogout;
+    Button btneditimage;
     ProgressDialog progressDialog;
     SharedPreferences preferences;
     String strusername;
@@ -41,21 +40,19 @@ public class adminMyprofilActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_admin_myprofil);
-
-        preferences = PreferenceManager.getDefaultSharedPreferences(adminMyprofilActivity.this);
+        setContentView(R.layout.activity_delivery_myprofil);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
         strusername=preferences.getString("username","");
+        getWindow().setStatusBarColor(ContextCompat.getColor(deliveryMyprofilActivity.this,R.color.green));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(deliveryMyprofilActivity.this,R.color.white));
 
-        getWindow().setStatusBarColor(ContextCompat.getColor(adminMyprofilActivity.this,R.color.green));
-        getWindow().setNavigationBarColor(ContextCompat.getColor(adminMyprofilActivity.this,R.color.white));
-
-        civadminprofilimage = findViewById(R.id.civAdminMyprofilprofilimage);
-        tvname = findViewById(R.id.tvAdminMyprofilName);
-        tvemailid = findViewById(R.id.tvAdminMyprofilEmail);
-        tvmobileno = findViewById(R.id.tvAdminMyprofilMobileno);
-        tvusername = findViewById(R.id.tvAdminMyprofilUsername);
-        tvlogout = findViewById(R.id.tvAdminMyprofillogout);
+        cvdeliveryprofilimage = findViewById(R.id.civDeliveryMyprofilprofilimage);
+        btneditimage = findViewById(R.id.btnDeliveryMyprofileditimage);
+        tvname = findViewById(R.id.tvDeliveryMyprofilName);
+        tvemail = findViewById(R.id.tvDeliveryMyprofilEmail);
+        tvmobileno = findViewById(R.id.tvDeliveryMyprofilMobileno);
+        tvusername = findViewById(R.id.tvDeliveryMyprofilUsername);
+        tvlogout = findViewById(R.id.tvDeliveryMyprofillogout);
 
 
     }
@@ -63,22 +60,23 @@ public class adminMyprofilActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        progressDialog = new ProgressDialog(adminMyprofilActivity.this);
-        progressDialog.setTitle("Loading");
-        progressDialog.setMessage("Please wait for while");
+        progressDialog = new ProgressDialog(deliveryMyprofilActivity.this);
+        progressDialog.setTitle("loading");
+        progressDialog.setMessage("Please wait a while");
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.show();
 
-        getAdmindetails();
+        getDeliverydetails();
     }
 
-    private void getAdmindetails() {
+    private void getDeliverydetails() {
+
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
 
         params.put("username",strusername);
 
-        client.post(urls.Adminmyprofil,params,new JsonHttpResponseHandler(){
+        client.post(urls.Deliverymyprofil,params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
@@ -86,25 +84,23 @@ public class adminMyprofilActivity extends AppCompatActivity {
                     JSONArray jsonArray = response.getJSONArray("getuserdetails");
                     for (int i=0;i<jsonArray.length();i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        String strname=jsonObject.getString("name");
-                        String strimage=jsonObject.getString("images");
-                        String stremail=jsonObject.getString("emailid");
-                        String strmobileno=jsonObject.getString("mobileno");
-                        String strusername=jsonObject.getString("username");
+                        String strimage = jsonObject.getString("images");
+                        String strname = jsonObject.getString("name");
+                        String stremail = jsonObject.getString("emailid");
+                        String strmobileno = jsonObject.getString("mobileno");
+                        String strusername = jsonObject.getString("username");
 
                         tvname.setText(strname);
-                        tvemailid.setText(stremail);
+                        tvemail.setText(stremail);
                         tvmobileno.setText(strmobileno);
                         tvusername.setText(strusername);
-
-                        Glide.with(adminMyprofilActivity.this)
+                        Glide.with(deliveryMyprofilActivity.this)
                                 .load(urls.address+"images/"+strimage)
                                 .skipMemoryCache(true)
                                 .error(R.drawable.noimage)
                                 .downsample(DownsampleStrategy.CENTER_INSIDE) // Scale down image to fit within specified bounds
                                 .override(800, 800) // Resize the image to 800x800 pixels
-                                .into(civadminprofilimage);
-
+                                .into(cvdeliveryprofilimage);
                         progressDialog.dismiss();
 
                     }
@@ -117,7 +113,7 @@ public class adminMyprofilActivity extends AppCompatActivity {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
                 progressDialog.dismiss();
-                Toast.makeText(adminMyprofilActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(deliveryMyprofilActivity.this, "sever error", Toast.LENGTH_SHORT).show();
             }
         });
     }

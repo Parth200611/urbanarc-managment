@@ -141,7 +141,7 @@ public class userMyprofilActivity extends AppCompatActivity {
                         tvusername.setText(strusername);
 
                         Glide.with(userMyprofilActivity.this)
-                                .load("http://192.168.1.4:80/urbanarcAPI/images/"+strimage)
+                                .load(urls.address+"images/"+strimage)
                                 .skipMemoryCache(true)
                                 .error(R.drawable.noimage)
                                 .downsample(DownsampleStrategy.CENTER_INSIDE) // Scale down image to fit within specified bounds

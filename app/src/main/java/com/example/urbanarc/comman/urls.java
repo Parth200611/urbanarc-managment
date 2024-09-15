@@ -16,6 +16,7 @@ public class urls {
     public static String Usermyprofil=address+"userdataformyprofil.php";
     public static String Shopkeepermyprofil=address+"Shopkeeperdataformyprofil.php";
     public static String Adminmyprofil=address+"admindataformyprofil.php";
+    public static String Deliverymyprofil=address+"deliverydataformyprofil.php";
 
 
 }

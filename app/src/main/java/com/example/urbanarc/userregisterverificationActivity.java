@@ -153,7 +153,7 @@ public class userregisterverificationActivity extends AppCompatActivity {
         params.put("emailid",stremailid);
         params.put("mobileno",strmobileno);
         params.put("username",strusername);
-        params.put("shopkeeperpassword",strpassword);
+        params.put("userpassword",strpassword);
 
         client.post(urls.userregisterapi,params,new JsonHttpResponseHandler(){
 

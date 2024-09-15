@@ -1,7 +1,10 @@
 package com.example.urbanarc;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
@@ -44,6 +47,30 @@ public class deliveryhomeActivity extends AppCompatActivity implements BottomNav
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutdeliveryhome, deliveryordersFragment).commit();
         }else if(item.getItemId()==R.id.menudeliverybottomnevigationorderhistory){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutdeliveryhome,deliveryorderhistoryFragment).commit();
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.deliveryhome_mainmenu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menuDeliverymainmenuorders){
+
+        }else if (item.getItemId() == R.id.menuDeliverymainmenuMyprofil){
+            Intent i = new Intent(deliveryhomeActivity.this,deliveryMyprofilActivity.class);
+            startActivity(i);
+
+        }else if (item.getItemId() == R.id.menuDeliverymainmenuReport){
+
+        }else if (item.getItemId() == R.id.menuDeliverymainmenuHelp){
+
         }
         return true;
     }

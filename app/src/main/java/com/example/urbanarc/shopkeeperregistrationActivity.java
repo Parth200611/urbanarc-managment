@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -30,6 +31,8 @@ public class shopkeeperregistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopkeeperregistration);
+        getWindow().setNavigationBarColor(ContextCompat.getColor(shopkeeperregistrationActivity.this,R.color.white));
+        getWindow().setStatusBarColor(ContextCompat.getColor(shopkeeperregistrationActivity.this,R.color.white));
         etname = findViewById(R.id.etShopkeeperregistrationName);
         etemailid = findViewById(R.id.etShopkeeperregistrationEmailid);
         etmobileno = findViewById(R.id.etShopkeeperregistrationmobileno);
