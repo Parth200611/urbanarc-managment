@@ -6,23 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/myprofilbackground"
-    tools:context=".userMyprofilActivity">
-
+    tools:context=".ShopkeepermyprofilActivity">
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:id="@+id/civUserMyprofilprofilimage"
+        android:id="@+id/civShopkeeperMyprofilprofilimage"
         />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnUserMyprofileditimage"
+        android:id="@+id/btnShopkeeperMyprofileditimage"
         android:text="Edit Image"
         android:textColor="@color/white"
         android:backgroundTint="@color/yellow"
-        android:layout_below="@id/civUserMyprofilprofilimage"
+        android:layout_below="@id/civShopkeeperMyprofilprofilimage"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
@@ -31,7 +30,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnUserMyprofileditimage"
+        android:layout_below="@+id/btnShopkeeperMyprofileditimage"
         android:layout_marginTop="16dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
@@ -54,7 +53,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvUserMyprofilName"
+                android:id="@+id/tvShopkeeperMyprofilName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -68,13 +67,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:text="Email Address"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvUserMyprofilEmail"
+                android:id="@+id/tvShopkeeperMyprofilEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -88,13 +87,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:text="Mobile Number"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvUserMyprofilMobileno"
+                android:id="@+id/tvShopkeeperMyprofilMobileno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -108,13 +107,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:text="Username"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvUserMyprofilUsername"
+                android:id="@+id/tvShopkeeperMyprofilUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/shape"
+                android:padding="10dp"
+                android:text="Username" />
+  <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="Address"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvShopkeeperMyprofilAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -140,9 +158,9 @@
         android:textStyle="bold"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginVertical="630dp"
+        android:layout_marginVertical="670dp"
         android:drawableRight="@drawable/baseline_edit_24"
-        android:id="@+id/tvUserMyprofiledit"
+        android:id="@+id/tvShopkeeperMyprofiledit"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -153,12 +171,11 @@
         android:textStyle="bold"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginVertical="660dp"
+        android:layout_marginVertical="696dp"
         android:drawableRight="@drawable/baseline_logout_24"
-        android:id="@+id/tvUserMyprofillogout"
+        android:id="@+id/tvShopkeeperMyprofillogout"
         android:drawablePadding="10dp"
         />
-
 
 
 

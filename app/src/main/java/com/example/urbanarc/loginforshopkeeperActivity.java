@@ -2,7 +2,9 @@ package com.example.urbanarc;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -46,12 +48,18 @@ public class loginforshopkeeperActivity extends AppCompatActivity {
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
 
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loginforshopkeeper);
         getWindow().setNavigationBarColor(ContextCompat.getColor(loginforshopkeeperActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(loginforshopkeeperActivity.this,R.color.logincolor));
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(loginforshopkeeperActivity.this);
+        editor= preferences.edit();
 
         etusername = findViewById(R.id.etloginshopusername);
         etpassword = findViewById(R.id.etloginshoppassword);
@@ -161,6 +169,7 @@ public class loginforshopkeeperActivity extends AppCompatActivity {
                     if (status.equals("1")){
                         progressDialog.dismiss();
                         Intent i = new Intent(loginforshopkeeperActivity.this, ShopkeeperhomeActivity.class);
+                        editor.putString("username",etusername.getText().toString()).commit();
                         startActivity(i);
                     }else{
                         progressDialog.dismiss();

@@ -38,40 +38,43 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class userMyprofilActivity extends AppCompatActivity {
+public class ShopkeepermyprofilActivity extends AppCompatActivity
+{
 
-    CircleImageView civprofilimage;
+    CircleImageView civShopkeeperprofilimage;
+    TextView tvname,tvemailid,tvmoileno,tvusername,tvedit,tvloout,tvaddress;
     Button btneditimage;
-    TextView tvname,tvemailid,tvmobileno,tvusername,tveditdetails,tvlogout;
     ProgressDialog progressDialog;
-    SharedPreferences preferences;
-    String struername;
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
+    SharedPreferences preferences;
+    String strusername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_user_myprofil);
-        getWindow().setStatusBarColor(ContextCompat.getColor(userMyprofilActivity.this,R.color.green));
-        getWindow().setNavigationBarColor(ContextCompat.getColor(userMyprofilActivity.this,R.color.white));
-        preferences = PreferenceManager.getDefaultSharedPreferences(userMyprofilActivity.this);
-        struername=preferences.getString("username","");
+        setContentView(R.layout.activity_shopkeepermyprofil);
+        getWindow().setStatusBarColor(ContextCompat.getColor(ShopkeepermyprofilActivity.this,R.color.green));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(ShopkeepermyprofilActivity.this,R.color.white));
 
-        civprofilimage = findViewById(R.id.civUserMyprofilprofilimage);
-        btneditimage = findViewById(R.id.btnUserMyprofileditimage);
-        tvname = findViewById(R.id.tvUserMyprofilName);
-        tvemailid = findViewById(R.id.tvUserMyprofilEmail);
-        tvmobileno = findViewById(R.id.tvUserMyprofilMobileno);
-        tvusername = findViewById(R.id.tvUserMyprofilUsername);
-        tveditdetails = findViewById(R.id.tvUserMyprofiledit);
-        tvlogout = findViewById(R.id.tvUserMyprofillogout);
+        preferences= PreferenceManager.getDefaultSharedPreferences(ShopkeepermyprofilActivity.this);
+        strusername = preferences.getString("username","");
 
-        googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        googleSignInClient= GoogleSignIn.getClient(userMyprofilActivity.this,googleSignInOptions);
+        civShopkeeperprofilimage = findViewById(R.id.civShopkeeperMyprofilprofilimage);
+        btneditimage = findViewById(R.id.btnShopkeeperMyprofileditimage);
+        tvname = findViewById(R.id.tvShopkeeperMyprofilName);
+        tvemailid = findViewById(R.id.tvShopkeeperMyprofilEmail);
+        tvmoileno = findViewById(R.id.tvShopkeeperMyprofilMobileno);
+        tvusername = findViewById(R.id.tvShopkeeperMyprofilUsername);
+        tvedit = findViewById(R.id.tvShopkeeperMyprofiledit);
+        tvloout = findViewById(R.id.tvShopkeeperMyprofillogout);
+        tvaddress = findViewById(R.id.tvShopkeeperMyprofilAddress);
 
-        GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(userMyprofilActivity.this);
+        googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        googleSignInClient= GoogleSignIn.getClient(ShopkeepermyprofilActivity.this,googleSignInOptions);
+
+        GoogleSignInAccount googleSignInAccount = GoogleSignIn.getLastSignedInAccount(ShopkeepermyprofilActivity.this);
         if (googleSignInAccount != null){
             String name = googleSignInAccount.getDisplayName();
             String email = googleSignInAccount.getEmail();
@@ -79,23 +82,20 @@ public class userMyprofilActivity extends AppCompatActivity {
             tvname.setText(name);
             tvemailid.setText(email);
 
-            tvlogout.setOnClickListener(new View.OnClickListener() {
+            tvloout.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View view) {
                     googleSignInClient.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Intent i = new Intent(userMyprofilActivity.this,loginforcustomerActivity.class);
+                            Intent i = new Intent(ShopkeepermyprofilActivity.this,loginforshopkeeperActivity.class);
                             startActivity(i);
                             finish();
-
                         }
                     });
-
                 }
             });
         }
-
 
 
     }
@@ -103,62 +103,62 @@ public class userMyprofilActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        progressDialog = new ProgressDialog(userMyprofilActivity.this);
+        progressDialog = new ProgressDialog(ShopkeepermyprofilActivity.this);
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("Please wait for while");
         progressDialog.setCanceledOnTouchOutside(true);
         progressDialog.show();
-        getuserDetails();
+
+        getShopdetails();
     }
 
-    private void getuserDetails() {
+    private void getShopdetails() {
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
 
-        params.put("username",struername);
+        params.put("username",strusername);
 
-        client.post(urls.Usermyprofil,params,new JsonHttpResponseHandler(){
+        client.post(urls.Shopkeepermyprofil,params,new JsonHttpResponseHandler(){
+
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
-
                 try {
                     JSONArray jsonArray = response.getJSONArray("getuserdetails");
-
-                    for (int i = 0;i < jsonArray.length();i++){
+                    for (int i=0;i<jsonArray.length();i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String strname = jsonObject.getString("name");
                         String strimage = jsonObject.getString("images");
-                        String stremail = jsonObject.getString("emailid");
+                        String stremailid = jsonObject.getString("emailid");
                         String strmobileno = jsonObject.getString("mobileno");
                         String strusername = jsonObject.getString("username");
-
+                        String straddress = jsonObject.getString("address");
                         progressDialog.dismiss();
-
                         tvname.setText(strname);
-                        tvemailid.setText(stremail);
-                        tvmobileno.setText(strmobileno);
+                        tvemailid.setText(stremailid);
+                        tvmoileno.setText(strmobileno);
                         tvusername.setText(strusername);
+                        tvaddress.setText(straddress);
 
-                        Glide.with(userMyprofilActivity.this)
+                        Glide.with(ShopkeepermyprofilActivity.this)
                                 .load("http://192.168.1.4:80/urbanarcAPI/images/"+strimage)
                                 .skipMemoryCache(true)
                                 .error(R.drawable.noimage)
                                 .downsample(DownsampleStrategy.CENTER_INSIDE) // Scale down image to fit within specified bounds
                                 .override(800, 800) // Resize the image to 800x800 pixels
-                                .into(civprofilimage);
+                                .into(civShopkeeperprofilimage);
 
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
+
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                progressDialog.dismiss();
-                Toast.makeText(userMyprofilActivity.this, "server error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ShopkeepermyprofilActivity.this, "server error", Toast.LENGTH_SHORT).show();
             }
         });
     }

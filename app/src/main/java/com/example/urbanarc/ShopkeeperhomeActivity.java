@@ -1,7 +1,10 @@
 package com.example.urbanarc;
 
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
@@ -30,7 +33,37 @@ public class ShopkeeperhomeActivity extends AppCompatActivity implements BottomN
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.menuShopkeeperbottomnevigationhome);
 
+
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.shopkeeperhome_mainmenu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId()==R.id.menumainmenushopkeeperhomenewoffers){
+
+        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomemyordrs){
+
+        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomenwishlist){
+
+        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomemuprofil){
+            Intent i = new Intent(ShopkeeperhomeActivity.this,ShopkeepermyprofilActivity.class);
+            startActivity(i);
+
+        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomeaboutus){
+
+        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomehelp){
+
+        }
+        return true;
+    }
+
     shopkeeperhomeFragment shopkeeperhomeFragment = new shopkeeperhomeFragment();
     shopkeeperaddproductFragment shopkeeperaddproductFragment = new shopkeeperaddproductFragment();
     shopkeepercategoryFragment shopkeepercategoryFragment = new shopkeepercategoryFragment();
