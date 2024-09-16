@@ -97,6 +97,14 @@ public class ShopkeepermyprofilActivity extends AppCompatActivity
             });
         }
 
+        tvedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ShopkeepermyprofilActivity.this,ShopkeeperdetailsupdateActivity.class);
+                startActivity(i);
+            }
+        });
+
 
     }
 
