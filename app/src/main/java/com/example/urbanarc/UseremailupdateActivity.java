@@ -23,56 +23,55 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.lang.ref.ReferenceQueue;
-
 import cz.msebera.android.httpclient.Header;
 
-public class UsercheckusernamefoeemailupdateActivity extends AppCompatActivity {
-
-    EditText etusername;
-    Button btnverify;
+public class UseremailupdateActivity extends AppCompatActivity {
+    EditText etemailid;
+    Button btnupdate;
+    String strusername;
     ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_usercheckusernamefoeemailupdate);
-        getWindow().setNavigationBarColor(ContextCompat.getColor(UsercheckusernamefoeemailupdateActivity.this,R.color.white));
-        getWindow().setStatusBarColor(ContextCompat.getColor(UsercheckusernamefoeemailupdateActivity.this,R.color.green));
+        setContentView(R.layout.activity_useremailupdate);
+        getWindow().setStatusBarColor(ContextCompat.getColor(UseremailupdateActivity.this,R.color.green));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(UseremailupdateActivity.this,R.color.white));
+        etemailid = findViewById(R.id.etUseremailupdatenewemail);
+        btnupdate = findViewById(R.id.btnUseremailupdateVerify);
 
-        etusername = findViewById(R.id.etUserCheckusernameforemailUsername);
-        btnverify = findViewById(R.id.btnUsercheckusernameforemailVerify);
+        strusername=getIntent().getStringExtra("username");
 
-        btnverify.setOnClickListener(new View.OnClickListener() {
+        btnupdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (etusername.getText().toString().isEmpty()) {
-                    Toast.makeText(UsercheckusernamefoeemailupdateActivity.this, "Eneter username", Toast.LENGTH_SHORT).show();
+                if (!etemailid.getText().toString().contains("@") && !etemailid.getText().toString().contains(".com")) {
+                    etemailid.setError("enter Proper Emaiil Id");
+                }else if (etemailid.getText().toString().isEmpty()){
+                    etemailid.setError("enter email addreass");
                 }else {
-                    progressDialog = new ProgressDialog(UsercheckusernamefoeemailupdateActivity.this);
-                    progressDialog.setTitle("Loading");
-                    progressDialog.setMessage("Please wait a while");
+                    progressDialog = new ProgressDialog(UseremailupdateActivity.this);
+                    progressDialog.setTitle("loading");
+                    progressDialog.setMessage("Please wait for a while");
                     progressDialog.setCanceledOnTouchOutside(false);
                     progressDialog.show();
 
-                    Checkusername();
+                    UpdateuserEmailid();
                 }
             }
-
-
-
         });
 
     }
 
-    private void Checkusername() {
+    private void UpdateuserEmailid() {
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params = new RequestParams();
 
-        params.put("username",etusername.getText().toString());
+        params.put("username",strusername);
+        params.put("emailid",etemailid.getText().toString());
 
-        client.post(urls.Userusernamecheck,params,new JsonHttpResponseHandler(){
+        client.post(urls.Useremailupdate,params,new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
@@ -80,12 +79,12 @@ public class UsercheckusernamefoeemailupdateActivity extends AppCompatActivity {
                     String status = response.getString("success");
                     if (status.equals("1")){
                         progressDialog.dismiss();
-                        Intent i = new Intent(UsercheckusernamefoeemailupdateActivity.this,UseremailupdateActivity.class);
-                        i.putExtra("username",etusername.getText().toString());
+                        Intent i = new Intent(UseremailupdateActivity.this,userhomeActivity.class);
                         startActivity(i);
+                        finish();
                     }else {
                         progressDialog.dismiss();
-                        Toast.makeText(UsercheckusernamefoeemailupdateActivity.this, "Username not present", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UseremailupdateActivity.this, "Updation Fail", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
@@ -96,8 +95,7 @@ public class UsercheckusernamefoeemailupdateActivity extends AppCompatActivity {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
                 progressDialog.dismiss();
-                Toast.makeText(UsercheckusernamefoeemailupdateActivity.this, "server error", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(UseremailupdateActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
             }
         });
     }

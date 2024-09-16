@@ -154,7 +154,7 @@ public class optverificationforpasswordupdateActivity extends AppCompatActivity 
                     if (status.equals("1")){
                         Intent i = new Intent(optverificationforpasswordupdateActivity.this,loginforcustomerActivity.class);
                         startActivity(i);
-                        finish();
+
                     }else{
                         Toast.makeText(optverificationforpasswordupdateActivity.this, "Updation Fail", Toast.LENGTH_SHORT).show();
                     }
