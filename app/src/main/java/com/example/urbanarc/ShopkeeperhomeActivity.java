@@ -58,7 +58,9 @@ public class ShopkeeperhomeActivity extends AppCompatActivity implements BottomN
 
         }else if (item.getItemId() == R.id.menumainmenushopkeeperhomeaboutus){
 
-        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomehelp){
+        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomecontactus){
+            Intent i = new Intent(ShopkeeperhomeActivity.this,ContactuspageActivity.class);
+            startActivity(i);
 
         }
         return true;

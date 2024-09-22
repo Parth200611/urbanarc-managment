@@ -33,8 +33,8 @@ public class ContactuspageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.setType("text/plain");
-                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"Solemate@gmail.com"}); // Replace with company email
-                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Inquiry from the Solamates App");
+                emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[]{"URBANARC@gmail.com"}); // Replace with company email
+                emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Inquiry from the  URBANARC App");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Hello, I have a question regarding...");
 
                 // Check if an email client is available
@@ -48,7 +48,7 @@ public class ContactuspageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String phoneNumber = "+919322766871";
-                String message = "Hello, I have a question regarding the shoes from Solamates.";
+                String message = "Hello, I have a question regarding the product from URBANARC.";
 
                 Intent whatsappIntent = new Intent(Intent.ACTION_VIEW);
                 whatsappIntent.setData(Uri.parse("https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + Uri.encode(message)));
