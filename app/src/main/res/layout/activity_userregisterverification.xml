@@ -56,8 +56,8 @@
             android:gravity="center"
             >
             <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:src="@drawable/otpverificationimage"
                 android:layout_gravity="center"
                 android:layout_marginTop="60dp"
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OTP Verification"
-                android:textSize="26sp"
+                android:textSize="30sp"
                 android:textColor="@color/green"
                 android:textStyle="bold"
                 android:layout_marginVertical="10dp"
@@ -76,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Almost there! Please enter the OTP sent to your device to verify your identity"
-                android:textSize="11sp"
+                android:textSize="14sp"
                 android:textColor="@color/gray"
                 android:textStyle="bold"
                 android:textAlignment="center"
@@ -87,7 +87,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="9322766871"
-                android:textSize="11sp"
+                android:textSize="14sp"
                 android:textColor="@color/gray"
                 android:textStyle="bold"
                 android:textAlignment="center"
@@ -101,8 +101,8 @@
                 android:gravity="center"
                 >
                 <EditText
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
                     android:textColor="@color/black"
                     android:id="@+id/etUserregistrationotpinput1"
                     android:inputType="number"
@@ -113,8 +113,8 @@
 
                     />
                 <EditText
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
                     android:textColor="@color/black"
                     android:id="@+id/etUserregistrationotpinput2"
                     android:inputType="number"
@@ -125,8 +125,8 @@
 
                     />
                 <EditText
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
                     android:textColor="@color/black"
                     android:id="@+id/etUserregistrationotpinput3"
                     android:inputType="number"
@@ -137,8 +137,8 @@
 
                     />
                 <EditText
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
                     android:textColor="@color/black"
                     android:id="@+id/etUserregistrationotpinput4"
                     android:inputType="number"
@@ -149,8 +149,8 @@
 
                     />
                 <EditText
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
                     android:textColor="@color/black"
                     android:id="@+id/etUserregistrationotpinput5"
                     android:inputType="number"
@@ -161,8 +161,8 @@
 
                     />
                 <EditText
-                    android:layout_width="40dp"
-                    android:layout_height="45dp"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
                     android:textColor="@color/black"
                     android:id="@+id/etUserregistrationotpinput6"
                     android:inputType="number"
@@ -186,6 +186,7 @@
                     android:layout_height="wrap_content"
                     android:text="Didn't receive otp ? |"
                     android:textColor="@color/black"
+                    android:textSize="16sp"
                     />
                 <TextView
                     android:layout_width="wrap_content"
@@ -193,6 +194,7 @@
                     android:text="Resend OTP"
                     android:textColor="@color/blue"
                     android:layout_marginStart="5dp"
+                    android:textSize="16sp"
                     android:id="@+id/tvUserregistrationresendotp"
                     />
             </LinearLayout>
@@ -205,7 +207,7 @@
             android:backgroundTint="@color/yellow"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="30dp"
             />
 
 

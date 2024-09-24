@@ -46,57 +46,57 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tvSplashtitle"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         app:contentPaddingRight="5dp"
         >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
 
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Update Email"
-            android:textColor="@color/green"
-            android:textStyle="bold"
-            android:textSize="26sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enetr your username to verify user after that you can easily update your email address or add new email"
-            android:textColor="@color/gray"
-            android:textSize="14sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="30dp"
-            />
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape"
-            android:hint="Username(ex-Parth@1234)"
-            android:padding="10dp"
-            android:layout_margin="30dp"
-            android:id="@+id/etUserCheckusernameforemailUsername"
-            android:inputType="text"
-            />
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="verify"
-            android:textColor="@color/white"
-            android:background="@color/yellow"
-            android:layout_marginTop="330dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:id="@+id/btnUsercheckusernameforemailVerify"
-            />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Update Email"
+                android:textColor="@color/green"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="30dp"
+                android:text="Enetr your username to verify user after that you can easily update your email address or add new email"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/etUserCheckusernameforemailUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="@drawable/shape"
+                android:hint="Username(ex-Parth@1234)"
+                android:inputType="text"
+                android:padding="10dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnUsercheckusernameforemailVerify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@color/yellow"
+                android:text="verify"
+                android:textColor="@color/white" />
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

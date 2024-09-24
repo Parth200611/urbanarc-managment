@@ -45,79 +45,80 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tvSplashtitle"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         app:contentPaddingRight="5dp"
         >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="UPDATE ACCOUNT INFORMATION"
-            android:textStyle="bold"
-            android:textColor="@color/green"
-            android:textSize="20sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="You can update your email address or change your password here.
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:text="UPDATE ACCOUNT INFORMATION"
+                android:textColor="@color/green"
+                android:textSize="24sp"
+                android:textStyle="bold"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="40dp"
+                android:text="You can update your email address or change your password here.
 For your security, please ensure that you use a strong password and a valid email address."
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="40dp"
-            />
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:id="@+id/cvUserEditprofilEditemail"
-            app:cardCornerRadius="8dp"
-            >
-            <TextView
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvUserEditprofilEditemail"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Click Here To Update Email"
-                android:gravity="center_vertical"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/blue"
-                android:drawableLeft="@drawable/baseline_alternate_email_24"
-                android:drawablePadding="5dp"
-                />
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginStart="30dp"
-            android:id="@+id/cvUserEditprofilEditpassword"
-            app:cardCornerRadius="8dp"
-            >
-            <TextView
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                app:cardCornerRadius="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:drawableLeft="@drawable/baseline_alternate_email_24"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Click Here To Update Email"
+                    android:textColor="@color/blue" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvUserEditprofilEditpassword"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Click Here To Update Password"
-                android:gravity="center_vertical"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/blue"
-                android:drawableLeft="@drawable/baseline_lock_open_24"
-                android:drawablePadding="5dp"
-                />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="60dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                app:cardCornerRadius="8dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:drawableLeft="@drawable/baseline_lock_open_24"
+                    android:drawablePadding="5dp"
+                    android:gravity="center_vertical"
+                    android:text="Click Here To Update Password"
+                    android:textColor="@color/blue" />
+            </androidx.cardview.widget.CardView>
 
 
-    </LinearLayout>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

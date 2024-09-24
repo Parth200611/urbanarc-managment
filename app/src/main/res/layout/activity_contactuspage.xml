@@ -135,7 +135,7 @@
 
   <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
@@ -151,12 +151,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Call URBANARC Customer care "
+                    android:text="Call URBANARC Customer care +91 7020472240"
                     android:gravity="center"
                     android:textColor="@color/blue"
                     android:textSize="16sp"
                     android:drawableLeft="@drawable/baseline_call_24"
-                    android:drawablePadding="5dp"
+                    android:layout_marginEnd="60dp"
+                    android:layout_marginStart="60dp"
                     />
 
             </LinearLayout>

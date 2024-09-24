@@ -1,9 +1,13 @@
 package com.example.urbanarc;
 
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,6 +17,8 @@ import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.List;
 
 public class ContactuspageActivity extends AppCompatActivity {
     CardView cvemail,cvwhatsapp,cvcall;
@@ -47,38 +53,35 @@ public class ContactuspageActivity extends AppCompatActivity {
         cvwhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "+919322766871";
+                String phoneNumber = "+919322766871"; // Indian phone number format
                 String message = "Hello, I have a question regarding the product from URBANARC.";
 
-                Intent whatsappIntent = new Intent(Intent.ACTION_VIEW);
-                whatsappIntent.setData(Uri.parse("https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + Uri.encode(message)));
+                // Use the WhatsApp API URL to send a message
+                String url = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + Uri.encode(message);
 
-                // Check if WhatsApp is installed
-                if (whatsappIntent.resolveActivity(getPackageManager()) != null) {
+                Intent whatsappIntent = new Intent(Intent.ACTION_VIEW);
+                whatsappIntent.setData(Uri.parse(url));
+
+                try {
+                    // Try to launch WhatsApp (the system will handle if it's regular or Business)
                     startActivity(whatsappIntent);
-                } else {
+                } catch (ActivityNotFoundException e) {
+                    // If WhatsApp is not installed, display a toast message
                     Toast.makeText(ContactuspageActivity.this, "WhatsApp is not installed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
 
-        cvcall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String phoneNumber = "+917020472240"; // Replace with your company phone number
+    }
 
-                Intent callIntent = new Intent(Intent.ACTION_DIAL);
-                callIntent.setData(Uri.parse("tel:" + phoneNumber));
-
-                // Check if the device can handle a call intent
-                if (callIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(callIntent);
-                } else {
-                    Toast.makeText(ContactuspageActivity.this, "Phone app is not available", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
+    private boolean isAppInstalled(String packageName) {
+        PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
     }
 }

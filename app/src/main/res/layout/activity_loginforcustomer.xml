@@ -12,7 +12,7 @@
         android:layout_height="70dp"
         android:id="@+id/ivLoginapplogo"
         android:src="@drawable/applogo"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         android:layout_marginStart="90dp"
         />
     <TextView
@@ -22,7 +22,7 @@
         android:text="URBANARC"
         android:textSize="26sp"
         android:layout_marginStart="170dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="180dp"
         android:textStyle="bold"
         android:textColor="@color/white"
 
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvloginwelcome"
         android:text="Welcome To URBANARC !"
-        android:textSize="20sp"
+        android:textSize="26sp"
         android:textColor="@color/green"
         android:fontFamily="@font/adlam_display"
         android:gravity="center"
@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvloginmessages"
-        android:text="Discover your favourite Home decors of sh today."
+        android:text="Discover your favourite Home decors today."
         android:textSize="14sp"
         android:textColor="@color/black"
         android:layout_gravity="center"
@@ -78,7 +78,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:hint="Username, email, phone no"
+            android:hint="Username"
             android:background="@drawable/shape"
             android:padding="10dp"
             android:inputType="text"
@@ -115,7 +115,7 @@
            android:layout_height="wrap_content"
            android:id="@+id/tvLoginForgottenpassword"
            android:text="Forgotten Password?"
-           android:layout_marginStart="100dp"
+           android:layout_marginStart="140dp"
            android:layout_marginTop="8dp"
            android:textColor="@color/blue"
            />

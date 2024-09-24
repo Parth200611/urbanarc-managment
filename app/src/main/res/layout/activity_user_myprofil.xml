@@ -12,7 +12,7 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:id="@+id/civUserMyprofilprofilimage"
         />
     <Button

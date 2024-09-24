@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,8 +54,11 @@ public class usercategoryFragment extends Fragment {
             @Override
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
-                Toast.makeText(getActivity(), "No category present", Toast.LENGTH_SHORT).show();
-            }
+                if (getActivity() != null) {
+                    Toast.makeText(getActivity(), "Failed to load data", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.e("usercategoryFragment", "Activity context is null, unable to show Toast");
+                }            }
         });
     }
 }
