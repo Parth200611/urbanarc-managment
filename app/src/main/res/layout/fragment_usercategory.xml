@@ -6,6 +6,17 @@
     android:orientation="vertical"
     tools:context=".usercategoryFragment">
 
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/svCategoryFragmentSearchcategory"
+        android:queryHint="Search Category"
+        android:iconifiedByDefault="false"
+        android:layout_margin="20dp"
+        android:padding="8dp"
+        android:background="@drawable/serch"
+        />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
