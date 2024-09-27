@@ -1,11 +1,14 @@
 package com.example.urbanarc;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
@@ -49,6 +52,7 @@ public class AdaptergetallCategory extends BaseAdapter {
             convertView =inflater.inflate(R.layout.lv_getcall_category_desgin_for_adapter,null);
             viewholder.ImageViewCategoryimage = convertView.findViewById(R.id.ivcategoryAdapterClassdesgingImage);
             viewholder.TextViewCategoryname = convertView.findViewById(R.id.tvcategoryadapterclassdesgingText);
+            viewholder.cvproductCategory=convertView.findViewById(R.id.cvcategoryAdapterClassdesgincardview);
 
             convertView.setTag(viewholder);
         }
@@ -68,11 +72,21 @@ public class AdaptergetallCategory extends BaseAdapter {
                 .override(800, 800) // Resize the image to 800x800 pixels
                 .into(viewholder.ImageViewCategoryimage);
 
+        viewholder.cvproductCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(activity,GetCattegoryWiseProductActivity.class);
+                i.putExtra("categoryname",obj.getCategoryName());
+                activity.startActivity(i);
+            }
+        });
+
 
         return convertView;
     }
 
     class Viewholder{
+        CardView cvproductCategory;
         CircleImageView ImageViewCategoryimage;
         TextView TextViewCategoryname;
     }
