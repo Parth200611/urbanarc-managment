@@ -24,6 +24,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cz.msebera.android.httpclient.Header;
 
 public class GetCattegoryWiseProductActivity extends AppCompatActivity {
@@ -32,6 +35,8 @@ public class GetCattegoryWiseProductActivity extends AppCompatActivity {
     ListView lvlistofproduct;
     TextView tvnoproduct;
     String strcategoryname;
+    List<POJOgetcategorywiseproduct> pojOgetcategorywiseproducts;
+    Adapterclassforcategorywiseproduct adapterclassforcategorywiseproduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,7 @@ public class GetCattegoryWiseProductActivity extends AppCompatActivity {
         svserchproduct = findViewById(R.id.svgetCategorywiseproductsearchproduct);
         lvlistofproduct = findViewById(R.id.lvgetCategorywiseproductlistofproduct);
         tvnoproduct = findViewById(R.id.tvgetCategorywiseproductnoproductavaiable);
+        pojOgetcategorywiseproducts = new ArrayList<>();
 
         strcategoryname=getIntent().getStringExtra("categoryname");
 
@@ -65,6 +71,24 @@ public class GetCattegoryWiseProductActivity extends AppCompatActivity {
                     if (jsonArray.isNull(0)){
                         tvnoproduct.setVisibility(View.VISIBLE);
                     }
+                    for (int i = 0;i<jsonArray.length();i++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        String strid = jsonObject.getString("id");
+                        String strcategoryname = jsonObject.getString("categoryname");
+                        String strproductimage = jsonObject.getString("productimage");
+                        String strcategoryproductname = jsonObject.getString("categoryproductname");
+                        String strcategoryShopname = jsonObject.getString("categoryShopname");
+                        String strcategoryproductprice = jsonObject.getString("categoryproductprice");
+                        String strproductdiscription = jsonObject.getString("productdiscription");
+                        String strproductoffer = jsonObject.getString("productoffer");
+                        String strproductrating = jsonObject.getString("productrating");
+
+                        pojOgetcategorywiseproducts.add(new POJOgetcategorywiseproduct(strid,strcategoryname,strproductimage,strcategoryproductname,strcategoryShopname,strcategoryproductprice
+                        ,strproductdiscription,strproductoffer,strproductrating));
+
+                    }
+                   // adapterclassforcategorywiseproduct = new Adapterclassforcategorywiseproduct(pojOgetcategorywiseproducts,GetCattegoryWiseProductActivity.this);
+                    lvlistofproduct.setAdapter(adapterclassforcategorywiseproduct);
 
 
 
