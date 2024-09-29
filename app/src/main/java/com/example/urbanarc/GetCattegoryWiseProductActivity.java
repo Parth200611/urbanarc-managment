@@ -87,7 +87,7 @@ public class GetCattegoryWiseProductActivity extends AppCompatActivity {
                         ,strproductdiscription,strproductoffer,strproductrating));
 
                     }
-                   // adapterclassforcategorywiseproduct = new Adapterclassforcategorywiseproduct(pojOgetcategorywiseproducts,GetCattegoryWiseProductActivity.this);
+                    adapterclassforcategorywiseproduct = new Adapterclassforcategorywiseproduct(pojOgetcategorywiseproducts,GetCattegoryWiseProductActivity.this);
                     lvlistofproduct.setAdapter(adapterclassforcategorywiseproduct);
 
 

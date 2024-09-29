@@ -7,7 +7,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         app:cardCornerRadius="8sp"
         app:cardMaxElevation="10dp"
         android:id="@+id/cvcategorywiseproductCardview"
@@ -19,7 +19,7 @@
             >
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="300dp"
                 android:id="@+id/ivcategorywiseproduvtproductimage"
                 android:src="@drawable/registeruser"
                 android:scaleType="fitXY"
@@ -46,12 +46,13 @@
                     android:layout_height="wrap_content"
                     android:text="Rating"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_marginStart="180dp"
+                    android:layout_marginStart="10dp"
                     android:background="@color/green"
                     android:id="@+id/tvcategorywiseproductrating"
                     android:layout_gravity="center_vertical"
                     android:textColor="@color/white"
+                    android:drawableRight="@drawable/baseline_star_24"
+
                     />
             </LinearLayout>
             <LinearLayout
@@ -101,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
-                android:maxLength="20"
+                android:maxLength="30"
                 android:text="Product Discription"
                 android:textColor="@color/gray"
                 android:textSize="14sp"
@@ -109,7 +110,7 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="@color/gray"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="8sp"

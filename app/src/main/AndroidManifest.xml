@@ -24,9 +24,7 @@
         <activity
             android:name=".GetCattegoryWiseProductActivity"
             android:exported="false" />
-        <activity
-            android:name=".comman.GetCategorywiseproductActivity"
-            android:exported="false" />
+
         <activity
             android:name=".ContactuspageActivity"
             android:exported="false" />
