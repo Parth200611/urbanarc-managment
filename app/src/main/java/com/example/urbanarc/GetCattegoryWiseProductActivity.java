@@ -52,7 +52,38 @@ public class GetCattegoryWiseProductActivity extends AppCompatActivity {
 
         strcategoryname=getIntent().getStringExtra("categoryname");
 
+        svserchproduct.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchproduct(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String query) {
+                searchproduct(query);
+                return false;
+            }
+        });
+
         getCategorywiseproduct();
+    }
+
+    private void searchproduct(String query) {
+        List<POJOgetcategorywiseproduct> templist=new ArrayList<>();
+        templist.clear();
+        for(POJOgetcategorywiseproduct obj:pojOgetcategorywiseproducts){
+            if (obj.getCategoryname().toUpperCase().contains(query.toUpperCase())
+            || obj.getCategoryShopname().toUpperCase().contains(query.toUpperCase())
+            || obj.getCategoryproductname().toUpperCase().contains(query.toUpperCase())
+            || obj.getCategoryproductprice().toUpperCase().contains(query.toUpperCase())){
+
+                templist.add(obj);
+            }
+            adapterclassforcategorywiseproduct = new Adapterclassforcategorywiseproduct(templist,this);
+            lvlistofproduct.setAdapter(adapterclassforcategorywiseproduct);
+
+        }
     }
 
     private void getCategorywiseproduct() {
