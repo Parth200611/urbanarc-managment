@@ -61,6 +61,9 @@ public class adminhomeActivity extends AppCompatActivity implements BottomNaviga
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menuAdminmainmenuUsers){
 
+            Intent i = new Intent(adminhomeActivity.this, AdmingetalluserdataActivity.class);
+            startActivity(i);
+
         }else if (item.getItemId()==R.id.menuAdminmainmenuShopkeeper){
 
         }else if (item.getItemId()==R.id.menuAdminmainmenuDelivery){

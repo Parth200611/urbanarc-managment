@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminUserfulldataActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/civAdminuserfulldatauserimage"
+        android:src="@drawable/plant"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/civAdminuserfulldatauserimage"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Name"
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/tvname"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_below="@id/tvname"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/shape"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:id="@+id/tvAdminUserfulldataofuserName"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mobile NO"
+        android:layout_below="@id/tvAdminUserfulldataofuserName"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/tvmobile"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mobile No"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/shape"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:id="@+id/tvAdminfulldataofuserMobileno"
+        android:layout_below="@id/tvmobile"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email Address"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/tvemail"
+        android:layout_below="@id/tvAdminfulldataofuserMobileno"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Address"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/shape"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:layout_below="@id/tvemail"
+        android:id="@+id/tvAdminUserfulldatauserEmailid"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/tvusername"
+        android:layout_below="@id/tvAdminUserfulldatauserEmailid"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/shape"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:layout_below="@id/tvusername"
+        android:id="@+id/tvAdminUserfullDataUsername"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/gray"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:id="@+id/tvpassword"
+        android:layout_below="@id/tvAdminUserfullDataUsername"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:background="@drawable/shape"
+        android:layout_marginEnd="30dp"
+        android:padding="10dp"
+        android:layout_below="@id/tvpassword"
+        android:id="@+id/tvAdminUserfullDataPassword"
+        android:inputType="textPassword"
+        />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAdminUserfullDataPassword"
+            android:layout_margin="20dp"
+            android:background="@color/yellow"
+            android:text="Remove User"
+            android:textColor="@color/white"
+            android:id="@+id/btnAdminUserfulldataRemoveuser"
+            />
+
+
+
+
+</RelativeLayout>
+
+
+</ScrollView>
