@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/myprofilbackground"
-    tools:context=".adminMyprofilActivity">
+    tools:context=".Admin.adminMyprofilActivity">
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="130dp"
         android:layout_height="130dp"

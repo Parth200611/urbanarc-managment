@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/myprofilbackground"
-    tools:context=".ShopkeepermyprofilActivity">
+    tools:context=".Shopkeeper.ShopkeepermyprofilActivity">
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="130dp"
         android:layout_height="130dp"

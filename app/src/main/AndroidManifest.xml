@@ -22,107 +22,110 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".AdminUserfulldataActivity"
+            android:name=".Admin.AdminShopkeeperlistActivity"
             android:exported="false" />
         <activity
-            android:name=".AdmingetalluserdataActivity"
+            android:name=".Admin.AdminUserfulldataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdmingetalluserdataActivity"
             android:exported="false" />
         <activity
             android:name=".AdminGetAlluserdataActivity"
             android:exported="false" />
         <activity
-            android:name=".GetCattegoryWiseProductActivity"
+            android:name=".User.GetCattegoryWiseProductActivity"
             android:exported="false" />
         <activity
-            android:name=".ContactuspageActivity"
+            android:name=".User.ContactuspageActivity"
             android:exported="false" />
         <activity
-            android:name=".ShopkeeperUsedrnamecheckforemailupdateActivity"
+            android:name=".Shopkeeper.ShopkeeperUsedrnamecheckforemailupdateActivity"
             android:exported="false" />
         <activity
-            android:name=".ShopkeeperEmailupdateActivity"
+            android:name=".Shopkeeper.ShopkeeperEmailupdateActivity"
             android:exported="false" />
         <activity
-            android:name=".ShopkeeperdetailsupdateActivity"
+            android:name=".Shopkeeper.ShopkeeperdetailsupdateActivity"
             android:exported="false" />
         <activity
-            android:name=".UseremailupdateActivity"
+            android:name=".User.UseremailupdateActivity"
             android:exported="false" />
         <activity
-            android:name=".UsercheckusernamefoeemailupdateActivity"
+            android:name=".User.UsercheckusernamefoeemailupdateActivity"
             android:exported="false" />
         <activity
-            android:name=".userEditprofilActivity"
+            android:name=".User.userEditprofilActivity"
             android:exported="false" />
         <activity
-            android:name=".deliveryMyprofilActivity"
+            android:name=".Delivery.deliveryMyprofilActivity"
             android:exported="false" />
         <activity
-            android:name=".adminMyprofilActivity"
+            android:name=".Admin.adminMyprofilActivity"
             android:exported="false" />
         <activity
-            android:name=".ShopkeepermyprofilActivity"
+            android:name=".Shopkeeper.ShopkeepermyprofilActivity"
             android:exported="false" />
         <activity
-            android:name=".userMyprofilActivity"
+            android:name=".User.userMyprofilActivity"
             android:exported="false" />
         <activity
-            android:name=".shopkeeperpasswordupdationverificationActivity"
+            android:name=".Shopkeeper.shopkeeperpasswordupdationverificationActivity"
             android:exported="false" />
         <activity
-            android:name=".shopkeeperpasswordupdateActivity"
+            android:name=".Shopkeeper.shopkeeperpasswordupdateActivity"
             android:exported="false" />
         <activity
-            android:name=".shopkeepernumbercheckActivity"
+            android:name=".Shopkeeper.shopkeepernumbercheckActivity"
             android:exported="false" />
         <activity
-            android:name=".ShopkeeperhomeActivity"
+            android:name=".Shopkeeper.ShopkeeperhomeActivity"
             android:exported="false"
             android:theme="@style/showactionbar" />
         <activity
-            android:name=".shopkeeperregisterverificationActivity"
+            android:name=".Shopkeeper.shopkeeperregisterverificationActivity"
             android:exported="false" />
         <activity
-            android:name=".userhomeActivity"
+            android:name=".User.userhomeActivity"
             android:exported="false"
             android:theme="@style/showactionbar" />
         <activity
-            android:name=".optverificationforpasswordupdateActivity"
+            android:name=".User.optverificationforpasswordupdateActivity"
             android:exported="false" />
         <activity
-            android:name=".userupdatepasswordActivity"
+            android:name=".User.userupdatepasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".usernumbercheckforforgottenpassworrd"
+            android:name=".User.usernumbercheckforforgottenpassworrd"
             android:exported="false" />
         <activity
-            android:name=".userregisterverificationActivity"
+            android:name=".User.userregisterverificationActivity"
             android:exported="false" />
         <activity
-            android:name=".deliveryhomeActivity"
+            android:name=".Delivery.deliveryhomeActivity"
             android:exported="false"
             android:theme="@style/showactionbar" />
         <activity
-            android:name=".adminhomeActivity"
+            android:name=".Admin.adminhomeActivity"
             android:exported="false"
             android:theme="@style/showactionbar" />
         <activity
-            android:name=".shopkeeperregistrationActivity"
+            android:name=".Shopkeeper.shopkeeperregistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".loginfordeliveryActivity"
+            android:name=".Delivery.loginfordeliveryActivity"
             android:exported="false" />
         <activity
-            android:name=".loginforadminActivity"
+            android:name=".Admin.loginforadminActivity"
             android:exported="false" />
         <activity
-            android:name=".loginforshopkeeperActivity"
+            android:name=".Shopkeeper.loginforshopkeeperActivity"
             android:exported="false" />
         <activity
-            android:name=".userregistrationActivity"
+            android:name=".User.userregistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".loginforcustomerActivity"
+            android:name=".User.loginforcustomerActivity"
             android:exported="false" />
         <activity
             android:name=".signupActivity"

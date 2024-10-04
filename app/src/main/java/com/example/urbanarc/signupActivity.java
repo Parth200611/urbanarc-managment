@@ -8,6 +8,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
+import com.example.urbanarc.Admin.loginforadminActivity;
+import com.example.urbanarc.Shopkeeper.loginforshopkeeperActivity;
+import com.example.urbanarc.User.loginforcustomerActivity;
+
 public class signupActivity extends AppCompatActivity {
     CardView cvcustomer,cvshopkeeper,cvother;
 
