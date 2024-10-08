@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green"
+    tools:context=".User.UserFeedBackActivity">
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/ivSplashapplogo"
+        android:src="@drawable/applogo"
+        android:layout_marginTop="65dp"
+        android:layout_marginStart="90dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSplashtitle"
+        android:text="URBANARC"
+        android:textSize="26sp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="70dp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+
+        />
+    <TextView
+        android:id="@+id/tvSplashSlogan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="Making Space Livable"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvSplashtitle"
+        android:layout_marginStart="170dp"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvSplashtitle"
+        android:layout_marginTop="80dp"
+        app:contentPaddingRight="5dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We’d Love Your Feedback!"
+                android:textSize="22sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                /> <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your opinion matters to us! Let us know what you think of our app – whether it’s something you love, something we could improve, or a feature you’d like to see. Your feedback helps us make the app better for everyone. Thank you for taking the time to share your thoughts!"
+                android:textSize="11sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/gray"
+            android:layout_marginEnd="16sp"
+                />
+
+            <EditText
+                android:id="@+id/etUserDeedbackFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Type your feedback here! 😊"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:background="@drawable/shape"
+                android:padding="16sp"
+                android:layout_marginTop="16sp"
+                android:layout_marginEnd="16sp"
+                android:layout_marginStart="16sp"
+
+                />
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16sp"
+                android:id="@+id/btnUserFeedbackSubmit"
+                android:background="@color/yellow"
+                android:text="Submit"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

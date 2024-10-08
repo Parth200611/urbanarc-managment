@@ -2,7 +2,9 @@ package com.example.urbanarc.User;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +26,8 @@ public class userregistrationActivity extends AppCompatActivity {
     EditText etname,etemailid,etmobileno,etusername,etpassword,etconfirmpassword;
     Button btnregisternow;
     ProgressDialog progressDialog;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
 
     @Override
@@ -31,6 +35,8 @@ public class userregistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_userregistration);
+        preferences = PreferenceManager.getDefaultSharedPreferences(userregistrationActivity.this);
+        editor=preferences.edit();
 
         etname = findViewById(R.id.etUserregistrationName);
         etemailid = findViewById(R.id.etUserregistrationEmailid);
@@ -106,6 +112,7 @@ public class userregistrationActivity extends AppCompatActivity {
                             i.putExtra("mobileno",etmobileno.getText().toString());
                             i.putExtra("username",etusername.getText().toString());
                             i.putExtra("password",etpassword.getText().toString());
+                            editor.putString("nameofuser",etname.getText().toString()).commit();
                             startActivity(i);
                         }
                     });

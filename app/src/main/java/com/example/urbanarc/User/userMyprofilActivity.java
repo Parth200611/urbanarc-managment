@@ -47,6 +47,8 @@ public class userMyprofilActivity extends AppCompatActivity {
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
 
+    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,7 @@ public class userMyprofilActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(userMyprofilActivity.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(userMyprofilActivity.this,R.color.white));
         preferences = PreferenceManager.getDefaultSharedPreferences(userMyprofilActivity.this);
+        editor=preferences.edit();
         struername=preferences.getString("username","");
 
         civprofilimage = findViewById(R.id.civUserMyprofilprofilimage);
@@ -145,6 +148,7 @@ public class userMyprofilActivity extends AppCompatActivity {
                         tvemailid.setText(stremail);
                         tvmobileno.setText(strmobileno);
                         tvusername.setText(strusername);
+                        editor.putString("name",strname);
 
                         Glide.with(userMyprofilActivity.this)
                                 .load(urls.address+"images/"+strimage)
