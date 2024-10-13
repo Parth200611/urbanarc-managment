@@ -1,4 +1,4 @@
-package com.example.urbanarc.User;
+package com.example.urbanarc.User.ADAPTERCLASS;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import androidx.cardview.widget.CardView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.example.urbanarc.R;
+import com.example.urbanarc.User.GetCattegoryWiseProductActivity;
+import com.example.urbanarc.User.POJOCLASS.POJOgetallcategory;
 import com.example.urbanarc.comman.urls;
 
 import java.util.List;
@@ -76,7 +78,7 @@ public class AdaptergetallCategory extends BaseAdapter {
         viewholder.cvproductCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(activity,GetCattegoryWiseProductActivity.class);
+                Intent i = new Intent(activity, GetCattegoryWiseProductActivity.class);
                 i.putExtra("categoryname",obj.getCategoryName());
                 activity.startActivity(i);
             }

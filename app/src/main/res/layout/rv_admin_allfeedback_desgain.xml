@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvrvAdmingetallfeedbavckcard"
+        app:cardCornerRadius="5sp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            >
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="136dp"
+                android:id="@+id/ivrvAdmingetallfeedbackuserimage"
+                android:src="@drawable/baseline_person_24"
+                android:layout_marginTop="10dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16sp"
+                android:layout_marginStart="146sp"
+                android:id="@+id/rvAdmingetallfeedbavckusername"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:layout_below="@id/rvAdmingetallfeedbavckusername"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="146sp"
+                android:id="@+id/rvAdmingetallfeedbavckdate"
+                />   <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:layout_below="@id/rvAdmingetallfeedbavckdate"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="146sp"
+                android:id="@+id/rvAdmingetallfeedbavcktime"
+
+                /> <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:layout_below="@id/rvAdmingetallfeedbavcktime"
+                android:layout_marginTop="10sp"
+                android:layout_marginStart="146sp"
+                android:id="@+id/rvAdmingetallfeedbavcktmessage"
+            android:layout_marginBottom="16sp"
+            android:maxLength="20"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

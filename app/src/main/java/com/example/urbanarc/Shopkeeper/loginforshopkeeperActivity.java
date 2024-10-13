@@ -171,6 +171,8 @@ public class loginforshopkeeperActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         Intent i = new Intent(loginforshopkeeperActivity.this, ShopkeeperhomeActivity.class);
                         editor.putString("username",etusername.getText().toString()).commit();
+                        editor.putBoolean("isLoginshopkeeper",true);
+                        editor.apply();
                         startActivity(i);
                     }else{
                         progressDialog.dismiss();

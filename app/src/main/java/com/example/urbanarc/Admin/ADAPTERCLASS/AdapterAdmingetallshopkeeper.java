@@ -1,36 +1,21 @@
-package com.example.urbanarc.Admin;
+package com.example.urbanarc.Admin.ADAPTERCLASS;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
+import com.example.urbanarc.Admin.POJOCLASS.POJOADMINgetallshopkeeperlist;
 import com.example.urbanarc.R;
 import com.example.urbanarc.comman.urls;
-import com.loopj.android.http.AsyncHttpClient;
-import com.loopj.android.http.JsonHttpResponseHandler;
-import com.loopj.android.http.RequestParams;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import cz.msebera.android.httpclient.Header;
 
 public class AdapterAdmingetallshopkeeper extends BaseAdapter {
     List<POJOADMINgetallshopkeeperlist> pojoadmiNgetallshopkeeperlists;

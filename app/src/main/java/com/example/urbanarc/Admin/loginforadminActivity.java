@@ -121,6 +121,8 @@ public class loginforadminActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         Intent i = new Intent(loginforadminActivity.this, adminhomeActivity.class);
                         editor.putString("username",etusername.getText().toString()).commit();
+                        editor.putBoolean("isLoginadmin",true);
+                        editor.apply();
                         startActivity(i);
                     }else{
                         progressDialog.dismiss();

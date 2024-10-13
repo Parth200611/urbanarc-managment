@@ -1,4 +1,4 @@
-package com.example.urbanarc.User;
+package com.example.urbanarc.User.POJOCLASS;
 
 public class POJOgetallcategory {
     //pojo plane old java object

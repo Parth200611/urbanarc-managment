@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import com.example.urbanarc.Admin.ADAPTERCLASS.ADAPTERADminGETallDeliveryList;
+import com.example.urbanarc.Admin.POJOCLASS.POJOADminGetALLDELIVERYLIst;
 import com.example.urbanarc.R;
 import com.example.urbanarc.comman.urls;
 import com.loopj.android.http.AsyncHttpClient;

@@ -1,4 +1,4 @@
-package com.example.urbanarc.User;
+package com.example.urbanarc.User.ADAPTERCLASS;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.urbanarc.R;
+import com.example.urbanarc.User.POJOCLASS.POJOgetcategorywiseproduct;
 import com.example.urbanarc.comman.urls;
 
 import java.util.List;

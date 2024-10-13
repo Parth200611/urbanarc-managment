@@ -1,19 +1,17 @@
-package com.example.urbanarc.Admin;
+package com.example.urbanarc.Admin.POJOCLASS;
 
-public class POJOADMINgetallshopkeeperlist {
-    String id,image,name,emailid,mobileno,addrss,username,password;
+public class POJOADMINGetallUserData {
+    String id,images,name,emailid,mobileno,username,userpassword;
 
-    public POJOADMINgetallshopkeeperlist(String id, String image, String name, String emailid, String mobileno, String addrss, String username, String password) {
+    public POJOADMINGetallUserData(String id, String images, String name, String emailid, String mobileno, String username, String userpassword) {
         this.id = id;
-        this.image = image;
+        this.images = images;
         this.name = name;
         this.emailid = emailid;
         this.mobileno = mobileno;
-        this.addrss = addrss;
         this.username = username;
-        this.password = password;
+        this.userpassword = userpassword;
     }
-
 
     public String getId() {
         return id;
@@ -23,12 +21,12 @@ public class POJOADMINgetallshopkeeperlist {
         this.id = id;
     }
 
-    public String getImage() {
-        return image;
+    public String getImages() {
+        return images;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImages(String images) {
+        this.images = images;
     }
 
     public String getName() {
@@ -55,14 +53,6 @@ public class POJOADMINgetallshopkeeperlist {
         this.mobileno = mobileno;
     }
 
-    public String getAddrss() {
-        return addrss;
-    }
-
-    public void setAddrss(String addrss) {
-        this.addrss = addrss;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -71,11 +61,11 @@ public class POJOADMINgetallshopkeeperlist {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getUserpassword() {
+        return userpassword;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUserpassword(String userpassword) {
+        this.userpassword = userpassword;
     }
 }

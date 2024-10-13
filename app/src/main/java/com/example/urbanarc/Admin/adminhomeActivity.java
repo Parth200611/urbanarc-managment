@@ -70,6 +70,8 @@ public class adminhomeActivity extends AppCompatActivity implements BottomNaviga
             startActivity(i);
 
         }else if (item.getItemId()==R.id.menuAdminmainmenufeedback){
+            Intent i = new Intent(adminhomeActivity.this,AdminGetUserFeedBackActivity.class);
+            startActivity(i);
 
         }else if (item.getItemId()==R.id.menuAdminmainmenuReport){
 

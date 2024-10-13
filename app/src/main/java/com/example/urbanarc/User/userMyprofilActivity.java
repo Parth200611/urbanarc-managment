@@ -1,6 +1,8 @@
 package com.example.urbanarc.User;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.example.urbanarc.R;
 import com.example.urbanarc.comman.urls;
+import com.example.urbanarc.signupActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -104,9 +107,45 @@ public class userMyprofilActivity extends AppCompatActivity {
 
             }
         });
+        
+        tvlogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserLogout();
+            }
+        });
 
 
 
+    }
+
+    private void UserLogout() {
+        new AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        logoutUser(); // Call the logout function if the user confirms
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss(); // Close the dialog if the user cancels
+                    }
+                })
+                .show();
+    }
+
+    private void logoutUser() {
+        editor.putBoolean("isLogin", false);
+        editor.apply();
+
+        // Redirect to the LoginActivity
+        Intent intent = new Intent(userMyprofilActivity.this, signupActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override
@@ -157,6 +196,7 @@ public class userMyprofilActivity extends AppCompatActivity {
                                 .downsample(DownsampleStrategy.CENTER_INSIDE) // Scale down image to fit within specified bounds
                                 .override(800, 800) // Resize the image to 800x800 pixels
                                 .into(civprofilimage);
+                        editor.putString("userimage",strimage).commit();
 
                     }
                 } catch (JSONException e) {

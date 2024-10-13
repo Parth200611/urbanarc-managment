@@ -111,6 +111,8 @@ public class loginfordeliveryActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         Intent i = new Intent(loginfordeliveryActivity.this, deliveryhomeActivity.class);
                         editor.putString("username",etusername.getText().toString()).commit();
+                        editor.putBoolean("isLogindeliver",true);
+                        editor.apply();
                         startActivity(i);
                     }else{
                         progressDialog.dismiss();

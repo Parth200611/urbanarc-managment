@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
+import com.example.urbanarc.User.ADAPTERCLASS.Adapterclassforcategorywiseproduct;
+import com.example.urbanarc.User.POJOCLASS.POJOgetcategorywiseproduct;
 import com.example.urbanarc.comman.urls;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;

@@ -178,6 +178,8 @@ GoogleSignInClient googleSignInClient;
                         progressDialog.dismiss();
                         Intent i = new Intent(loginforcustomerActivity.this,userhomeActivity.class);
                         editor.putString("username",etusername.getText().toString()).commit();
+                        editor.putBoolean("isLogin",true);
+                        editor.apply();
                         startActivity(i);
                         finish();
                     }else{

@@ -13,8 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.urbanarc.R;
-import com.example.urbanarc.User.AdaptergetallCategory;
-import com.example.urbanarc.User.POJOgetallcategory;
+import com.example.urbanarc.User.ADAPTERCLASS.AdaptergetallCategory;
+import com.example.urbanarc.User.POJOCLASS.POJOgetallcategory;
 import com.example.urbanarc.comman.urls;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;

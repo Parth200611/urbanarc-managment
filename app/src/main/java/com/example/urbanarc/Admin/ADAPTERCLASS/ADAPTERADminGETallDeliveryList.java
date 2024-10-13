@@ -1,4 +1,4 @@
-package com.example.urbanarc.Admin;
+package com.example.urbanarc.Admin.ADAPTERCLASS;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
+import com.example.urbanarc.Admin.POJOCLASS.POJOADminGetALLDELIVERYLIst;
 import com.example.urbanarc.R;
 import com.example.urbanarc.comman.urls;
 

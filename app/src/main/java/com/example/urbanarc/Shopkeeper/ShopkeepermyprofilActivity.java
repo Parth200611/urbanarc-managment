@@ -1,6 +1,8 @@
 package com.example.urbanarc.Shopkeeper;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,7 +20,9 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.example.urbanarc.R;
+import com.example.urbanarc.User.userMyprofilActivity;
 import com.example.urbanarc.comman.urls;
+import com.example.urbanarc.signupActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -46,6 +50,7 @@ public class ShopkeepermyprofilActivity extends AppCompatActivity
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
     SharedPreferences preferences;
+    SharedPreferences.Editor editor;
     String strusername;
 
     @Override
@@ -57,6 +62,7 @@ public class ShopkeepermyprofilActivity extends AppCompatActivity
         getWindow().setNavigationBarColor(ContextCompat.getColor(ShopkeepermyprofilActivity.this,R.color.white));
 
         preferences= PreferenceManager.getDefaultSharedPreferences(ShopkeepermyprofilActivity.this);
+        editor=preferences.edit();
         strusername = preferences.getString("username","");
 
         civShopkeeperprofilimage = findViewById(R.id.civShopkeeperMyprofilprofilimage);
@@ -104,6 +110,45 @@ public class ShopkeepermyprofilActivity extends AppCompatActivity
         });
 
 
+
+        tvloout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ShopkeeperLogout();
+            }
+        });
+
+
+    }
+
+    private void ShopkeeperLogout() {
+
+        new AlertDialog.Builder(this)
+                .setTitle("Logout")
+                .setMessage("Are you sure you want to log out?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        logoutshopkeeper(); // Call the logout function if the user confirms
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss(); // Close the dialog if the user cancels
+                    }
+                })
+                .show();
+    }
+
+    private void logoutshopkeeper() {
+        editor.putBoolean("isLoginshopkeeper", false);
+        editor.apply();
+
+        // Redirect to the LoginActivity
+        Intent intent = new Intent(ShopkeepermyprofilActivity.this, signupActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

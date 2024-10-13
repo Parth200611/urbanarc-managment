@@ -1,4 +1,4 @@
-package com.example.urbanarc.Admin;
+package com.example.urbanarc.Admin.POJOCLASS;
 
 public class POJOADminGetALLDELIVERYLIst {
     String id,name,image,username,rating,emailid,mobileno,orders,password;
