@@ -19,6 +19,21 @@
         android:background="@drawable/shape"
         android:id="@+id/svAdminGetAllusersearchview"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All user location"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/buttonshape"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:textColor="@color/gray"
+        android:drawableLeft="@drawable/baseline_location_pin_24"
+        android:drawablePadding="5dp"
+        android:textSize="16sp"
+        android:id="@+id/tvAdminallUserdataLocation"
+        />
 
     <ListView
         android:layout_width="match_parent"

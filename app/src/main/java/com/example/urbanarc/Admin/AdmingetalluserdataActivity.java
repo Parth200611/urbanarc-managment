@@ -1,5 +1,6 @@
 package com.example.urbanarc.Admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -31,7 +32,7 @@ public class AdmingetalluserdataActivity extends AppCompatActivity {
 
 
     ListView lvuserlist;
-    TextView tvnouser;
+    TextView tvnouser,tvlocation;
     List<POJOADMINGetallUserData> pojoadminGetallUserData;
     ADAPTERAdmingetalluser adapterAdmingetalluser;
     SearchView searchView;
@@ -47,6 +48,15 @@ public class AdmingetalluserdataActivity extends AppCompatActivity {
         tvnouser=findViewById(R.id.tvAdmingetAllusernouseravaiable);
         pojoadminGetallUserData=new ArrayList<>();
         searchView=findViewById(R.id.svAdminGetAllusersearchview);
+        tvlocation=findViewById(R.id.tvAdminallUserdataLocation);
+
+        tvlocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdmingetalluserdataActivity.this, AdminAlluserLocationActivity.class);
+                startActivity(i);
+            }
+        });
 
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
