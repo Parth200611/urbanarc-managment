@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_admin_alluser_location">AdminAlluserLocationActivity</string>
+    <string name="title_activity_admin_getall_shop_location">AdminGetallShopLocationActivity
+    </string>
+    <string name="title_activity_admin_allshoplocation">AdminAllshoplocationActivity</string>
 </resources>

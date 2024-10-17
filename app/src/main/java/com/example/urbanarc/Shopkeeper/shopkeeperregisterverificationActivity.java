@@ -1,7 +1,12 @@
 package com.example.urbanarc.Shopkeeper;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,11 +18,19 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
 import com.example.urbanarc.comman.urls;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.CancellationToken;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.OnTokenCanceledListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -31,47 +44,58 @@ import com.loopj.android.http.RequestParams;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import cz.msebera.android.httpclient.Header;
 
 public class shopkeeperregisterverificationActivity extends AppCompatActivity {
-    TextView tvmobileno,tvresendotp;
-    EditText etinput1,etinput2,etinput3,etinput4,etinput5,etinput6;
+    TextView tvmobileno, tvresendotp;
+    EditText etinput1, etinput2, etinput3, etinput4, etinput5, etinput6;
     Button btnverify;
 
-    String strotp,strname,stremailid,strmobileno,strusername,strpassword,straddress;
+    String strotp, strname, stremailid, strmobileno, strusername, strpassword;
 
     ProgressDialog progressDialog;
+    double lattitude,longitude;
+    String address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopkeeperregisterverification);
-        getWindow().setStatusBarColor(ContextCompat.getColor(shopkeeperregisterverificationActivity.this,R.color.green));
-        getWindow().setNavigationBarColor(ContextCompat.getColor(shopkeeperregisterverificationActivity.this,R.color.white));
+        getWindow().setStatusBarColor(ContextCompat.getColor(shopkeeperregisterverificationActivity.this, R.color.green));
+        getWindow().setNavigationBarColor(ContextCompat.getColor(shopkeeperregisterverificationActivity.this, R.color.white));
 
         tvmobileno = findViewById(R.id.tvShopkeeperregistrationverificationmobileno);
         tvresendotp = findViewById(R.id.tvShopkeeperregistrationotpresendotp);
-        etinput1=findViewById(R.id.etShopkeeperregistrationotpinput1);
-        etinput2=findViewById(R.id.etShopkeeperregistrationotpinput2);
-        etinput3=findViewById(R.id.etShopkeeperregistrationotpinput3);
-        etinput4=findViewById(R.id.etShopkeeperregistrationotpinput4);
-        etinput5=findViewById(R.id.etShopkeeperregistrationotpinput5);
-        etinput6=findViewById(R.id.etShopkeeperregistrationotpinput6);
+        etinput1 = findViewById(R.id.etShopkeeperregistrationotpinput1);
+        etinput2 = findViewById(R.id.etShopkeeperregistrationotpinput2);
+        etinput3 = findViewById(R.id.etShopkeeperregistrationotpinput3);
+        etinput4 = findViewById(R.id.etShopkeeperregistrationotpinput4);
+        etinput5 = findViewById(R.id.etShopkeeperregistrationotpinput5);
+        etinput6 = findViewById(R.id.etShopkeeperregistrationotpinput6);
         btnverify = findViewById(R.id.btShopkeeperregiistrationverificcationverify);
-
-
 
 
         strotp = getIntent().getStringExtra("otp");
         strname = getIntent().getStringExtra("name");
         stremailid = getIntent().getStringExtra("emailid");
         strmobileno = getIntent().getStringExtra("mobileno");
-        straddress =getIntent().getStringExtra("address");
         strusername = getIntent().getStringExtra("username");
         strpassword = getIntent().getStringExtra("password");
         tvmobileno.setText(strmobileno);
+
+        if (ActivityCompat.checkSelfPermission(shopkeeperregisterverificationActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(shopkeeperregisterverificationActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(shopkeeperregisterverificationActivity.this, new String[]{
+                    Manifest.permission.ACCESS_FINE_LOCATION,
+                    Manifest.permission.ACCESS_COARSE_LOCATION
+            }, 233);
+        } else {
+
+        }
         btnverify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,26 +103,26 @@ public class shopkeeperregisterverificationActivity extends AppCompatActivity {
                         etinput3.getText().toString().trim().isEmpty() ||
                         etinput4.getText().toString().trim().isEmpty() ||
                         etinput5.getText().toString().trim().isEmpty() ||
-                        etinput6.getText().toString().trim().isEmpty()){
+                        etinput6.getText().toString().trim().isEmpty()) {
                     Toast.makeText(shopkeeperregisterverificationActivity.this, "Enter Proper Otp", Toast.LENGTH_SHORT).show();
                 }
-                String otpcode=etinput1.getText().toString()+etinput2.getText().toString()+etinput3.getText().toString()+etinput4.getText().toString()+etinput5.getText().toString()+etinput6.getText().toString();
+                String otpcode = etinput1.getText().toString() + etinput2.getText().toString() + etinput3.getText().toString() + etinput4.getText().toString() + etinput5.getText().toString() + etinput6.getText().toString();
 
-                if (strotp!=null){
-                    progressDialog=new ProgressDialog(shopkeeperregisterverificationActivity.this);
+                if (strotp != null) {
+                    progressDialog = new ProgressDialog(shopkeeperregisterverificationActivity.this);
                     progressDialog.setTitle("Verifying");
                     progressDialog.setMessage("Please Wait for moment");
                     progressDialog.setCanceledOnTouchOutside(false);
                     progressDialog.show();
 
-                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(strotp,otpcode);
+                    PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.getCredential(strotp, otpcode);
                     FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
+                            if (task.isSuccessful()) {
                                 progressDialog.dismiss();
-                                Shopkeeperregister();
-                            }else {
+                                getAllshoplocation();
+                            } else {
                                 Toast.makeText(shopkeeperregisterverificationActivity.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
                             }
 
@@ -127,15 +151,11 @@ public class shopkeeperregisterverificationActivity extends AppCompatActivity {
                     @Override
                     public void onCodeSent(@NonNull String newotp, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                         super.onCodeSent(newotp, forceResendingToken);
-                        strotp=newotp;
+                        strotp = newotp;
                     }
                 });
             }
         });
-
-
-
-
 
 
         InputOtp();
@@ -143,14 +163,70 @@ public class shopkeeperregisterverificationActivity extends AppCompatActivity {
 
     }
 
-    private void Shopkeeperregister() {
+    private void getAllshoplocation() {
+        FusedLocationProviderClient fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(shopkeeperregisterverificationActivity.this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        fusedLocationProviderClient.getCurrentLocation(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY, new CancellationToken() {
+            @NonNull
+            @Override
+            public CancellationToken onCanceledRequested(@NonNull OnTokenCanceledListener onTokenCanceledListener) {
+                return null;
+            }
+
+            @Override
+            public boolean isCancellationRequested() {
+                return false;
+            }
+        }).addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                lattitude =location.getLatitude();
+                longitude = location.getLongitude();
+
+                Geocoder geocoder = new Geocoder(shopkeeperregisterverificationActivity.this);
+
+                try {
+                    List<Address> addressesList = geocoder.getFromLocation(lattitude,longitude,1);
+                    address=addressesList.get(0).getAddressLine(0);
+                    Shopkeeperregister(lattitude,longitude,address);
+
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(shopkeeperregisterverificationActivity.this, "Error"+e.toString(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+    private void Shopkeeperregister(double lattitude,double longitude ,String address) {
         AsyncHttpClient client = new AsyncHttpClient();
         RequestParams params  = new RequestParams();
 
         params.put("name",strname);
         params.put("emailid",stremailid);
+        params.put("lattitude",lattitude);
+        params.put("longitude",longitude);
+        params.put("shopaddress",address);
         params.put("mobileno",strmobileno);
-        params.put("address",straddress);
         params.put("username",strusername);
         params.put("shopkeeperpassword",strpassword);
 

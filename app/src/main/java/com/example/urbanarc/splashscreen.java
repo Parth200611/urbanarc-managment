@@ -53,18 +53,19 @@ public class splashscreen extends AppCompatActivity {
                     startActivity(i);
                     finish();
 
-                }else if (isLoggedInadmin) {
-                    Intent i = new Intent(splashscreen.this, adminhomeActivity.class);
-                    startActivity(i);
-                    finish();
-
                 }else if (isLoggedIndelivery) {
                     Intent i = new Intent(splashscreen.this, deliveryhomeActivity.class);
                     startActivity(i);
                     finish();
 
-                } else {
-                    // User is not logged in, navigate to LoginActivity
+                }else if (isLoggedInadmin) {
+                    Intent i = new Intent(splashscreen.this, adminhomeActivity.class);
+                    startActivity(i);
+                    finish();
+
+                }
+                else {
+
                     Intent intent = new Intent(splashscreen.this, signupActivity.class);
                     startActivity(intent);
                     finish();

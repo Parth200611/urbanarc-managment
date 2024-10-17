@@ -37,8 +37,12 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDXKrtmMVOvzYhO9YDMYIdILpIThd8WW3w" />
+            android:value="AIzaSyD4JYyu79ZVeFByy93trDXCzRFSHPWzUz8" />
 
+        <activity
+            android:name=".Admin.AdminAllshoplocationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_admin_allshoplocation" />
         <activity
             android:name=".Admin.AdminAlluserLocationActivity"
             android:exported="false"

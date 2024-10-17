@@ -1,5 +1,6 @@
 package com.example.urbanarc.Admin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -30,7 +31,7 @@ import cz.msebera.android.httpclient.Header;
 public class AdminShopkeeperlistActivity extends AppCompatActivity {
     SearchView svSearchShopkeeper;
     ListView lvShopkeeperList;
-    TextView tvNoshopkeeper;
+    TextView tvNoshopkeeper,tvshoplocation;
     List<POJOADMINgetallshopkeeperlist> pojoadmiNgetallshopkeeperlists;
     AdapterAdmingetallshopkeeper adapterAdmingetallshopkeeper;
 
@@ -44,6 +45,15 @@ public class AdminShopkeeperlistActivity extends AppCompatActivity {
         lvShopkeeperList = findViewById(R.id.lvAdminshopkeeperList);
         tvNoshopkeeper = findViewById(R.id.tvAdminShopkeeperlistNoshopkeeper);
         pojoadmiNgetallshopkeeperlists = new ArrayList<>();
+        tvshoplocation = findViewById(R.id.tvAdminallShopdataLocation);
+
+        tvshoplocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AdminShopkeeperlistActivity.this,AdminAllshoplocationActivity.class);
+                startActivity(i);
+            }
+        });
 
         getListofShopkeeper();
 
@@ -70,7 +80,7 @@ public class AdminShopkeeperlistActivity extends AppCompatActivity {
                         String strname = jsonObject.getString("name");
                         String stremailid = jsonObject.getString("emailid");
                         String strmobileno = jsonObject.getString("mobileno");
-                        String straddress = jsonObject.getString("address");
+                        String straddress = jsonObject.getString("shopaddress");
                         String strusername = jsonObject.getString("username");
                         String strpassword = jsonObject.getString("shopkeeperpassword");
 

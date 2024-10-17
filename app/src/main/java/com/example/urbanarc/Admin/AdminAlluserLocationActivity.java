@@ -15,6 +15,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.urbanarc.R;
+import com.example.urbanarc.comman.urls;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -22,6 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.urbanarc.databinding.ActivityAdminAlluserLocationBinding;
@@ -29,9 +31,18 @@ import com.google.android.gms.tasks.CancellationToken;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.OnTokenCanceledListener;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 public class AdminAlluserLocationActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -131,6 +142,46 @@ public class AdminAlluserLocationActivity extends FragmentActivity implements On
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        getAlluserlocation();
 
+    }
+
+    private void getAlluserlocation() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
+        client.post(urls.AdminGetAlluserlocation,params,new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    JSONArray jsonArray = response.getJSONArray("getallcustomerlocation");
+                    for (int i =0;i<jsonArray.length();i++){
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        String strid=jsonObject.getString("id");
+                        String strname =jsonObject.getString("name");
+                        double strlattitude = Double.parseDouble(jsonObject.getString("lattitude"));
+                        double strlongitude = Double.parseDouble(jsonObject.getString("longuitude"));
+                        String straddress = jsonObject.getString("address");
+                        String strusername = jsonObject.getString("username");
+
+                        LatLng currentlocationuser = new LatLng(strlattitude,strlongitude);
+                        MarkerOptions markerOptions = new MarkerOptions();
+                        markerOptions.position(currentlocationuser).title(straddress);
+                        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.userlocatuion));
+                        mMap.addMarker(markerOptions);
+
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(AdminAlluserLocationActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

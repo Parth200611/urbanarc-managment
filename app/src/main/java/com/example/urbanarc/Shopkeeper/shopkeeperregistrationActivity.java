@@ -20,7 +20,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class shopkeeperregistrationActivity extends AppCompatActivity {
-    EditText etname,etemailid,etmobileno,etusername,etpassword,etconfirmpassword,etaddress;
+    EditText etname,etemailid,etmobileno,etusername,etpassword,etconfirmpassword;
     Button btnregisternow;
     ProgressDialog progressDialog;
 
@@ -33,7 +33,7 @@ public class shopkeeperregistrationActivity extends AppCompatActivity {
         etname = findViewById(R.id.etShopkeeperregistrationName);
         etemailid = findViewById(R.id.etShopkeeperregistrationEmailid);
         etmobileno = findViewById(R.id.etShopkeeperregistrationmobileno);
-        etaddress = findViewById(R.id.etShopkeeperregistrationaddress);
+
         etusername = findViewById(R.id.etShopkeeperregistrationUsername);
         etpassword = findViewById(R.id.etShopkeeperregistrationPassword);
         etconfirmpassword = findViewById(R.id.etshopkeeperregistrationconfirmpassword);
@@ -50,8 +50,6 @@ public class shopkeeperregistrationActivity extends AppCompatActivity {
                     etmobileno.setError("Enter  the proper Mobile Number");
                 } else if (!etemailid.getText().toString().contains("@") && !etemailid.getText().toString().contains(".com")) {
                     etemailid.setError("enter Proper Emaiil Id");
-                } else if (etaddress.getText().toString().isEmpty()){
-                    etaddress.setError("enter address");
                 } else if (etusername.getText().toString().isEmpty()) {
                     etusername.setError("Please enter username");
                 } else if (etusername.getText().toString().length() < 8) {
@@ -107,7 +105,6 @@ public class shopkeeperregistrationActivity extends AppCompatActivity {
                                     i.putExtra("name",etname.getText().toString());
                                     i.putExtra("emailid",etemailid.getText().toString());
                                     i.putExtra("mobileno",etmobileno.getText().toString());
-                                    i.putExtra("address",etaddress.getText().toString());
                                     i.putExtra("username",etusername.getText().toString());
                                     i.putExtra("password",etpassword.getText().toString());
                                     startActivity(i);
