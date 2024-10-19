@@ -31,6 +31,7 @@ public class urls {
     public static String Userfeedback=address+"userfeedback.php";
     public static String AdminGetUserfeedback=address+"admingetalllfeedback.php";
     public static String AdminGetAlluserlocation=address+"getalluserlocation.php";
+    public static String AdminGetAllshoplocation=address+"getallshoplocation.php";
 
 
 }

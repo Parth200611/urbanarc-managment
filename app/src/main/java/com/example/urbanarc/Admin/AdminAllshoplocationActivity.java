@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.BitmapFactory;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.urbanarc.R;
+import com.example.urbanarc.comman.urls;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
@@ -21,6 +23,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.example.urbanarc.databinding.ActivityAdminAllshoplocationBinding;
@@ -28,9 +31,18 @@ import com.google.android.gms.tasks.CancellationToken;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.OnTokenCanceledListener;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 public class AdminAllshoplocationActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -131,7 +143,46 @@ public class AdminAllshoplocationActivity extends FragmentActivity implements On
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        getallShopLocation();
+    }
 
-        // Add a marker in Sydney and move the camera
+    private void getallShopLocation() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
+        client.post(urls.AdminGetAllshoplocation,params,new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    JSONArray array = response.getJSONArray("getallshoplocation");
+                    for (int i =0 ; i<array.length(); i++){
+                        JSONObject jsonObject = array.getJSONObject(i);
+                        String strid=jsonObject.getString("id");
+                        String strname = jsonObject.getString("name");
+                        double strlattitude = Double.parseDouble(jsonObject.getString("lattitude"));
+                        double strlongirtude = Double.parseDouble(jsonObject.getString("longitude"));
+                        String straddress = jsonObject.getString("shopaddress");
+                        String strusername = jsonObject.getString("username");
+
+                        LatLng cureentlyshopat = new LatLng(strlattitude,strlongirtude);
+                        MarkerOptions markerOptions = new MarkerOptions();
+                        markerOptions.position(cureentlyshopat).title(straddress);
+                        markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.shop));
+
+                        mMap.addMarker(markerOptions);
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Toast.makeText(AdminAllshoplocationActivity.this, "Server Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
