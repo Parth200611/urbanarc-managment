@@ -55,7 +55,7 @@ public class UserhomeFragment extends Fragment {
         rvcategory = view.findViewById(R.id.rvUserHomefragmentCategoryproduct);
         pojoUserFragmentCategories=new ArrayList<>();
         searchView = view.findViewById(R.id.svUserhomefargmentrsearchproduct);
-        tyvnocategpry = view.findViewById(R.id.tvUserHomeFragmentTextnocategory);
+
 
         AdpterUserHomefeagmentcategory adpterUserHomefeagmentcategory;
 
