@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".User.UserhomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home" />
 
-</FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16sp"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search category,product name"
+                android:background="@drawable/serch"
+                android:id="@+id/svUserhomefargmentrsearchproduct"
+                />
+            <com.denzcoskun.imageslider.ImageSlider
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                app:iss_auto_cycle="true"
+                android:id="@+id/isUserHomeFragmentOfferImageslider"
+                app:iss_delay="2000"
+                app:iss_period="2000"
+                app:iss_no_dots="true"
+                android:layout_margin="16dp"
+                />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rvUserHomefragmentCategoryproduct"
+
+                />
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+</ScrollView>

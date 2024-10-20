@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".User.userhomeActivity">
+
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -24,5 +26,6 @@
         app:itemTextColor="@color/nevybluecolor"
         android:background="@color/white"
         />
+
 
 </RelativeLayout>

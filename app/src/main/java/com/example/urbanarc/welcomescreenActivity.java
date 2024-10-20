@@ -41,7 +41,6 @@ public class welcomescreenActivity extends AppCompatActivity {
         slideModelArrayList.add(new SlideModel(R.drawable.welcomeimage8, ScaleTypes.CENTER_CROP));
         slideModelArrayList.add(new SlideModel(R.drawable.welcomeimage5, ScaleTypes.CENTER_CROP));
         slideModelArrayList.add(new SlideModel(R.drawable.welcomeimage4, ScaleTypes.CENTER_CROP));
-
         imageSlider.setImageList(slideModelArrayList);
         imageSlider.setSlideAnimation(AnimationTypes.ZOOM_IN);
 

@@ -43,35 +43,27 @@ public class splashscreen extends AppCompatActivity {
                 boolean isLoggedInadmin = preferences.getBoolean("isLoginadmin", false);
                 boolean isLoggedIndelivery = preferences.getBoolean("isLogindeliver", false);
 
-
-                if (isLoggedIn) {
-                    // User is already logged in, navigate to HomeActivity
-                    Intent intent = new Intent(splashscreen.this, userhomeActivity.class);
-                    startActivity(intent);
-                } else if (isLoggedInshopkeeper) {
+                if (isLoggedInshopkeeper) {
+                    // Shopkeeper is already logged in, navigate to ShopkeeperHomeActivity
                     Intent i = new Intent(splashscreen.this, ShopkeeperhomeActivity.class);
                     startActivity(i);
                     finish();
-
-                }else if (isLoggedIndelivery) {
+                } else if (isLoggedIndelivery) {
+                    // Delivery person is already logged in, navigate to DeliveryHomeActivity
                     Intent i = new Intent(splashscreen.this, deliveryhomeActivity.class);
                     startActivity(i);
                     finish();
-
-                }else if (isLoggedInadmin) {
-                    Intent i = new Intent(splashscreen.this, adminhomeActivity.class);
-                    startActivity(i);
+                } else if (isLoggedIn) {
+                    // User is already logged in, navigate to UserHomeActivity
+                    Intent intent = new Intent(splashscreen.this, userhomeActivity.class);
+                    startActivity(intent);
                     finish();
-
-                }
-                else {
-
+                } else {
+                    // No one is logged in, navigate to SignupActivity
                     Intent intent = new Intent(splashscreen.this, signupActivity.class);
                     startActivity(intent);
                     finish();
                 }
-
-
 
             }
         },6000);
