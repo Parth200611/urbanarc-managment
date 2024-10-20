@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.urbanarc.R;
-import com.example.urbanarc.User.POJOUserFragmentCategory;
+import com.example.urbanarc.User.POJOCLASS.POJOUserFragmentCategory;
 import com.example.urbanarc.comman.urls;
 
 import java.util.List;

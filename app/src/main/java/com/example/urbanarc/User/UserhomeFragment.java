@@ -23,9 +23,8 @@ import com.denzcoskun.imageslider.constants.AnimationTypes;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.urbanarc.R;
-import com.example.urbanarc.User.ADAPTERCLASS.AdaptergetallCategory;
 import com.example.urbanarc.User.ADAPTERCLASS.AdpterUserHomefeagmentcategory;
-import com.example.urbanarc.User.POJOCLASS.POJOgetallcategory;
+import com.example.urbanarc.User.POJOCLASS.POJOUserFragmentCategory;
 import com.example.urbanarc.comman.urls;
 
 import org.json.JSONArray;
