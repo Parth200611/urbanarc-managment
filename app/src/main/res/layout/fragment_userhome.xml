@@ -38,6 +38,28 @@
                 android:id="@+id/rvUserHomefragmentCategoryproduct"
 
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvUserHomeFragmentCategory1"
+                android:text="Category"
+                android:layout_marginTop="16sp"
+                android:textSize="20sp"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:drawableRight="@drawable/baseline_arrow_right_alt_24"
+                android:drawablePadding="5sp"
+                android:layout_marginStart="16sp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rvUserHomefragmentCategorywiseproductlist"
+                android:padding="8dp"
+
+                />
 
 
 

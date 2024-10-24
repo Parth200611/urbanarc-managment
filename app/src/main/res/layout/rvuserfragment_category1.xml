@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/rvUserFragmentCategoryProductCard"
+        android:layout_margin="5sp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:id="@+id/rvUserFragmentCategoryProductImge"
+        android:src="@drawable/welcomeimage2"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvUserFragmentCategoryProductName"
+        android:text="Product Name"
+        android:textSize="16sp"
+        android:layout_marginTop="3dp"
+        android:layout_marginStart="5dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvUserFragmentCategoryProductPrice"
+            android:text="Product price"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvUserFragmentCategoryProductRating"
+            android:text=""
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="86dp"
+            android:background="@color/green"
+            android:drawableRight="@drawable/icon_star"
+            android:drawablePadding="3dp"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvUserFragmentCategoryProductoffer"
+        android:text="offer"
+        android:textSize="14sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/blue"
+        android:layout_marginBottom="8sp"/>
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

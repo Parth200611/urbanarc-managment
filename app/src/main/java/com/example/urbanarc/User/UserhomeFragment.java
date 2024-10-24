@@ -1,9 +1,11 @@
 package com.example.urbanarc.User;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -23,8 +25,11 @@ import com.denzcoskun.imageslider.constants.AnimationTypes;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.urbanarc.R;
+import com.example.urbanarc.SpacingItemDecoration;
+import com.example.urbanarc.User.ADAPTERCLASS.AdapterUserHomeFragmentCategoryWiseproduct;
 import com.example.urbanarc.User.ADAPTERCLASS.AdpterUserHomefeagmentcategory;
 import com.example.urbanarc.User.POJOCLASS.POJOUserFragmentCategory;
+import com.example.urbanarc.User.POJOCLASS.POJOgetCtaegoryWiseproductHomepage;
 import com.example.urbanarc.comman.urls;
 
 import org.json.JSONArray;
@@ -37,11 +42,13 @@ import java.util.List;
 
 public class UserhomeFragment extends Fragment {
     ImageSlider isOfferImage;
-    RecyclerView rvcategory;
+    RecyclerView rvcategory,rvcategorywiseproductlist1;
     List<POJOUserFragmentCategory> pojoUserFragmentCategories;
     AdpterUserHomefeagmentcategory adpterUserHomefeagmentcategory;
     SearchView searchView;
-    TextView tyvnocategpry;
+    TextView tyvnocategpry1,tvcategory1;
+    List<POJOgetCtaegoryWiseproductHomepage> pojOgetCtaegoryWiseproductHomepages;
+    AdapterUserHomeFragmentCategoryWiseproduct adapterUserHomeFragmentCategoryWiseproduct;
 
 
 
@@ -54,6 +61,11 @@ public class UserhomeFragment extends Fragment {
         rvcategory = view.findViewById(R.id.rvUserHomefragmentCategoryproduct);
         pojoUserFragmentCategories=new ArrayList<>();
         searchView = view.findViewById(R.id.svUserhomefargmentrsearchproduct);
+        tvcategory1 = view.findViewById(R.id.tvUserHomeFragmentCategory1);
+        rvcategorywiseproductlist1 = view.findViewById(R.id.rvUserHomefragmentCategorywiseproductlist);
+        pojOgetCtaegoryWiseproductHomepages = new ArrayList<>();
+
+
 
 
         AdpterUserHomefeagmentcategory adpterUserHomefeagmentcategory;
@@ -69,12 +81,12 @@ public class UserhomeFragment extends Fragment {
         isOfferImage.setSlideAnimation(AnimationTypes.ZOOM_IN);
 
         rvcategory.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.HORIZONTAL,false));
-
-
+        rvcategorywiseproductlist1.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.HORIZONTAL,false));
 
 
 
         getAllCtegoryofProduct();
+        getCategorywiseproduct1();
 
 
 
@@ -82,6 +94,43 @@ public class UserhomeFragment extends Fragment {
         return view;
     }
 
+    private void getCategorywiseproduct1() {
+        RequestQueue requestQueue1 = Volley.newRequestQueue(getActivity());
+        StringRequest stringRequest1 = new StringRequest(Request.Method.GET, urls.UserHomepagecategory1, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject3 = new JSONObject(response);
+                    JSONArray jsonArray2 = jsonObject3.getJSONArray("getusercategoryhomesofa");
+                    for (int j=0;j<jsonArray2.length();j++){
+                        JSONObject jsonObject4 = jsonArray2.getJSONObject(j);
+                        String strid = jsonObject4.getString("id");
+                        String strimage = jsonObject4.getString("image");
+                        String strcategory = jsonObject4.getString("category");
+                        String strproductname = jsonObject4.getString("productname");
+                        String strprice = jsonObject4.getString("price");
+                        String stroffer = jsonObject4.getString("offer");
+                        String strdiscription = jsonObject4.getString("discription");
+                        String strrating = jsonObject4.getString("rating");
+                        tvcategory1.setText(strcategory);
+                        pojOgetCtaegoryWiseproductHomepages.add(new POJOgetCtaegoryWiseproductHomepage(strid,strimage,strcategory,strproductname,strprice,stroffer,strdiscription,strrating));
+                    }
+                    adapterUserHomeFragmentCategoryWiseproduct = new AdapterUserHomeFragmentCategoryWiseproduct(pojOgetCtaegoryWiseproductHomepages,getActivity());
+                    rvcategorywiseproductlist1.setAdapter(adapterUserHomeFragmentCategoryWiseproduct);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        requestQueue1.add(stringRequest1);
+
+    }
 
 
     private void getAllCtegoryofProduct() {
