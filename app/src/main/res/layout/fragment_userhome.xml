@@ -59,7 +59,8 @@
                 android:id="@+id/rvUserHomefragmentCategorywiseproductlist"
                 android:padding="8dp"
 
-                /> <TextView
+                />
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvUserHomeFragmentCategory2"
@@ -81,7 +82,41 @@
                 android:padding="8dp"
 
                 />
+<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvUserHomeFragmentCategory3"
+                android:text="Category"
+                android:layout_marginTop="16sp"
+                android:textSize="20sp"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:drawableRight="@drawable/baseline_arrow_right_alt_24"
+                android:drawablePadding="5sp"
+                android:layout_marginStart="16sp"
 
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rvUserHomefragmentCategorywiseproductlist3"
+                android:padding="8dp"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="www.urbanarc.com"
+                android:layout_marginTop="16sp"
+                android:textSize="16sp"
+                android:textColor="@color/gray"
+                android:drawablePadding="5sp"
+                android:layout_marginStart="16sp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+
+                />
 
 
 

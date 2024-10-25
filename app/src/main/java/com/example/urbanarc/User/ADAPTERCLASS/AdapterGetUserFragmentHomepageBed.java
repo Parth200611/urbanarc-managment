@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -56,6 +57,7 @@ public class AdapterGetUserFragmentHomepageBed extends RecyclerView.Adapter<Adap
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView ivimage;
         TextView tvproductname,tvprice,tvrating,tvoffer;
+        CardView cvCard;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             ivimage = itemView.findViewById(R.id.rvUserFragmentCategoryProductImge);
@@ -63,6 +65,7 @@ public class AdapterGetUserFragmentHomepageBed extends RecyclerView.Adapter<Adap
             tvprice =itemView.findViewById(R.id.rvUserFragmentCategoryProductPrice);
             tvrating =itemView.findViewById(R.id.rvUserFragmentCategoryProductRating);
             tvoffer =itemView.findViewById(R.id.rvUserFragmentCategoryProductoffer);
+            cvCard =itemView.findViewById(R.id.rvUserFragmentCategoryProductCard);
 
         }
     }
