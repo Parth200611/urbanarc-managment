@@ -1,6 +1,7 @@
 package com.example.urbanarc.User.ADAPTERCLASS;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.DownsampleStrategy;
 import com.example.urbanarc.R;
 import com.example.urbanarc.User.POJOCLASS.POJOgetCateggroryWisePoduct;
+import com.example.urbanarc.User.userhomepagegetCategorywiseproductdetail;
 import com.example.urbanarc.comman.urls;
 
 import java.util.List;
@@ -74,6 +76,15 @@ public class AdpterHoomeGetCategoryWiseProduct extends BaseAdapter {
                 .skipMemoryCache(true)
                 .error(R.drawable.noimage)
                 .into(itemView.ivproductimage);
+        itemView.cvcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(activity, userhomepagegetCategorywiseproductdetail.class);
+                i.putExtra("id",obj.getId());
+                activity.startActivity(i);
+
+            }
+        });
 
 
         return convertView;
