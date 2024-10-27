@@ -36,6 +36,7 @@ public class urls {
     public static String UserHomepagecategory2=address+"userhomefragmentuserpagebed.php";
     public static String UserHomepagecategory3=address+"useruserhomepagecategory.php";
     public static String Userhomegetproductdetails=address+"userhomepageproductdata.php";
+    public static String Userhomepagefavlistproduct=address+"userfavlistdataenter.php";
 
 
 }

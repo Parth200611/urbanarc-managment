@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.UserHomepageProductdetailsSofa">
+    tools:context=".User.UserHomefragmentproductbed">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tvUserHomepageProductName"
+            android:id="@+id/tvUserHomepageBedProductName"
             android:text="Product Name"
             android:layout_marginTop="30sp"
             android:textColor="@color/black"
@@ -23,8 +23,8 @@
             /><TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvUserHomepageProductName"
-        android:id="@+id/tvUserHomepageProductDiscription"
+        android:layout_below="@id/tvUserHomepageBedProductName"
+        android:id="@+id/tvUserHomepageProductBedDiscription"
         android:text="Product Discription"
         android:layout_marginTop="10sp"
         android:textColor="@color/gray"
@@ -33,46 +33,46 @@
         android:layout_marginEnd="20sp"
         />
         <ImageView
-            android:id="@+id/heartIcon"
+            android:id="@+id/ivbedheartIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/heratoutlin"
-        android:clickable="true"
+            android:clickable="true"
             android:layout_marginTop="130dp"
             android:layout_marginStart="450sp"
-        android:focusable="true"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="600sp"
-        android:id="@+id/ivUserHomepageProductDetailsSofaimage"
-        android:layout_below="@id/tvUserHomepageProductDiscription"
-        android:layout_marginTop="40sp"
-        android:layout_marginStart="20sp"
-        android:layout_marginEnd="20sp"
-        />
+            android:focusable="true"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="600sp"
+            android:id="@+id/ivUserHomepageProductBedDetailsSofaimage"
+            android:layout_below="@id/tvUserHomepageProductBedDiscription"
+            android:layout_marginTop="40sp"
+            android:layout_marginStart="20sp"
+            android:layout_marginEnd="20sp"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/ivUserHomepageProductDetailsSofaimage"
+            android:layout_below="@id/ivUserHomepageProductBedDetailsSofaimage"
             android:layout_marginTop="20sp"
-            android:id="@+id/linerlayout"
+            android:id="@+id/linerlayout11"
             >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvUserHomepageProductPrice"
-            android:text="Product price"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginStart="20sp"
-            android:layout_marginEnd="20sp"
-            android:textStyle="bold"
-            />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvUserHomepageProductRating"
+                android:id="@+id/tvUserHomepageProductBedPrice"
+                android:text="Product price"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginStart="20sp"
+                android:layout_marginEnd="20sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvUserHomepageProductBedRating"
                 android:text="Rating"
                 android:textSize="14sp"
                 android:layout_marginStart="8dp"
@@ -84,8 +84,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linerlayout"
-            android:id="@+id/tvUserHomepageProductshopname"
+            android:layout_below="@id/linerlayout11"
+            android:id="@+id/tvUserHomepageProductBedshopname"
             android:text="Shopname"
             android:textSize="16sp"
             android:layout_marginTop="4dp"
@@ -97,8 +97,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvUserHomepageProductshopname"
-            android:id="@+id/tvUserHomepageProductoffer"
+            android:layout_below="@id/tvUserHomepageProductBedshopname"
+            android:id="@+id/tvUserHomepageProductBedoffer"
             android:text="offer"
             android:textSize="16sp"
             android:layout_marginTop="4dp"
@@ -109,11 +109,11 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/linerlayout1"
+            android:layout_below="@id/linerlayout12"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30sp"
             android:layout_marginStart="30sp"
-            android:id="@+id/btnUserHomepageProductBuyNow"
+            android:id="@+id/btnUserHomepageProductBedBuyNow"
             android:text="Buy Now"
             android:background="@color/yellow"
             android:textColor="@color/white"
@@ -121,11 +121,11 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnUserHomepageProductBuyNow"
+            android:layout_below="@id/btnUserHomepageProductBedBuyNow"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="30sp"
             android:layout_marginStart="30sp"
-            android:id="@+id/btnUserHomepageProductAddtoCart"
+            android:id="@+id/btnUserHomepageProductBedAddtoCart"
             android:text="Add to Cart"
             android:background="@drawable/buttonshape"
             android:textColor="@color/yellow"
@@ -134,36 +134,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/tvUserHomepageProductoffer"
-            android:id="@+id/linerlayout1"
+            android:layout_below="@id/tvUserHomepageProductBedoffer"
+            android:id="@+id/linerlayout12"
             >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/text1"
-            android:text="Delivery:"
-            android:textSize="16sp"
-            android:layout_marginStart="20dp"
-            android:drawableLeft="@drawable/icon_delivery"
-            android:textColor="@color/black"
-            android:drawablePadding="5sp"
-            />
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvUserHomepageProductdelivery"
-            android:text="Delivery:"
-            android:textSize="16sp"
-            android:layout_marginStart="5dp"
-            android:textColor="@color/black"
-            />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text1"
+                android:text="Delivery:"
+                android:textSize="16sp"
+                android:layout_marginStart="20dp"
+                android:drawableLeft="@drawable/icon_delivery"
+                android:textColor="@color/black"
+                android:drawablePadding="5sp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvUserHomepageProductBeddelivery"
+                android:text="Delivery:"
+                android:textSize="16sp"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/black"
+                />
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="www.urbanarc.com"
             android:layout_marginTop="20sp"
-            android:layout_below="@id/btnUserHomepageProductAddtoCart"
+            android:layout_below="@id/btnUserHomepageProductBedAddtoCart"
             android:textSize="16sp"
             android:textColor="@color/gray"
             android:drawablePadding="5sp"
@@ -175,4 +175,5 @@
 
 
     </RelativeLayout>
+
 </ScrollView>
