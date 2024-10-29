@@ -119,7 +119,7 @@ public class UserhomeFragment extends Fragment {
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject5 = new JSONObject(response);
-                    JSONArray jsonArray4 = jsonObject5.getJSONArray("getusercategoryhomePlant");
+                    JSONArray jsonArray4 = jsonObject5.getJSONArray("getusercategoryhomePLants");
                     for (int j=0;j<jsonArray4.length();j++){
                         JSONObject jsonObject6 = jsonArray4.getJSONObject(j);
                         String strid = jsonObject6.getString("id");

@@ -64,6 +64,8 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
         }else if (item.getItemId()==R.id.menumainmenuuserhomemyorders){
 
         } else if (item.getItemId() == R.id.menumainmenuuserhomewishlist) {
+            Intent i = new Intent(userhomeActivity.this,UserWishlist.class);
+            startActivity(i);
 
         } else if (item.getItemId() == R.id.menumainmenuuserhomemyprofil) {
             Intent i = new Intent(userhomeActivity.this,userMyprofilActivity.class);

@@ -154,7 +154,7 @@ public class userhomepagegetCategorywiseproductdetail extends AppCompatActivity 
         params.put("price",strprice);
         params.put("offer",stroffer);
         params.put("discription",strdiscription);
-        params.put("radting",strrating);
+        params.put("rating",strrating);
         params.put("deliveryday",strdelivery);
         params.put("productid",strid);
 

@@ -34,10 +34,11 @@ public class urls {
     public static String AdminGetAllshoplocation=address+"getallshoplocation.php";
     public static String UserHomepagecategory1=address+"userhomegethomepagesofa.php";
     public static String UserHomepagecategory2=address+"userhomefragmentuserpagebed.php";
-    public static String UserHomepagecategory3=address+"useruserhomepagecategory.php";
+    public static String UserHomepagecategory3=address+"userhomegetplant.php";
     public static String Userhomegetproductdetails=address+"userhomepageproductdata.php";
     public static String Userhomepagefavlistproduct=address+"userfavlistdataenter.php";
     public static String UsergetCategorywiseproduct=address+"homecategorywisseproduct.php";
+    public static String userWishlist=address+"userwishlistproduct.php";
 
 
 }
