@@ -39,6 +39,8 @@ public class urls {
     public static String Userhomepagefavlistproduct=address+"userfavlistdataenter.php";
     public static String UsergetCategorywiseproduct=address+"homecategorywisseproduct.php";
     public static String userWishlist=address+"userwishlistproduct.php";
+    public static String userWishlistdetails=address+"userwishlistproductdetails.php";
+    public static String wishlistdelete=address+"wishlistremove.php";
 
 
 }
