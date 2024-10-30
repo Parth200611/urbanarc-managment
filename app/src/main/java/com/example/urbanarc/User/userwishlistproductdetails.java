@@ -1,7 +1,10 @@
 package com.example.urbanarc.User;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,8 +35,11 @@ public class userwishlistproductdetails extends AppCompatActivity {
     TextView tvproductname,tvdiscription,tvprice,tvrating,tvoffer,tvdelivery,tvshopname;
     ImageView ivproductimage,ivAddtoFav;
     AppCompatButton btnaddtocart,btnbuynow;
-    String strid;
+    String strid,strUsername;
     String strproductname,strdiscription,strprice,strrating,stroffer,strshopnem,strdelivery,strid1,strcategory,strimage;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+
     boolean isRed = true;
 
     @Override
@@ -42,6 +48,9 @@ public class userwishlistproductdetails extends AppCompatActivity {
         setContentView(R.layout.activity_userwishlistproductdetails);
         getWindow().setNavigationBarColor(ContextCompat.getColor(this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.green));
+        preferences = PreferenceManager.getDefaultSharedPreferences(userwishlistproductdetails.this);
+        editor = preferences.edit();
+        strUsername=preferences.getString("username",null);
 
         strid=getIntent().getStringExtra("id");
 
@@ -54,6 +63,14 @@ public class userwishlistproductdetails extends AppCompatActivity {
         tvshopname = findViewById(R.id.tvUserHomepageProductshopname);
         tvdelivery = findViewById(R.id.tvUserHomepageProductdelivery);
         ivAddtoFav = findViewById(R.id.heartIcon);
+        btnaddtocart = findViewById(R.id.btnUserHomepageProductAddtoCart);
+
+        btnaddtocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddtoCart();
+            }
+        });
 
 
         ivAddtoFav.setOnClickListener(v -> {
@@ -162,5 +179,44 @@ public class userwishlistproductdetails extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void AddtoCart() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
+        params.put("username",strUsername);
+        params.put("shopname",strshopnem);
+        params.put("image",strimage);
+        params.put("category",strcategory);
+        params.put("productname",strproductname);
+        params.put("price",strprice);
+        params.put("offer",stroffer);
+        params.put("discription",strdiscription);
+        params.put("rating",strrating);
+        params.put("deliveryday",strdelivery);
+        params.put("productid",strid1);
+
+        client.post(urls.addtocart,params,new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    String status=response.getString("success");
+                    if (status.equals("1")){
+                        Toast.makeText(userwishlistproductdetails.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(userwishlistproductdetails.this, "Server Problem", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        });
     }
 }

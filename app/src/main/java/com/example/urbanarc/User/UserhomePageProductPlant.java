@@ -73,6 +73,16 @@ public class UserhomePageProductPlant extends AppCompatActivity {
         tvshopname = findViewById(R.id.tvUserHomepageProductPlantshopname);
         tvdeliveryday = findViewById(R.id.tvUserHomepageProductPlantdelivery);
         ivAddtoFav = findViewById(R.id.ivPlantheartIcon);
+        btnaddtocart=findViewById(R.id.btnUserHomepageProductPlantAddtoCart);
+
+
+
+        btnaddtocart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddtoCart();
+            }
+        });
 
         ivAddtoFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,6 +207,44 @@ public class UserhomePageProductPlant extends AppCompatActivity {
             public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
                 Toast.makeText(UserhomePageProductPlant.this, "server error", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void AddtoCart() {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+
+        params.put("username",strUsername);
+        params.put("shopname",strshopname);
+        params.put("image",strimage);
+        params.put("category",strcategory);
+        params.put("productname",strproductname);
+        params.put("price",strprice);
+        params.put("offer",stroffer);
+        params.put("discription",strdiscription);
+        params.put("rating",strrating);
+        params.put("deliveryday",strdelivery);
+        params.put("productid",strpid);
+
+        client.post(urls.addtocart,params,new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    String status=response.getString("success");
+                    if (status.equals("1")){
+                        Toast.makeText(UserhomePageProductPlant.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(UserhomePageProductPlant.this, "Server Problem", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }
