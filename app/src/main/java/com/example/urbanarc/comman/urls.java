@@ -42,6 +42,8 @@ public class urls {
     public static String userWishlistdetails=address+"userwishlistproductdetails.php";
     public static String wishlistdelete=address+"wishlistremove.php";
     public static String addtocart=address+"useraddtocart.php";
+    public static String Useraddtocart=address+"useraddtocartdata.php";
+    public static String Useraddtocartdetails=address+"useraddtocartdatadetails.php";
 
 
 }

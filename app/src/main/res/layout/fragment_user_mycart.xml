@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".User.userMycartFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="My cart" />
+        >
+        <androidx.appcompat.widget.SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:queryHint="Search product"
+            app:iconifiedByDefault="false"
+            android:layout_margin="20sp"
+            android:background="@drawable/serch"
+            android:id="@+id/svUseraddtoccartsearchbar"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rvUserAddtocartList"
+            android:layout_below="@id/svUseraddtoccartsearchbar"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="www.urbanarc.com"
+            android:layout_below="@id/tvnoproduct"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:textColor="@color/gray"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Product Present"
+            android:layout_below="@id/rvUserAddtocartList"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:visibility="gone"
+            android:id="@+id/tvnoproduct"
+            android:textColor="@color/gray"
+            />
 
-</FrameLayout>
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
