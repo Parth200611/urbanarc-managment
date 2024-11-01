@@ -5,8 +5,11 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
@@ -36,6 +40,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+
 import cz.msebera.android.httpclient.Header;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -49,6 +55,9 @@ public class userMyprofilActivity extends AppCompatActivity {
     String struername;
     GoogleSignInOptions googleSignInOptions;
     GoogleSignInClient googleSignInClient;
+    private  int pick_image_request=789;
+    Bitmap bitmap;
+    Uri filepath;
 
     SharedPreferences.Editor editor;
 
@@ -71,6 +80,13 @@ public class userMyprofilActivity extends AppCompatActivity {
         tvusername = findViewById(R.id.tvUserMyprofilUsername);
         tveditdetails = findViewById(R.id.tvUserMyprofiledit);
         tvlogout = findViewById(R.id.tvUserMyprofillogout);
+
+        btneditimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SelectUserProfileimage();
+            }
+        });
 
         googleSignInOptions= new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         googleSignInClient= GoogleSignIn.getClient(userMyprofilActivity.this,googleSignInOptions);
@@ -117,6 +133,29 @@ public class userMyprofilActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void SelectUserProfileimage() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent,"Select Image For Profil"),pick_image_request);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==pick_image_request && resultCode==RESULT_OK && data!=null){
+            filepath=data.getData();
+            try {
+                bitmap= MediaStore.Images.Media.getBitmap(getContentResolver(),filepath);
+                civprofilimage.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     private void UserLogout() {
