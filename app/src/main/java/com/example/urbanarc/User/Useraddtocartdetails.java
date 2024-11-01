@@ -1,5 +1,6 @@
 package com.example.urbanarc.User;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -33,7 +34,7 @@ import cz.msebera.android.httpclient.Header;
 public class Useraddtocartdetails extends AppCompatActivity {
     TextView tvproductname,tvdiscription,tvprice,tvrating,tvoffer,tvdelivery,tvshopname;
     ImageView ivproductimage,ivAddtoFav;
-    AppCompatButton btnbuynow;
+    AppCompatButton btnbuynow,btnremovefromcart;
     String strid,strUsername;
     String strproductname,strdiscription,strprice,strrating,stroffer,strshopnem,strdelivery,strproductid,strcategory,strimage;
     SharedPreferences preferences;
@@ -61,6 +62,14 @@ public class Useraddtocartdetails extends AppCompatActivity {
         tvshopname = findViewById(R.id.tvUserHomepageProductshopname);
         tvdelivery = findViewById(R.id.tvUserHomepageProductdelivery);
         ivAddtoFav = findViewById(R.id.heartIcon);
+        btnremovefromcart=findViewById(R.id.btnUserHomepageProductRemovefromCart);
+
+        btnremovefromcart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Removefromcart(strid);
+            }
+        });
         ivAddtoFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +81,33 @@ public class Useraddtocartdetails extends AppCompatActivity {
 
     }
 
+    private void Removefromcart(String strid) {
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestParams params = new RequestParams();
+        params.put("id",strid);
+        client.post(urls.Userremovefromcart,params,new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    String status=response.getString("status");
+                    if (status.equals("success")) {
+                        Toast.makeText(Useraddtocartdetails.this, "Removed from My Cart", Toast.LENGTH_SHORT).show();
+
+                    } else{
+                        Toast.makeText(Useraddtocartdetails.this, "Can't Remove", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        });
+    }
 
 
     private void getData(String strid) {
