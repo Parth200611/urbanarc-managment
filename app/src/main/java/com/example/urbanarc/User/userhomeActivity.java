@@ -34,7 +34,7 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
     UserhomeFragment userhomeFragment=new UserhomeFragment();
     userExplorFragment userExplorFragment = new userExplorFragment();
     userMycartFragment userMycartFragment = new userMycartFragment();
-    usercategoryFragment usercategoryFragment = new usercategoryFragment();
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -42,9 +42,7 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,userhomeFragment).commit();
         }else if(item.getItemId()==R.id.menuUserhomebottomnavigationExplor){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,userExplorFragment).commit();
-        } else if (item.getItemId()==R.id.menuUserhomebottomnavigationCategory){
-            getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,usercategoryFragment).commit();
-        }else if(item.getItemId()==R.id.menuUserhomebottomnavigationCart){
+        } else if(item.getItemId()==R.id.menuUserhomebottomnavigationCart){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutuserhome,userMycartFragment).commit();
         }
         return true;
@@ -59,9 +57,7 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.menumainmenuuserhomenewoffers){
-
-        }else if (item.getItemId()==R.id.menumainmenuuserhomemyorders){
+        if (item.getItemId()==R.id.menumainmenuuserhomemyorders){
 
         } else if (item.getItemId() == R.id.menumainmenuuserhomewishlist) {
             Intent i = new Intent(userhomeActivity.this,UserWishlist.class);
