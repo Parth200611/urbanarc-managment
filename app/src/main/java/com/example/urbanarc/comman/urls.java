@@ -45,6 +45,7 @@ public class urls {
     public static String Useraddtocart=address+"useraddtocartdata.php";
     public static String Useraddtocartdetails=address+"useraddtocartdatadetails.php";
     public static String Userremovefromcart=address+"userremovefromaddtocart.php";
+    public static String UserAddprofilphoto=address+"UserAddprofilphoto.php";
 
 
 }
