@@ -68,6 +68,8 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
             startActivity(i);
 
         } else if (item.getItemId() == R.id.menumainmenuuserhomeaboutus) {
+            Intent i = new Intent(userhomeActivity.this, UserAboutUs.class);
+            startActivity(i);
 
         } else if (item.getItemId() == R.id.menumainmenuuserhomehelp) {
             Intent i = new Intent(userhomeActivity.this, ContactuspageActivity.class);

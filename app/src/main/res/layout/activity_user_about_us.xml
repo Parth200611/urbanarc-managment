@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User.UserAboutUs">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABOUT URBANARC"
+            android:textSize="21sp"
+            android:textColor="@color/green"
+            android:fontFamily="@font/amaranth_bold"
+            android:layout_marginTop="80sp"
+            android:id="@+id/tv1"
+            android:layout_marginStart="16sp"
+            />  <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:textAlignment="center"
+            android:text="Welcome to UrbanArc – your go-to destination for exceptional interior products and home decor. At UrbanArc, we believe that your home is a reflection of your personality, and we're here to help you create spaces that inspire and comfort. From stylish furniture to unique decorative pieces, our curated collection offers something for every style and budget.
+
+Our mission is to make interior design accessible and enjoyable. With a focus on quality, innovation, and affordability, we bring you the latest trends and timeless classics. Whether you’re revamping a single room or designing your entire home, UrbanArc is here to provide the tools and inspiration you need.
+
+Thank you for choosing UrbanArc. Let’s build beautiful spaces together!"
+            android:textSize="16sp"
+            android:textColor="@color/gray"
+
+            android:layout_marginTop="10sp"
+            android:layout_below="@+id/tv1"
+        android:id="@+id/tv2"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="www.urbanarc.com"
+            android:textSize="14sp"
+            android:textColor="@color/gray"
+            android:layout_marginTop="20sp"
+            android:layout_below="@id/tv2"
+            android:gravity="center"
+            />
+
+    </RelativeLayout>
+
+</ScrollView>

@@ -2,7 +2,7 @@ package com.example.urbanarc.comman;
 
 public class urls {
 
-    public static String address="http://192.168.1.4:80/urbanarcAPI/";
+    public static String address="http://192.168.0.3:80/urbanarcAPI/";
     public static String adminlogin=address+"admindataforlogin.php";
     public static String deliverylogin=address+"deliverydataforlogin.php";
     public static String userregisterapi=address+"userregisterdetails.php";
@@ -47,6 +47,7 @@ public class urls {
     public static String Userremovefromcart=address+"userremovefromaddtocart.php";
     public static String UserAddprofilphoto=address+"UserAddprofilphoto.php";
     public static String UserExplorProduct=address+"userExplorfrgamnetddataget.php";
+    public static String UserExplorProductdetails=address+"UserExplordetails.php";
 
 
 }
