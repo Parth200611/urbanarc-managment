@@ -48,6 +48,7 @@ public class urls {
     public static String UserAddprofilphoto=address+"UserAddprofilphoto.php";
     public static String UserExplorProduct=address+"userExplorfrgamnetddataget.php";
     public static String UserExplorProductdetails=address+"UserExplordetails.php";
+    public static String getuseraddress=address+"Getuseraddress.php";
 
 
 }

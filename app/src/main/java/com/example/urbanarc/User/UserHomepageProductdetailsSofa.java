@@ -1,6 +1,7 @@
 package com.example.urbanarc.User;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -43,6 +44,7 @@ public class UserHomepageProductdetailsSofa extends AppCompatActivity {
     String strpid,strimage,strcategory,strproductname,strprice,stroffer,strdiscription,strrating,strshopname,strdelivery;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +76,29 @@ public class UserHomepageProductdetailsSofa extends AppCompatActivity {
         tvdeliveryday = findViewById(R.id.tvUserHomepageProductdelivery);
         ivAddtoFav = findViewById(R.id.heartIcon);
         btnaddtocart = findViewById(R.id.btnUserHomepageProductAddtoCart);
+        btnBuynow=findViewById(R.id.btnUserHomepageProductBuyNow);
+
+        btnBuynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserHomepageProductdetailsSofa.this,UseraddressfromSofa.class);
+                i.putExtra("username", strUsername);
+                i.putExtra("image", strimage);
+                i.putExtra("productname", strproductname);
+                i.putExtra("price", strprice);
+                i.putExtra("offer", stroffer);
+                i.putExtra("dicrption", strdiscription);
+                i.putExtra("rating", strrating);
+                i.putExtra("diliveryday", strdelivery);
+                i.putExtra("shopname", strshopname);
+                i.putExtra("category", strcategory);
+                i.putExtra("productid", strid);
+                startActivity(i);
+
+
+
+            }
+        });
         btnaddtocart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

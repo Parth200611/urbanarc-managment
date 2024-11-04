@@ -280,6 +280,8 @@ public class userMyprofilActivity extends AppCompatActivity {
                         String strusername = jsonObject.getString("username");
 
                         progressDialog.dismiss();
+                        editor.putString("nameofuser",strname).commit();
+
 
                         tvname.setText(strname);
                         tvemailid.setText(stremail);

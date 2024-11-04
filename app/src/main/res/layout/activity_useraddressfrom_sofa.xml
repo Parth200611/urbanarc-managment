@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".User.UseraddressfromSofa">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="110sp"
+        android:backgroundTint="@color/green"
+        android:id="@+id/tvcard"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Cancle Order"
+            android:layout_marginTop="70sp"
+            android:id="@+id/Useraddresscancleorder"
+            android:layout_marginStart="350dp"
+            />
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a delivery address"
+        android:layout_below="@+id/tvcard"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16sp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/tv1"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120sp"
+        android:layout_below="@+id/tv1"
+        android:layout_marginTop="16sp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        app:cardCornerRadius="5sp"
+        android:id="@+id/tvcard2"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12sp"
+                android:layout_marginEnd="16sp"
+                android:layout_marginStart="16sp"
+                android:text="User Name"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:id="@+id/Useraddressusername"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6sp"
+                android:layout_marginEnd="40sp"
+                android:layout_marginStart="16sp"
+                android:text="User address"
+                android:textSize="14sp"
+                android:id="@+id/Useraddressuseraddress"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6sp"
+                android:layout_marginEnd="16sp"
+                android:layout_marginStart="16sp"
+                android:layout_marginBottom="10sp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number:"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    /> <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Usermobileno"
+                    android:textSize="12sp"
+
+                android:id="@+id/Useraddressusermobileno"
+                android:layout_marginStart="5dp"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvcard2"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        android:text="Deliver to this address"
+        android:background="@color/yellow"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-condensed"
+        android:id="@+id/btnUseraddressselectaddress"
+        />
+ <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnUseraddressselectaddress"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16sp"
+        android:layout_marginEnd="16sp"
+        android:text="Edit Address"
+        android:background="@drawable/buttonshape"
+        android:textSize="12sp"
+        android:fontFamily="sans-serif-condensed"
+        android:id="@+id/btnUseraddressModifiaddress"
+        />
+
+</RelativeLayout>
