@@ -67,6 +67,32 @@ public class UseraddressfromSofa extends AppCompatActivity {
         tvuseraddress = findViewById(R.id.Useraddressuseraddress);
         tvmobileno = findViewById(R.id.Useraddressusermobileno);
         btnmodifyaddress = findViewById(R.id.btnUseraddressModifiaddress);
+        btndeliveraddress=findViewById(R.id.btnUseraddressselectaddress);
+
+        btndeliveraddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UseraddressfromSofa.this,UserFinalBillsofa.class);
+                i.putExtra("username",strusername);
+                i.putExtra("image",strimage);
+                i.putExtra("productname",strproductname);
+                i.putExtra("price",strprice);
+                i.putExtra("offer",stroffer);
+                i.putExtra("discription",strdiscription);
+                i.putExtra("rating",strrating);
+                i.putExtra("shopname",strshopname);
+                i.putExtra("deliveryday",strdelivery);
+                i.putExtra("category",strcategory);
+                i.putExtra("productid",strproductid);
+                i.putExtra("userofname",strgetNameofuser);
+                i.putExtra("usermobileno",strgetMobilenoofuser);
+                i.putExtra("useraddress",straddress);
+                i.putExtra("lattitude",strlattitude);
+                i.putExtra("longitude",strlongitude);
+                startActivity(i);
+
+            }
+        });
         tvcancleorder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,7 +117,7 @@ public class UseraddressfromSofa extends AppCompatActivity {
                  i.putExtra("productid",strproductid);
                  i.putExtra("userofname",strgetNameofuser);
                  i.putExtra("usermobileno",strgetMobilenoofuser);
-                 i.putExtra("useraddress",strgetUseraddress);
+                 i.putExtra("useraddress",straddress);
                  startActivity(i);
              }
          });

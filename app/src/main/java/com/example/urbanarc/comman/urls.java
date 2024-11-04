@@ -49,6 +49,7 @@ public class urls {
     public static String UserExplorProduct=address+"userExplorfrgamnetddataget.php";
     public static String UserExplorProductdetails=address+"UserExplordetails.php";
     public static String getuseraddress=address+"Getuseraddress.php";
+    public static String orderbill=address+"OrderFromUser.php";
 
 
 }
