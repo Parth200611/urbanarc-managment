@@ -8,18 +8,56 @@
     tools:context=".User.UseraddressfromSofa">
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="110sp"
+        android:layout_height="190sp"
         android:backgroundTint="@color/green"
         android:id="@+id/tvcard"
         >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+        >
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/ivSplashapplogo"
+                android:src="@drawable/applogo"
+                android:layout_marginTop="65dp"
+                android:layout_marginStart="90dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSplashtitle"
+                android:text="URBANARC"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="70dp"
+                android:textStyle="bold"
+
+                />
+            <TextView
+                android:id="@+id/tvSplashSlogan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="casual"
+                android:text="Making Space Livable"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_below="@+id/tvSplashtitle"
+                android:layout_marginStart="170dp"
+                />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Cancle Order"
-            android:layout_marginTop="70sp"
+            android:layout_marginTop="140sp"
             android:id="@+id/Useraddresscancleorder"
             android:layout_marginStart="350dp"
             />
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
     <TextView

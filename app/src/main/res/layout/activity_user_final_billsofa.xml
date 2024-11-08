@@ -12,7 +12,52 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="16dp">
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:backgroundTint="@color/green"
+
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:id="@+id/ivSplashapplogo"
+                    android:src="@drawable/applogo"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginStart="90dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tvSplashtitle"
+                    android:text="URBANARC"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:layout_marginStart="170dp"
+                    android:layout_marginTop="40dp"
+                    android:textStyle="bold"
+
+                    />
+                <TextView
+                    android:id="@+id/tvSplashSlogan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:text="Making Space Livable"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/tvSplashtitle"
+                    android:layout_marginStart="170dp"
+                    />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
 
         <!-- Main Card Container -->
@@ -22,7 +67,10 @@
             app:cardCornerRadius="12dp"
             app:cardElevation="5dp"
             android:backgroundTint="@color/white"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16sp"
+            android:layout_marginStart="16sp"
+            android:layout_marginTop="20sp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -141,16 +189,31 @@
                             android:textColor="@color/blue"
                             android:textSize="14sp"
                             android:paddingTop="4dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Delivery:"
+                                android:textSize="14sp"
+                                android:paddingTop="4dp"
+                                android:textColor="@android:color/black" />
+
 
 
                         <TextView
                             android:id="@+id/tvproductDelivery"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Delivery: Nov 10, 2024"
+                            android:text="Nov 10, 2024"
                             android:textSize="14sp"
                             android:paddingTop="4dp"
+                            android:layout_marginStart="3sp"
                             android:textColor="@android:color/black" />
+                    </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
 
