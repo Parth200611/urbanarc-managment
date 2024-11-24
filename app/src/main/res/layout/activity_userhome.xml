@@ -14,7 +14,7 @@
         android:id="@+id/FrameLayoutuserhome"
         android:layout_above="@id/bottomnevigatiomuserhome"
         />
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:id="@+id/bottomnevigatiomuserhome"

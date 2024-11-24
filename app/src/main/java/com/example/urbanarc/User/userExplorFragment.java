@@ -92,7 +92,6 @@ public class userExplorFragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getActivity(), "Server Error", Toast.LENGTH_SHORT).show();
 
             }
         });

@@ -1,7 +1,10 @@
 package com.example.urbanarc.User;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +29,8 @@ import com.loopj.android.http.RequestParams;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -110,12 +115,14 @@ public class UserFinalBillsofa extends AppCompatActivity {
         tvonline.setOnClickListener(v -> {
             selectedPaymentMethod = "Online Payment";
             updateSelection(tvonline);
+            onlinepay();
         });
 
         // Card Payment selection
         tvcard.setOnClickListener(v -> {
             selectedPaymentMethod = "Card Payment";
             updateSelection(tvcard);
+
 
             tvupiid.setVisibility(View.GONE); // Hide UPI ID when Card Payment is selected
         });
@@ -132,6 +139,34 @@ public class UserFinalBillsofa extends AppCompatActivity {
         });
 
 
+    }
+
+    private void onlinepay() {
+
+        String upiId = "9322766871@ptaxis";  // Replace with recipient's UPI ID
+        String amount = "100.00";  // Replace with the amount to be paid
+        String note = "Payment for Order";  // Replace with your transaction note
+
+        // Construct UPI URI to launch the UPI app
+        Uri uri = Uri.parse("upi://pay")
+                .buildUpon()
+                .appendQueryParameter("pa", upiId) // UPI ID
+                .appendQueryParameter("am", amount) // Amount
+                .appendQueryParameter("tn", note) // Transaction Note
+                .appendQueryParameter("cu", "INR") // Currency
+                .build();
+
+        // Create an intent to launch Paytm (or other UPI apps)
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+
+        // Explicitly check if Paytm is available to handle UPI
+        intent.putExtra(Intent.EXTRA_REFERRER, Uri.parse("android-app://com.paytm.payments"));
+        // Check if any UPI apps are installed that can handle this intent
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);  // Launch the UPI app (e.g., Paytm)
+        } else {
+            Toast.makeText(this, "No UPI app found. Please install Paytm or another UPI app.", Toast.LENGTH_SHORT).show();
+        }
     }
 
 

@@ -157,7 +157,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="By using Solemates,you agree to our Terms and Condition and Policy if any problem contact www.urbanarc.com"
+            android:text="By using urbanarc,you agree to our Terms and Condition and Policy if any problem contact www.urbanarc.com"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:textColor="@color/gray"

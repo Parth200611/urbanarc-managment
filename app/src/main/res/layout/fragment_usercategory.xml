@@ -15,6 +15,7 @@
         android:layout_margin="20dp"
         android:padding="8dp"
         android:background="@drawable/serch"
+
         />
 
     <ListView
