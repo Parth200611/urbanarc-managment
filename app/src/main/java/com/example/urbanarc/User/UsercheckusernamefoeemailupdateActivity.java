@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
@@ -34,6 +35,7 @@ public class UsercheckusernamefoeemailupdateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_usercheckusernamefoeemailupdate);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         getWindow().setNavigationBarColor(ContextCompat.getColor(UsercheckusernamefoeemailupdateActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(UsercheckusernamefoeemailupdateActivity.this,R.color.green));
 

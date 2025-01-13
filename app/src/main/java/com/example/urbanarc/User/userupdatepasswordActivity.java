@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
@@ -32,6 +33,8 @@ public class userupdatepasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_userupdatepassword);
         getWindow().setNavigationBarColor(ContextCompat.getColor(userupdatepasswordActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(userupdatepasswordActivity.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         etpassword = findViewById(R.id.etUserupdatepasswordnewpassword);
         etconfirmpassword = findViewById(R.id.etUserupdatepasswordConfirmpassword);
         btnnext = findViewById(R.id.btnUserupdatepasswordnext);

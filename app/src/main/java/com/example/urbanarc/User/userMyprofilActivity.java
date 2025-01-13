@@ -20,6 +20,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.android.volley.AuthFailureError;
@@ -80,6 +81,8 @@ public class userMyprofilActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(userMyprofilActivity.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(userMyprofilActivity.this,R.color.white));
         preferences = PreferenceManager.getDefaultSharedPreferences(userMyprofilActivity.this);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         editor=preferences.edit();
         struername=preferences.getString("username","");
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -20,6 +21,7 @@ public class UserAboutUs extends AppCompatActivity {
         setContentView(R.layout.activity_user_about_us);
         getWindow().setStatusBarColor(ContextCompat.getColor(UserAboutUs.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(UserAboutUs.this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
     }
 }

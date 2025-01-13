@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
@@ -24,6 +25,7 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.green)));
         getWindow().setStatusBarColor(ContextCompat.getColor(userhomeActivity.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(userhomeActivity.this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         bottomNavigationView = findViewById(R.id.bottomnevigatiomuserhome);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);

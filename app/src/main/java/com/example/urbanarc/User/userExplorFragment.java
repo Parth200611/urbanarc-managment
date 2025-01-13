@@ -2,6 +2,7 @@ package com.example.urbanarc.User;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -54,6 +55,7 @@ public class userExplorFragment extends Fragment {
         tvnoproductavaiable=view.findViewById(R.id.tvnoproduct);
         rvexplorlist.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false));
         pojoExplordatagets = new ArrayList<>();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
 
         getAllProduct();

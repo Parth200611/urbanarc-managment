@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -49,6 +50,7 @@ public class UserhomePageProductPlant extends AppCompatActivity {
 
         getWindow().setStatusBarColor(ContextCompat.getColor(UserhomePageProductPlant.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(UserhomePageProductPlant.this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         preferences = PreferenceManager.getDefaultSharedPreferences(UserhomePageProductPlant.this);
         editor = preferences.edit();
         strUsername=preferences.getString("username",null);

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.Admin.adminhomeActivity;
@@ -27,6 +28,7 @@ public class splashscreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splashscreen);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         getWindow().setNavigationBarColor(ContextCompat.getColor(splashscreen.this,R.color.splashbackgroundcolor));
         getWindow().setStatusBarColor(ContextCompat.getColor(splashscreen.this,R.color.splashbackgroundcolor));
 

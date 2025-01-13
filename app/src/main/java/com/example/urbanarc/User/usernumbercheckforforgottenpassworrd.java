@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
@@ -35,6 +36,8 @@ public class usernumbercheckforforgottenpassworrd extends AppCompatActivity {
         setContentView(R.layout.activity_usernumbercheckforforgottenpassworrd);
         getWindow().setNavigationBarColor(ContextCompat.getColor(usernumbercheckforforgottenpassworrd.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(usernumbercheckforforgottenpassworrd.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         etmobileno = findViewById(R.id.etUsernumbercheckmobileno);
         btnverify = findViewById(R.id.btnUsernumbercheckverify);

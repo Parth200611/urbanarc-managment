@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -50,6 +51,7 @@ public class UserHomepageProductdetailsSofa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_homepage_productdetails_sofa);
         getWindow().setStatusBarColor(ContextCompat.getColor(UserHomepageProductdetailsSofa.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         getWindow().setNavigationBarColor(ContextCompat.getColor(UserHomepageProductdetailsSofa.this,R.color.white));
         preferences = PreferenceManager.getDefaultSharedPreferences(UserHomepageProductdetailsSofa.this);
         editor = preferences.edit();

@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
@@ -67,6 +68,8 @@ public class userregisterverificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_userregisterverification);
         getWindow().setStatusBarColor(ContextCompat.getColor(userregisterverificationActivity.this, R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(userregisterverificationActivity.this, R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         tvmobileno = findViewById(R.id.tvUserregistrationverificationmobileno);
         tvresendotp = findViewById(R.id.tvUserregistrationresendotp);

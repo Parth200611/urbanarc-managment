@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -26,6 +27,7 @@ public class Confirmorder extends AppCompatActivity {
         setContentView(R.layout.activity_confirmorder);
        getWindow().setStatusBarColor(ContextCompat.getColor(Confirmorder.this,R.color.green));
        getWindow().setNavigationBarColor(ContextCompat.getColor(Confirmorder.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
        lottieAnimationView = findViewById(R.id.lotti);
        btgotohome = findViewById(R.id.btngotohome);
        btgotohome.setOnClickListener(new View.OnClickListener() {

@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -58,6 +59,7 @@ public class userMycartFragment extends Fragment {
         preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         editor=preferences.edit();
         strusername=preferences.getString("username",null);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         svserachabr=view.findViewById(R.id.svUseraddtoccartsearchbar);
         rvlistofproduct = view.findViewById(R.id.rvUserAddtocartList);

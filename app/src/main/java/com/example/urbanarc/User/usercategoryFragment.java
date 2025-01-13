@@ -2,6 +2,7 @@ package com.example.urbanarc.User;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -49,6 +50,7 @@ public class usercategoryFragment extends Fragment {
         tvNocategorypresent = view.findViewById(R.id.tvUsercategoryFragmentTextnocategory);
         pojOgetallcategories = new ArrayList<>();
         svSearchCategory = view.findViewById(R.id.svCategoryFragmentSearchcategory);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         svSearchCategory.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

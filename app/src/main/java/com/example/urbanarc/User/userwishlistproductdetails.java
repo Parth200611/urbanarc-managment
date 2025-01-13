@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -47,6 +48,8 @@ public class userwishlistproductdetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userwishlistproductdetails);
         getWindow().setNavigationBarColor(ContextCompat.getColor(this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.green));
         preferences = PreferenceManager.getDefaultSharedPreferences(userwishlistproductdetails.this);
         editor = preferences.edit();

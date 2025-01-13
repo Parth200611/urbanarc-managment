@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -30,6 +31,7 @@ public class UseraddressModify extends AppCompatActivity {
         setContentView(R.layout.activity_useraddress_modify);
         getWindow().setStatusBarColor(ContextCompat.getColor(UseraddressModify.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(UseraddressModify.this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         strusername=getIntent().getStringExtra("username");
         strimage=getIntent().getStringExtra("image");

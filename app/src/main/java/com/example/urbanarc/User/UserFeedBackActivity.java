@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
@@ -45,6 +46,8 @@ public class UserFeedBackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_feed_back);
         getWindow().setNavigationBarColor(ContextCompat.getColor(UserFeedBackActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(UserFeedBackActivity.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         preferences= PreferenceManager.getDefaultSharedPreferences(UserFeedBackActivity.this);
         editor = preferences.edit();

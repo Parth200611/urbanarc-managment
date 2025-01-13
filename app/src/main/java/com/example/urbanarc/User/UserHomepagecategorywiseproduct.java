@@ -6,6 +6,7 @@ import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -51,6 +52,7 @@ public class UserHomepagecategorywiseproduct extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_homepagecategorywiseproduct);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         getWindow().setNavigationBarColor(ContextCompat.getColor(UserHomepagecategorywiseproduct.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(UserHomepagecategorywiseproduct.this,R.color.green));
 

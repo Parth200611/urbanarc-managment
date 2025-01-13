@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.example.urbanarc.R;
 import com.google.firebase.FirebaseException;
@@ -37,6 +38,8 @@ public class userregistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_userregistration);
         preferences = PreferenceManager.getDefaultSharedPreferences(userregistrationActivity.this);
         editor=preferences.edit();
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         etname = findViewById(R.id.etUserregistrationName);
         etemailid = findViewById(R.id.etUserregistrationEmailid);

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -53,6 +54,7 @@ public class UserFinalBillsofa extends AppCompatActivity {
         setContentView(R.layout.activity_user_final_billsofa);
         getWindow().setStatusBarColor(ContextCompat.getColor(UserFinalBillsofa.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(UserFinalBillsofa.this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         strusername = getIntent().getStringExtra("username");
         strimage = getIntent().getStringExtra("image");
         strproductname = getIntent().getStringExtra("productname");

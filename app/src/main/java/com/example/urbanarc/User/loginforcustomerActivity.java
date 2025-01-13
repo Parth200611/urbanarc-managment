@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
@@ -54,6 +55,7 @@ GoogleSignInClient googleSignInClient;
         setContentView(R.layout.activity_loginforcustomer);
         getWindow().setNavigationBarColor(ContextCompat.getColor(loginforcustomerActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(loginforcustomerActivity.this,R.color.logincolor));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         preferences = PreferenceManager.getDefaultSharedPreferences(loginforcustomerActivity.this);
         editor = preferences.edit();

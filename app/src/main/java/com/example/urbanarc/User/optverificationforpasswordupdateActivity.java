@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
@@ -52,6 +53,7 @@ public class optverificationforpasswordupdateActivity extends AppCompatActivity 
         setContentView(R.layout.activity_optverificationforpasswordupdate);
         getWindow().setNavigationBarColor(ContextCompat.getColor(optverificationforpasswordupdateActivity.this,R.color.white));
         getWindow().setStatusBarColor(ContextCompat.getColor(optverificationforpasswordupdateActivity.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         tvmobileno=findViewById(R.id.tvUserupdatepasswordverificationmobileno);
         tvresendotp=findViewById(R.id.tvUserpassupdateresendotp);

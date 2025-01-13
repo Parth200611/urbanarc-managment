@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,6 +48,8 @@ public class UserWishlist extends AppCompatActivity {
         setContentView(R.layout.activity_user_wishlist);
         getWindow().setStatusBarColor(ContextCompat.getColor(UserWishlist.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(UserWishlist.this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         preferences = PreferenceManager.getDefaultSharedPreferences(UserWishlist.this);
         strusername = preferences.getString("username",null);
         rvwishlist = findViewById(R.id.rvUserwishlistrecyclerlist);

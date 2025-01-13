@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -50,6 +51,7 @@ public class Useraddtocartdetails extends AppCompatActivity {
         preferences = PreferenceManager.getDefaultSharedPreferences(Useraddtocartdetails.this);
         editor = preferences.edit();
         strUsername = preferences.getString("username",null);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         strid = getIntent().getStringExtra("id");
 
