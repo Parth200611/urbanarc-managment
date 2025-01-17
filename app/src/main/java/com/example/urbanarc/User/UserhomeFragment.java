@@ -70,7 +70,7 @@ public class UserhomeFragment extends Fragment {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         rvcategory = view.findViewById(R.id.rvUserHomefragmentCategoryproduct);
         pojoUserFragmentCategories=new ArrayList<>();
-        searchView = view.findViewById(R.id.svUserhomefargmentrsearchproduct);
+
         tvcategory1 = view.findViewById(R.id.tvUserHomeFragmentCategory1);
         tvcategory2 = view.findViewById(R.id.tvUserHomeFragmentCategory2);
         tvcategory3 = view.findViewById(R.id.tvUserHomeFragmentCategory3);
@@ -93,7 +93,7 @@ public class UserhomeFragment extends Fragment {
         slideModelArrayList.add(new SlideModel(R.drawable.offerimage6, ScaleTypes.CENTER_CROP));
         slideModelArrayList.add(new SlideModel(R.drawable.offerimage8, ScaleTypes.CENTER_CROP));
 
-        isOfferImage.setImageList(slideModelArrayList);
+        isOfferImage.setImageList(slideModelArrayList,ScaleTypes.CENTER_CROP);
         isOfferImage.setSlideAnimation(AnimationTypes.ZOOM_IN);
 
         rvcategory.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.HORIZONTAL,false));
@@ -132,7 +132,6 @@ public class UserhomeFragment extends Fragment {
                         String stroffer = jsonObject6.getString("offer");
                         String strdiscription = jsonObject6.getString("discription");
                         String strrating = jsonObject6.getString("rating");
-                        tvcategory3.setText(strcategory);
                         pojoUserFragmentHomepagePlantData.add(new POJOUserFragmentHomepagePlantData(strid,strimage,strcategory,strproductname,strprice,stroffer,strdiscription,strrating));
                     }
                     adapterUserHomeFragmentPlantData = new AdapterUserHomeFragmentPlantData(pojoUserFragmentHomepagePlantData,getActivity());
@@ -170,7 +169,7 @@ public class UserhomeFragment extends Fragment {
                         String stroffer = jsonObject5.getString("offer");
                         String strdiscription = jsonObject5.getString("discription");
                         String strrating = jsonObject5.getString("rating");
-                        tvcategory2.setText(strcategory);
+
                         pojoUsehomeFragmentcategory2s.add(new POJOUsehomeFragmentcategory2(strid,strimage,strcategory,strproductname,strprice,stroffer,strdiscription,strrating));
                     }
                     adapterGetUserFragmentHomepageBed = new AdapterGetUserFragmentHomepageBed(pojoUsehomeFragmentcategory2s,getActivity());
@@ -208,7 +207,7 @@ public class UserhomeFragment extends Fragment {
                         String stroffer = jsonObject4.getString("offer");
                         String strdiscription = jsonObject4.getString("discription");
                         String strrating = jsonObject4.getString("rating");
-                        tvcategory1.setText(strcategory);
+
                         pojOgetCtaegoryWiseproductHomepages.add(new POJOgetCtaegoryWiseproductHomepage(strid,strimage,strcategory,strproductname,strprice,stroffer,strdiscription,strrating));
                     }
                     adapterUserHomeFragmentCategoryWiseproduct = new AdapterUserHomeFragmentCategoryWiseproduct(pojOgetCtaegoryWiseproductHomepages,getActivity());

@@ -13,24 +13,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16sp"
-                android:iconifiedByDefault="false"
-                android:queryHint="Search category,product name"
-                android:background="@drawable/serch"
-                android:id="@+id/svUserhomefargmentrsearchproduct"
-                />
+
+
             <com.denzcoskun.imageslider.ImageSlider
                 android:layout_width="match_parent"
-                android:layout_height="270dp"
+                android:layout_height="200dp"
                 app:iss_auto_cycle="true"
                 android:id="@+id/isUserHomeFragmentOfferImageslider"
                 app:iss_delay="2000"
                 app:iss_period="2000"
                 app:iss_no_dots="true"
-                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16sp"
+
                 />
             <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -42,13 +37,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvUserHomeFragmentCategory1"
-                android:text="Category"
+                android:text="Sofa to relax in style"
                 android:layout_marginTop="16sp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/green"
                 android:textStyle="bold"
-                android:drawableRight="@drawable/baseline_arrow_right_alt_24"
-                android:drawablePadding="5sp"
                 android:layout_marginStart="16sp"
 
                 />
@@ -64,13 +57,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvUserHomeFragmentCategory2"
-                android:text="Category"
+                android:text="Bed to sleep like a dream"
                 android:layout_marginTop="16sp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/green"
                 android:textStyle="bold"
-                android:drawableRight="@drawable/baseline_arrow_right_alt_24"
-                android:drawablePadding="5sp"
                 android:layout_marginStart="16sp"
 
                 />
@@ -86,13 +77,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/tvUserHomeFragmentCategory3"
-                android:text="Category"
+                android:text="Plants dine with elegance"
                 android:layout_marginTop="16sp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="@color/green"
                 android:textStyle="bold"
-                android:drawableRight="@drawable/baseline_arrow_right_alt_24"
-                android:drawablePadding="5sp"
+
                 android:layout_marginStart="16sp"
 
                 />
