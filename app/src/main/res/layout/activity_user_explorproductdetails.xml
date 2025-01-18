@@ -37,17 +37,17 @@
             android:id="@+id/heartIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="450sp"
-            android:layout_marginTop="130dp"
+            android:src="@drawable/heratoutlin"
             android:clickable="true"
-            android:focusable="true"
-            android:src="@drawable/heratoutlin" />
-
+            android:layout_below="@+id/tvUserHomepageProductName"
+            android:layout_marginTop="56dp"
+            android:layout_marginStart="370sp"
+            android:focusable="true"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/ivUserHomepageProductDetailsSofaimage"
-            android:layout_below="@id/tvUserHomepageProductDiscription"
+            android:layout_below="@id/heartIcon"
             android:layout_marginTop="10sp"
             android:layout_marginBottom="10sp"
             android:layout_marginStart="20sp"

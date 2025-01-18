@@ -1,6 +1,7 @@
 package com.example.urbanarc.User;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -21,6 +22,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.bumptech.glide.Glide;
 import com.example.urbanarc.R;
 import com.example.urbanarc.comman.urls;
+import com.example.urbanarc.databinding.ActivityUserhomepagegetCategorywiseproductdetailBinding;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -64,6 +66,27 @@ public class userhomepagegetCategorywiseproductdetail extends AppCompatActivity 
         tvdeliveryday = findViewById(R.id.tvUserHomepageProductdelivery);
         ivAddtoFav = findViewById(R.id.ivheartIcon);
         btnaddtocart=findViewById(R.id.btnUserHomepageProductAddtoCart);
+        btnBuynow=findViewById(R.id.btnUserHomepageProductBuyNow);
+
+        btnBuynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(userhomepagegetCategorywiseproductdetail.this,UseraddressfromSofa.class);
+                i.putExtra("username", strUsername);
+                i.putExtra("image", strimage);
+                i.putExtra("productname", strproductname);
+                i.putExtra("price", strprice);
+                i.putExtra("offer", stroffer);
+                i.putExtra("dicrption", strdiscription);
+                i.putExtra("rating", strrating);
+                i.putExtra("diliveryday", strdelivery);
+                i.putExtra("shopname", strshopname);
+                i.putExtra("category", strcategory);
+                i.putExtra("productid", strid);
+                startActivity(i);
+
+            }
+        });
 
 
         btnaddtocart.setOnClickListener(new View.OnClickListener() {
@@ -178,7 +201,7 @@ public class userhomepagegetCategorywiseproductdetail extends AppCompatActivity 
                     if (status.equals("1")){
                         Toast.makeText(userhomepagegetCategorywiseproductdetail.this, "Added To Wishlist", Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(userhomepagegetCategorywiseproductdetail.this, "error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(userhomepagegetCategorywiseproductdetail.this, "Product Already exits", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);

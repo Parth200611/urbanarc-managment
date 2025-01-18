@@ -19,7 +19,7 @@
 
 <com.denzcoskun.imageslider.ImageSlider
     android:layout_width="match_parent"
-    android:layout_height="380dp"
+    android:layout_height="370dp"
     app:iss_auto_cycle="true"
     android:id="@+id/imagesliderwelcome"
     app:iss_delay="2000"

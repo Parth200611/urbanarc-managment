@@ -91,6 +91,7 @@ public class UseraddressfromSofa extends AppCompatActivity {
                 i.putExtra("useraddress",straddress);
                 i.putExtra("lattitude",strlattitude);
                 i.putExtra("longitude",strlongitude);
+
                 startActivity(i);
 
             }

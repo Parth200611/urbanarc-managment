@@ -37,8 +37,9 @@ public class Useraddtocartdetails extends AppCompatActivity {
     ImageView ivproductimage,ivAddtoFav;
     AppCompatButton btnbuynow,btnremovefromcart;
     String strid,strUsername;
-    String strproductname,strdiscription,strprice,strrating,stroffer,strshopnem,strdelivery,strproductid,strcategory,strimage;
+    String strproductname,strdiscription,strprice,strrating,stroffer,strshopname,strdelivery,strproductid,strcategory,strimage;
     SharedPreferences preferences;
+    String day="3-4 days";
     SharedPreferences.Editor editor;
     boolean isHeartFilled=false;
 
@@ -65,6 +66,26 @@ public class Useraddtocartdetails extends AppCompatActivity {
         tvdelivery = findViewById(R.id.tvUserHomepageProductdelivery);
         ivAddtoFav = findViewById(R.id.heartIcon);
         btnremovefromcart=findViewById(R.id.btnUserHomepageProductRemovefromCart);
+        btnbuynow=findViewById(R.id.btnUserHomepageProductBuyNow);
+
+        btnbuynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Useraddtocartdetails.this,UseraddressfromSofa.class);
+                i.putExtra("username", strUsername);
+                i.putExtra("image", strimage);
+                i.putExtra("productname", strproductname);
+                i.putExtra("price", strprice);
+                i.putExtra("offer", stroffer);
+                i.putExtra("dicrption", strdiscription);
+                i.putExtra("rating", strrating);
+                i.putExtra("diliveryday", strdelivery);
+                i.putExtra("shopname", strshopname);
+                i.putExtra("category", strcategory);
+                i.putExtra("productid", strid);
+                startActivity(i);
+            }
+        });
 
         btnremovefromcart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,7 +147,7 @@ public class Useraddtocartdetails extends AppCompatActivity {
                     for (int i =0;i<jsonArray.length();i++){
                         JSONObject jsonObject1=jsonArray.getJSONObject(i);
 
-                        strshopnem=jsonObject1.getString("shopname");
+                        strshopname=jsonObject1.getString("shopname");
                         strimage=jsonObject1.getString("image");
                         strcategory=jsonObject1.getString("category");
                         strproductname=jsonObject1.getString("productname");
@@ -134,15 +155,16 @@ public class Useraddtocartdetails extends AppCompatActivity {
                         stroffer=jsonObject1.getString("offer");
                         strdiscription=jsonObject1.getString("discription");
                         strrating=jsonObject1.getString("rating");
-                        strdelivery=jsonObject1.getString("deliveryday");
+
                         strproductid=jsonObject1.getString("productid");
 
                         tvproductname.setText(strproductname);
                         tvdiscription.setText(strdiscription);
                         tvprice.setText(strprice);
                         tvrating.setText(strrating);
-                        tvshopname.setText(strshopnem);
+                        tvshopname.setText(strshopname);
                         tvoffer.setText(stroffer);
+                        strdelivery=day;
                         tvdelivery.setText(strdelivery);
 
                         Glide.with(Useraddtocartdetails.this)
@@ -182,7 +204,7 @@ public class Useraddtocartdetails extends AppCompatActivity {
         RequestParams params = new RequestParams();
 
         params.put("username",strUsername);
-        params.put("shopname",strproductname);
+        params.put("shopname",strshopname);
         params.put("image",strimage);
         params.put("category",strcategory);
         params.put("productname",strproductname);
@@ -202,7 +224,7 @@ public class Useraddtocartdetails extends AppCompatActivity {
                     if (status.equals("1")){
                         Toast.makeText(Useraddtocartdetails.this, "Added To Wishlist", Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(Useraddtocartdetails.this, "error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Useraddtocartdetails.this, "Product Already exits", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);

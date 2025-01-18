@@ -95,6 +95,7 @@ public class UserHomepageProductdetailsSofa extends AppCompatActivity {
                 i.putExtra("shopname", strshopname);
                 i.putExtra("category", strcategory);
                 i.putExtra("productid", strid);
+
                 startActivity(i);
 
 
@@ -159,7 +160,7 @@ public class UserHomepageProductdetailsSofa extends AppCompatActivity {
                     if (status.equals("1")){
                         Toast.makeText(UserHomepageProductdetailsSofa.this, "Added To Wishlist", Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(UserHomepageProductdetailsSofa.this, "error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserHomepageProductdetailsSofa.this, "Product Already exits", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);

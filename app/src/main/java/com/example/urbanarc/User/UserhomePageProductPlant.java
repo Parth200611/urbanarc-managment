@@ -1,6 +1,7 @@
 package com.example.urbanarc.User;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -76,6 +77,26 @@ public class UserhomePageProductPlant extends AppCompatActivity {
         tvdeliveryday = findViewById(R.id.tvUserHomepageProductPlantdelivery);
         ivAddtoFav = findViewById(R.id.ivPlantheartIcon);
         btnaddtocart=findViewById(R.id.btnUserHomepageProductPlantAddtoCart);
+        btnBuynow=findViewById(R.id.btnUserHomepageProductPlantBuyNow);
+
+        btnBuynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserhomePageProductPlant.this,UseraddressfromSofa.class);
+                i.putExtra("username", strUsername);
+                i.putExtra("image", strimage);
+                i.putExtra("productname", strproductname);
+                i.putExtra("price", strprice);
+                i.putExtra("offer", stroffer);
+                i.putExtra("dicrption", strdiscription);
+                i.putExtra("rating", strrating);
+                i.putExtra("diliveryday", strdelivery);
+                i.putExtra("shopname", strshopname);
+                i.putExtra("category", strcategory);
+                i.putExtra("productid", strid);
+                startActivity(i);
+            }
+        });
 
 
 
@@ -198,7 +219,7 @@ public class UserhomePageProductPlant extends AppCompatActivity {
                     if (status.equals("1")){
                         Toast.makeText(UserhomePageProductPlant.this, "Added To Wishlist", Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(UserhomePageProductPlant.this, "error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserhomePageProductPlant.this, "Product Already exits", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);

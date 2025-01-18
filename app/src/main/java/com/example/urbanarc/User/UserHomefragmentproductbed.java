@@ -1,6 +1,7 @@
 package com.example.urbanarc.User;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -66,6 +67,7 @@ public class UserHomefragmentproductbed extends AppCompatActivity {
         tvdeliveryday = findViewById(R.id.tvUserHomepageProductBeddelivery);
         ivAddtoFav = findViewById(R.id.ivbedheartIcon);
         btnaddtocart =  findViewById(R.id.btnUserHomepageProductBedAddtoCart);
+        btnBuynow=findViewById(R.id.btnUserHomepageProductBedBuyNow);
 
         btnaddtocart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +79,24 @@ public class UserHomefragmentproductbed extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 toggleHeart();
+            }
+        });
+        btnBuynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserHomefragmentproductbed.this,UseraddressfromSofa.class);
+                i.putExtra("username", strUsername);
+                i.putExtra("image", strimage);
+                i.putExtra("productname", strproductname);
+                i.putExtra("price", strprice);
+                i.putExtra("offer", stroffer);
+                i.putExtra("dicrption", strdiscription);
+                i.putExtra("rating", strrating);
+                i.putExtra("diliveryday", strdelivery);
+                i.putExtra("shopname", strshopname);
+                i.putExtra("category", strcategory);
+                i.putExtra("productid", strid);
+                startActivity(i);
             }
         });
 
@@ -188,7 +208,7 @@ public class UserHomefragmentproductbed extends AppCompatActivity {
                     if (status.equals("1")){
                         Toast.makeText(UserHomefragmentproductbed.this, "Added To Wishlist", Toast.LENGTH_SHORT).show();
                     }else{
-                        Toast.makeText(UserHomefragmentproductbed.this, "error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UserHomefragmentproductbed.this, "Product Already exits", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     throw new RuntimeException(e);

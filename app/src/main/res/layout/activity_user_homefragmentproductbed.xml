@@ -38,14 +38,15 @@
             android:layout_height="wrap_content"
             android:src="@drawable/heratoutlin"
             android:clickable="true"
-            android:layout_marginTop="130dp"
-            android:layout_marginStart="450sp"
+            android:layout_below="@+id/tvUserHomepageBedProductName"
+            android:layout_marginTop="56dp"
+            android:layout_marginStart="370sp"
             android:focusable="true"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/ivUserHomepageProductBedDetailsSofaimage"
-            android:layout_below="@id/tvUserHomepageProductBedDiscription"
+            android:layout_below="@id/ivbedheartIcon"
             android:layout_marginTop="10sp"
             android:layout_marginBottom="10sp"
             android:layout_marginStart="20sp"
