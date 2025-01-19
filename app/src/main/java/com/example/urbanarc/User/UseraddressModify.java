@@ -22,6 +22,9 @@ public class UseraddressModify extends AppCompatActivity {
     String strgetNameofuser,strgetMobilenoofuser,strgetUseraddress;
     String strlattitude,strlongitude,straddress;
     AppCompatButton btnselectaddress;
+    String newname;
+    String newmobile;
+    String newaddress;
     private static final int REQUEST_CODE_MAP = 100;
 
 
@@ -58,12 +61,48 @@ public class UseraddressModify extends AppCompatActivity {
         etmobileno.setText(strgetMobilenoofuser);
         etaddress.setText(strgetUseraddress);
 
+
+
+
+
+
+
         btnselectaddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (etname.getText().toString().isEmpty()){
+                    etname.setError("Enter Your name");
+                } else  if (etmobileno.getText().toString().isEmpty()){
+                    etmobileno.setError("Enter Your name");
+                } else  if (etaddress.getText().toString().isEmpty()){
+                    etaddress.setError("Enter Your name");
+                }else {
+                  String newname =etname.getText().toString();
+                    String newmobile=etmobileno.getText().toString();
+                    String newaddress=etaddress.getText().toString();
+
+                    Intent i = new Intent(UseraddressModify.this,UserFinalBillsofa.class);
+                    i.putExtra("username",strusername);
+                    i.putExtra("image",strimage);
+                    i.putExtra("productname",strproductname);
+                    i.putExtra("price",strprice);
+                    i.putExtra("offer",stroffer);
+                    i.putExtra("discription",strdiscription);
+                    i.putExtra("rating",strrating);
+                    i.putExtra("shopname",strshopname);
+                    i.putExtra("deliveryday",strdelivery);
+                    i.putExtra("category",strcategory);
+                    i.putExtra("productid",strproductid);
+                    i.putExtra("userofname",newname);
+                    i.putExtra("usermobileno",newmobile);
+                    i.putExtra("useraddress",newaddress);
+                    i.putExtra("lattitude",strlattitude);
+                    i.putExtra("longitude",strlongitude);
+
+                    startActivity(i);
+                }
+
             }
         });
-
-
     }
 }
