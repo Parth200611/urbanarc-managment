@@ -37,7 +37,7 @@ public class userwishlistproductdetails extends AppCompatActivity {
     ImageView ivproductimage,ivAddtoFav;
     AppCompatButton btnaddtocart,btnbuynow;
     String strid,strUsername;
-    String strproductname,strdiscription,strprice,strrating,stroffer,strshopnem,strdelivery,strid1,strcategory,strimage;
+    String strproductname,strdiscription,strprice,strrating,stroffer,strshopname,strdelivery,strid1,strcategory,strimage;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
@@ -67,6 +67,27 @@ public class userwishlistproductdetails extends AppCompatActivity {
         tvdelivery = findViewById(R.id.tvUserHomepageProductdelivery);
         ivAddtoFav = findViewById(R.id.heartIcon);
         btnaddtocart = findViewById(R.id.btnUserHomepageProductAddtoCart);
+        btnbuynow=findViewById(R.id.btnUserHomepageProductBuyNow);
+
+        btnbuynow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(userwishlistproductdetails.this,UseraddressfromSofa.class);
+                i.putExtra("username", strUsername);
+                i.putExtra("image", strimage);
+                i.putExtra("productname", strproductname);
+                i.putExtra("price", strprice);
+                i.putExtra("offer", stroffer);
+                i.putExtra("dicrption", strdiscription);
+                i.putExtra("rating", strrating);
+                i.putExtra("diliveryday", strdelivery);
+                i.putExtra("shopname", strshopname);
+                i.putExtra("category", strcategory);
+                i.putExtra("productid", strid);
+
+                startActivity(i);
+            }
+        });
 
         btnaddtocart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +130,7 @@ public class userwishlistproductdetails extends AppCompatActivity {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         strid1 = jsonObject.getString("id");
                         strproductname = jsonObject.getString("productname");
-                        strshopnem = jsonObject.getString("shopname");
+                        strshopname = jsonObject.getString("shopname");
                         strcategory = jsonObject.getString("category");
                         strprice = jsonObject.getString("price");
                         stroffer = jsonObject.getString("offer");
@@ -124,7 +145,7 @@ public class userwishlistproductdetails extends AppCompatActivity {
                         tvprice.setText(strprice);
                         tvoffer.setText(stroffer);
                         tvrating.setText(strrating);
-                        tvshopname.setText(strshopnem);
+                        tvshopname.setText(strshopname);
                         tvdelivery.setText(strdelivery);
 
                         Glide.with(userwishlistproductdetails.this)
@@ -189,7 +210,7 @@ public class userwishlistproductdetails extends AppCompatActivity {
         RequestParams params = new RequestParams();
 
         params.put("username",strUsername);
-        params.put("shopname",strshopnem);
+        params.put("shopname",strshopname);
         params.put("image",strimage);
         params.put("category",strcategory);
         params.put("productname",strproductname);
