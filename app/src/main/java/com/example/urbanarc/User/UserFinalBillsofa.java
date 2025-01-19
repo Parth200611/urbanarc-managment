@@ -6,6 +6,7 @@ import android.content.pm.ResolveInfo;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -115,9 +116,31 @@ public class UserFinalBillsofa extends AppCompatActivity {
 
         // Online Payment selection
         tvonline.setOnClickListener(v -> {
+            Intent i = new Intent(UserFinalBillsofa.this,Useronlinepay.class);
             selectedPaymentMethod = "Online Payment";
-            updateSelection(tvonline);
-            onlinepay();
+            i.putExtra("username",strusername);
+            i.putExtra("image",strimage);
+            i.putExtra("productname",strproductname);
+            i.putExtra("price",strprice);
+            i.putExtra("offer",stroffer);
+            i.putExtra("discription",strdiscription);
+            i.putExtra("rating",strrating);
+            i.putExtra("shopname",strshopname);
+            i.putExtra("deliveryday",strdelivery);
+            i.putExtra("category",strcategory);
+            i.putExtra("productid",strproductid);
+            i.putExtra("userofname",strgetNameofuser);
+            i.putExtra("usermobileno",strgetMobilenoofuser);
+            i.putExtra("useraddress",straddress);
+            i.putExtra("lattitude",strlattitude);
+            i.putExtra("longitude",strlongitude);
+            i.putExtra("paymentmethode",strlongitude);
+            startActivity(i);
+
+
+
+//            updateSelection(tvonline);
+//            onlinepay();
         });
 
         // Card Payment selection
@@ -144,33 +167,38 @@ public class UserFinalBillsofa extends AppCompatActivity {
     }
 
     private void onlinepay() {
+        String upiId = "parthdahapute7@okaxis";  // Replace with the recipient's UPI ID
+        String amount = "100.00";  // Amount to be paid
+        String note = "Payment for Order";  // Transaction note
 
-        String upiId = "9322766871@ptaxis";  // Replace with recipient's UPI ID
-        String amount = "100.00";  // Replace with the amount to be paid
-        String note = "Payment for Order";  // Replace with your transaction note
-
-        // Construct UPI URI to launch the UPI app
+        // Construct the UPI URI
         Uri uri = Uri.parse("upi://pay")
                 .buildUpon()
-                .appendQueryParameter("pa", upiId) // UPI ID
-                .appendQueryParameter("am", amount) // Amount
-                .appendQueryParameter("tn", note) // Transaction Note
-                .appendQueryParameter("cu", "INR") // Currency
+                .appendQueryParameter("pa", upiId)  // Payee UPI ID
+                .appendQueryParameter("pn", "Recipient Name")  // Payee Name (Optional)
+                .appendQueryParameter("tn", note)  // Transaction Note
+                .appendQueryParameter("am", amount)  // Amount
+                .appendQueryParameter("cu", "INR")  // Currency
                 .build();
 
-        // Create an intent to launch Paytm (or other UPI apps)
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        // Create an intent for UPI payment
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(uri);
 
-        // Explicitly check if Paytm is available to handle UPI
-        intent.putExtra(Intent.EXTRA_REFERRER, Uri.parse("android-app://com.paytm.payments"));
-        // Check if any UPI apps are installed that can handle this intent
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);  // Launch the UPI app (e.g., Paytm)
+        // Debugging log for intent URI
+        Log.d("UPI_INTENT", "Intent URI: " + uri.toString());
+
+        // Check if there is any UPI app that can handle this intent
+        List<ResolveInfo> resolveInfoList = getPackageManager().queryIntentActivities(intent, 0);
+
+        if (!resolveInfoList.isEmpty()) {
+            // If UPI apps are available, launch the intent
+            startActivity(intent);
         } else {
-            Toast.makeText(this, "No UPI app found. Please install Paytm or another UPI app.", Toast.LENGTH_SHORT).show();
+            // No UPI apps found
+            Toast.makeText(this, "No UPI app found. Please install a UPI-enabled app.", Toast.LENGTH_SHORT).show();
         }
     }
-
 
 
     public void updateSelection(TextView selectedView) {
@@ -191,7 +219,7 @@ public class UserFinalBillsofa extends AppCompatActivity {
         params.put("mobileno",strgetMobilenoofuser);
         params.put("lattitude",strlattitude);
         params.put("longitude",strlongitude);
-        params.put("addrress",strgetUseraddress);
+        params.put("address",strgetUseraddress);
         params.put("image",strimage);
         params.put("productname",strproductname);
         params.put("price",strprice);

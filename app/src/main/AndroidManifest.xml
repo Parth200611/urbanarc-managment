@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".User.Useronlinepay"
+            android:exported="false" />
+        <activity
             android:name=".User.Confirmorder"
             android:exported="false" />
         <activity
