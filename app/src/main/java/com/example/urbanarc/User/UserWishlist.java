@@ -1,5 +1,6 @@
 package com.example.urbanarc.User;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -111,4 +112,13 @@ public class UserWishlist extends AppCompatActivity {
 
         requestQueue.add(stringRequest);
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(UserWishlist.this, userhomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        startActivity(intent);
+        finish(); // Optional: Close the current activity
+    }
+
 }
