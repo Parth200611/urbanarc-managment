@@ -15,6 +15,7 @@
          android:layout_marginTop="16dp"
          android:id="@+id/svUserhomefargmentrsearchproduct"
          android:textStyle="bold"
+       android:layout_marginStart="8dp"
          />
 
 
