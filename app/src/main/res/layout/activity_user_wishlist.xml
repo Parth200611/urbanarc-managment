@@ -5,16 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".User.UserWishlist">
-      <SearchView
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_margin="16sp"
-          android:iconifiedByDefault="false"
-          android:queryHint="Search product name"
-          android:background="@drawable/serch"
-          android:id="@+id/svUserhomefargmentrsearchproduct"
-          />
+   >
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+         android:text="Your Dream Product Are Here !"
+         android:textColor="@color/green"
+         android:textSize="21dp"
+         android:layout_marginTop="16dp"
+         android:id="@+id/svUserhomefargmentrsearchproduct"
+         android:textStyle="bold"
+         />
 
 
       <androidx.recyclerview.widget.RecyclerView
@@ -23,5 +24,19 @@
           android:id="@+id/rvUserwishlistrecyclerlist"
           android:layout_marginTop="16sp"
           android:layout_below="@id/svUserhomefargmentrsearchproduct"
+          android:visibility="visible"
           />
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:text="No Product"
+          android:textSize="30dp"
+          android:textColor="@color/grey_font"
+          android:visibility="gone"
+          android:id="@+id/tvnoorders"
+          android:layout_marginBottom="30dp"
+          />
+
+
 </RelativeLayout>

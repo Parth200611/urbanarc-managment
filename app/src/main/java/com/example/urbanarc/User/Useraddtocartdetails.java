@@ -116,6 +116,8 @@ public class Useraddtocartdetails extends AppCompatActivity {
                     String status=response.getString("status");
                     if (status.equals("success")) {
                         Toast.makeText(Useraddtocartdetails.this, "Removed from My Cart", Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(Useraddtocartdetails.this,userhomeActivity.class);
+                        startActivity(i);
 
                     } else{
                         Toast.makeText(Useraddtocartdetails.this, "Can't Remove", Toast.LENGTH_SHORT).show();

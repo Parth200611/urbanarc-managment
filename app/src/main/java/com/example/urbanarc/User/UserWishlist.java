@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +43,7 @@ public class UserWishlist extends AppCompatActivity {
     String strid,strusername1,strshopname,strimage,strcategory,strproductname,strprice,stroffer,strdiscription,strrating,strdelivery,strproductid;
     List<POJOUserWishList> pojoUserWishLists;
     AdpterUserWishlist adpterUserWishlist;
-
+    TextView tvno;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,7 @@ public class UserWishlist extends AppCompatActivity {
         pojoUserWishLists = new ArrayList<>();
         rvwishlist.setLayoutManager(new GridLayoutManager(UserWishlist.this,2,GridLayoutManager.VERTICAL,false));
         getwishistproduct(strusername);
+        tvno=findViewById(R.id.tvnoorders);
 
 
     }
@@ -70,6 +73,15 @@ public class UserWishlist extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     JSONArray jsonArray  = jsonObject.getJSONArray("getuserwishlist");
+                    if (jsonArray.length() == 0) {
+                        // No orders found
+                        rvwishlist.setVisibility(View.GONE);
+                        tvno.setVisibility(View.VISIBLE);
+                    } else {
+                        // Orders exist
+                        rvwishlist.setVisibility(View.VISIBLE);
+                        tvno.setVisibility(View.GONE);
+                    }
                     for (int i =0;i<jsonArray.length();i++){
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                         strid = jsonObject1.getString("id");

@@ -61,6 +61,7 @@ public class userMycartFragment extends Fragment {
         strusername=preferences.getString("username",null);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+
         svserachabr=view.findViewById(R.id.svUseraddtoccartsearchbar);
         rvlistofproduct = view.findViewById(R.id.rvUserAddtocartList);
         tvnoproduct = view.findViewById(R.id.tvnoproduct);

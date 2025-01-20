@@ -50,6 +50,9 @@ public class urls {
     public static String UserExplorProductdetails=address+"UserExplordetails.php";
     public static String getuseraddress=address+"Getuseraddress.php";
     public static String orderbill=address+"OrderFromUser.php";
+    public static String UserMyOrders=address+"UserOrders.php";
+    public static String UserMyOrdersDEtails=address+"MyOderersDetails.php";
+    public static String removeorder=address+"removeorder.php";
 
 
 }

@@ -60,6 +60,8 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId()==R.id.menumainmenuuserhomemyorders){
+            Intent i = new Intent(userhomeActivity.this,UserOrders.class);
+            startActivity(i);
 
         } else if (item.getItemId() == R.id.menumainmenuuserhomewishlist) {
             Intent i = new Intent(userhomeActivity.this,UserWishlist.class);
