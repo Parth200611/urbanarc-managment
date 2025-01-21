@@ -62,12 +62,12 @@ public class splashscreen extends AppCompatActivity {
                     finish();
                 } else {
                     // No one is logged in, navigate to SignupActivity
-                    Intent intent = new Intent(splashscreen.this, signupActivity.class);
+                    Intent intent = new Intent(splashscreen.this, welcomescreenActivity.class);
                     startActivity(intent);
                     finish();
                 }
 
             }
-        },6000);
+        },4000);
     }
 }

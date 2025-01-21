@@ -10,20 +10,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
-        <androidx.appcompat.widget.SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:queryHint="Search product"
-            app:iconifiedByDefault="false"
-            android:layout_margin="20sp"
-            android:background="@drawable/serch"
-            android:id="@+id/svUserExplorsearchbar"
-            />
+<!--        <androidx.appcompat.widget.SearchView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:queryHint="Search product"-->
+<!--            app:iconifiedByDefault="false"-->
+<!--            android:layout_margin="20sp"-->
+<!--            android:background="@drawable/serch"-->
+<!--            android:id="@+id/svUserExplorsearchbar"-->
+<!--            />-->
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/rvUserExplorList"
-            android:layout_below="@id/svUserExplorsearchbar"
+          android:layout_marginTop="20sp"
             />
         <TextView
             android:layout_width="match_parent"

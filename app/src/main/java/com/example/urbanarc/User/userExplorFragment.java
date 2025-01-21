@@ -50,7 +50,7 @@ public class userExplorFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_user_explor, container, false);
-        svserachproduct=view.findViewById(R.id.svUserExplorsearchbar);
+//        svserachproduct=view.findViewById(R.id.svUserExplorsearchbar);
         rvexplorlist=view.findViewById(R.id.rvUserExplorList);
         tvnoproductavaiable=view.findViewById(R.id.tvnoproduct);
         rvexplorlist.setLayoutManager(new GridLayoutManager(getActivity(),2,GridLayoutManager.VERTICAL,false));
