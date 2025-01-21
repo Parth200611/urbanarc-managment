@@ -2,6 +2,7 @@ package com.example.urbanarc.Admin;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -18,7 +19,9 @@ public class adminmanageordersFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_adminmanageorders, container, false);
+
     }
 }

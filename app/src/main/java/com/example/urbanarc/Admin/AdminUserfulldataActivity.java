@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 
@@ -39,6 +40,7 @@ public class AdminUserfulldataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_userfulldata);
         getWindow().setStatusBarColor(ContextCompat.getColor(AdminUserfulldataActivity.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         civuserimage=findViewById(R.id.civAdminuserfulldatauserimage);
         tvname=findViewById(R.id.tvAdminUserfulldataofuserName);

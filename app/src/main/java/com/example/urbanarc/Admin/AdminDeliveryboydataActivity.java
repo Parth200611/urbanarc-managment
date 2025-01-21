@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.Admin.ADAPTERCLASS.ADAPTERADminGETallDeliveryList;
@@ -38,6 +39,7 @@ public class AdminDeliveryboydataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_deliveryboydata);
         getWindow().setStatusBarColor(ContextCompat.getColor(AdminDeliveryboydataActivity.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         lvlist=findViewById(R.id.lvAdmingetalldeliveryDatalist);
 

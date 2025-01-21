@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 
@@ -42,6 +43,7 @@ public class AdmingetalluserdataActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admingetalluserdata);
         getWindow().setStatusBarColor(ContextCompat.getColor(AdmingetalluserdataActivity.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
 
         lvuserlist=findViewById(R.id.lvAdmingetalluserDatalist);

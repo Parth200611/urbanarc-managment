@@ -6,6 +6,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,6 +44,7 @@ public class AdminGetUserFeedBackActivity extends AppCompatActivity {
         
         getWindow().setStatusBarColor(ContextCompat.getColor(AdminGetUserFeedBackActivity.this,R.color.green));
         getWindow().setNavigationBarColor(ContextCompat.getColor(AdminGetUserFeedBackActivity.this,R.color.white));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         
 
         rvfeedbacklist = findViewById(R.id.rvAdminGetFeedbackList);

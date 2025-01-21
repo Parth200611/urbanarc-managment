@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -45,6 +46,7 @@ public class deliveryfulldetails extends AppCompatActivity {
         setContentView(R.layout.activity_deliveryfulldetails);
         getWindow().setStatusBarColor(ContextCompat.getColor(deliveryfulldetails.this,R.color.green));
         id=getIntent().getStringExtra("deliid");
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         civuserimage=findViewById(R.id.civAdminuserfulldatauserimage);
         tvname=findViewById(R.id.tvAdminUserfulldataofuserName);

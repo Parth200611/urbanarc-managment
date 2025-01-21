@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.content.ContextCompat;
 
@@ -40,6 +41,7 @@ public class AdminShopkeeperlistActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_shopkeeperlist);
         getWindow().setStatusBarColor(ContextCompat.getColor(AdminShopkeeperlistActivity.this,R.color.green));
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         svSearchShopkeeper=findViewById(R.id.svAdmingetShopkeeperlistSearchView);
         lvShopkeeperList = findViewById(R.id.lvAdminshopkeeperList);
