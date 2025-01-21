@@ -53,6 +53,10 @@ public class urls {
     public static String UserMyOrders=address+"UserOrders.php";
     public static String UserMyOrdersDEtails=address+"MyOderersDetails.php";
     public static String removeorder=address+"removeorder.php";
+    public static String AllAhopdetails=address+"getshopdetails.php";
+    public static String removeshopkeeper=address+"removeshopkeeper.php";
+    public static String getdeliverydetils=address+"GETDELIVERYDETAILS.php";
+    public static String removedeliveryboy=address+"removedeliveryboy.php";
 
 
 }

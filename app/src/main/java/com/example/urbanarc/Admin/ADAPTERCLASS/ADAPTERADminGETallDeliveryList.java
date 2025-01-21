@@ -1,6 +1,7 @@
 package com.example.urbanarc.Admin.ADAPTERCLASS;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.cardview.widget.CardView;
 
 import com.bumptech.glide.Glide;
 import com.example.urbanarc.Admin.POJOCLASS.POJOADminGetALLDELIVERYLIst;
+import com.example.urbanarc.Admin.deliveryfulldetails;
 import com.example.urbanarc.R;
 import com.example.urbanarc.comman.urls;
 
@@ -76,6 +78,15 @@ public class ADAPTERADminGETallDeliveryList extends BaseAdapter {
                 .skipMemoryCache(true)
                 .error(R.drawable.noimage)// Resize the image to 800x800 pixels
                 .into(holder.ivprofilimage);
+
+        holder.cvDeliverydatacard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(activity, deliveryfulldetails.class);
+                i.putExtra("deliid",obj.getId());
+                activity.startActivity(i);
+            }
+        });
 
 
         return convertView;
