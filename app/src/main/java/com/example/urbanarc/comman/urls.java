@@ -57,6 +57,7 @@ public class urls {
     public static String removeshopkeeper=address+"removeshopkeeper.php";
     public static String getdeliverydetils=address+"GETDELIVERYDETAILS.php";
     public static String removedeliveryboy=address+"removedeliveryboy.php";
+    public static String deletproduct=address+"removeproduct.php";
 
 
 }
