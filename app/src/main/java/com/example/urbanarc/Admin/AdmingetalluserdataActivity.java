@@ -49,7 +49,6 @@ public class AdmingetalluserdataActivity extends AppCompatActivity {
         lvuserlist=findViewById(R.id.lvAdmingetalluserDatalist);
         tvnouser=findViewById(R.id.tvAdmingetAllusernouseravaiable);
         pojoadminGetallUserData=new ArrayList<>();
-        searchView=findViewById(R.id.svAdminGetAllusersearchview);
         tvlocation=findViewById(R.id.tvAdminallUserdataLocation);
 
         tvlocation.setOnClickListener(new View.OnClickListener() {
@@ -61,42 +60,11 @@ public class AdmingetalluserdataActivity extends AppCompatActivity {
         });
 
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                searchuser(query);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String query) {
-                searchuser(query);
-                return false;
-            }
-        });
 
         getAlluserdata();
 
     }
 
-    private void searchuser(String query) {
-        List<POJOADMINGetallUserData> tempsearch=new ArrayList<>();
-        tempsearch.clear();
-
-        for (POJOADMINGetallUserData obj:pojoadminGetallUserData) {
-            if (obj.getName().toUpperCase().contains(query.toUpperCase()) ||
-            obj.getMobileno().toUpperCase().contains(query.toUpperCase()) ||
-            obj.getEmailid().toUpperCase().contains(query.toUpperCase()) ||
-            obj.getUsername().toUpperCase().contains(query.toUpperCase()))
-
-            {
-                tempsearch.add(obj);
-            }
-            adapterAdmingetalluser = new ADAPTERAdmingetalluser(pojoadminGetallUserData,AdmingetalluserdataActivity.this);
-            lvuserlist.setAdapter(adapterAdmingetalluser);
-
-        }
-    }
 
     private void getAlluserdata() {
         AsyncHttpClient client = new AsyncHttpClient();

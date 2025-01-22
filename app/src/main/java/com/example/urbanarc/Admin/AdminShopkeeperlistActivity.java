@@ -43,7 +43,7 @@ public class AdminShopkeeperlistActivity extends AppCompatActivity {
         getWindow().setStatusBarColor(ContextCompat.getColor(AdminShopkeeperlistActivity.this,R.color.green));
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        svSearchShopkeeper=findViewById(R.id.svAdmingetShopkeeperlistSearchView);
+
         lvShopkeeperList = findViewById(R.id.lvAdminshopkeeperList);
         tvNoshopkeeper = findViewById(R.id.tvAdminShopkeeperlistNoshopkeeper);
         pojoadmiNgetallshopkeeperlists = new ArrayList<>();

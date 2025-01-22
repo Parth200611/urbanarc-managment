@@ -7,23 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Admin.AdminShopkeeperlistActivity">
-  <androidx.appcompat.widget.SearchView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/svAdmingetShopkeeperlistSearchView"
-      app:queryHint="Search Shopkeeper"
-      app:iconifiedByDefault="false"
-      android:layout_marginTop="40dp"
-      android:layout_marginEnd="16sp"
-      android:layout_marginStart="16sp"
-      android:background="@drawable/shape"
-      />
+
   <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:text="All Shop location"
-      android:layout_marginTop="16dp"
+      android:layout_marginTop="20dp"
       android:layout_marginStart="16dp"
       android:background="@drawable/buttonshape"
       android:padding="8dp"
@@ -38,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/lvAdminshopkeeperList"
-        android:layout_margin="16sp"
+        android:layout_marginTop="16sp"
         />
     <TextView
         android:layout_width="wrap_content"
