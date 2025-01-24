@@ -40,10 +40,11 @@ public class adminhomeActivity extends AppCompatActivity implements BottomNaviga
         if (item.getItemId()==R.id.menubottomnevigationadminHome){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutadminhome,adminhomeFragment).commit();
         }else if (item.getItemId() == R.id.menubottomnevigationadminmanageorder){
-            getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutadminhome,adminmanageuserFragment).commit();
-        }else{
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutadminhome,adminmanageordersFragment).commit();
+        }else{
+            getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutadminhome, adminmanageuserFragment).commit();
         }
+
         return true;
     }
 
