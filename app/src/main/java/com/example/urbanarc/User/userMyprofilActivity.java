@@ -206,6 +206,7 @@ public class userMyprofilActivity extends AppCompatActivity {
                 Map<String,VolleyMultipartRequest.DataPart> parms = new HashMap<>();
                 long imagename = System.currentTimeMillis();
                 parms.put("pic",new VolleyMultipartRequest.DataPart(imagename+".jpeg",getfiledatafromBitmap(bitmap)));
+
                 return parms;
 
             }

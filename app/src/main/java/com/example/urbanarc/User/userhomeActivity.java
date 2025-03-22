@@ -29,6 +29,7 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
 
         bottomNavigationView = findViewById(R.id.bottomnevigatiomuserhome);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
         bottomNavigationView.setSelectedItemId(R.id.menuUserhomebottomnavigationHome);
 
     }
@@ -80,7 +81,7 @@ public class userhomeActivity extends AppCompatActivity implements BottomNavigat
             startActivity(i);
 
         } else if (item.getItemId() == R.id.menumainmenuuserhomefeedback) {
-            Intent i = new Intent(userhomeActivity.this, UserFeedBackActivity.class);
+            Intent  i = new Intent(userhomeActivity.this, UserFeedBackActivity.class);
             startActivity(i);
 
         }
