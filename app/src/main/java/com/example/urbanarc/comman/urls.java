@@ -64,6 +64,9 @@ public class urls {
     public static String AddProductimage=address+"AddProductimage.php";
     public static String getShopProduct=address+"getShopProduct.php";
     public static String RemoveProductShop=address+"RemoveProductShop.php";
+    public static String getOrders=address+"getOrders.php";
+    public static String addFinalOrder=address+"addFinalOrder.php";
+    public static String removeorders=address+"removeorders.php";
 
 
 }

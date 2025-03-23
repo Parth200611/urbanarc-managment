@@ -1,5 +1,6 @@
 package com.example.urbanarc.Shopkeeper;
 
+import android.app.ProgressDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -50,6 +51,7 @@ public class shopkeeperhomeFragment extends Fragment {
     AdpterAllProduct adpterAllProduct;
     SharedPreferences preferences;
     String strusername,strname;
+    ProgressDialog progressDialog;
 
 
     @Override
@@ -64,6 +66,8 @@ public class shopkeeperhomeFragment extends Fragment {
         tvNoProduct = view.findViewById(R.id.tvNoProduct);
         rvProductList.setLayoutManager(new LinearLayoutManager(getContext()));
         pojoAllProducts=new ArrayList<>();
+        progressDialog=new ProgressDialog(getActivity());
+        progressDialog.show();
 getShopdetails();
 getData(strname);
         return view;
@@ -105,6 +109,7 @@ getData(strname);
                             }
 
                             adpterAllProduct = new AdpterAllProduct(pojoAllProducts, getActivity());
+                            progressDialog.dismiss();
                             rvProductList.setAdapter(adpterAllProduct);
 
                         } catch (JSONException e) {

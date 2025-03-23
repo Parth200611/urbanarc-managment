@@ -14,6 +14,8 @@ import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.User.ContactuspageActivity;
 import com.example.urbanarc.R;
+import com.example.urbanarc.User.UserAboutUs;
+import com.example.urbanarc.User.userhomeActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ShopkeeperhomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -45,17 +47,13 @@ public class ShopkeeperhomeActivity extends AppCompatActivity implements BottomN
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId()==R.id.menumainmenushopkeeperhomenewoffers){
-
-        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomemyordrs){
-
-        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomenwishlist){
-
-        }else if (item.getItemId() == R.id.menumainmenushopkeeperhomemuprofil){
+        if (item.getItemId() == R.id.menumainmenushopkeeperhomemuprofil){
             Intent i = new Intent(ShopkeeperhomeActivity.this,ShopkeepermyprofilActivity.class);
             startActivity(i);
 
         }else if (item.getItemId() == R.id.menumainmenushopkeeperhomeaboutus){
+            Intent i = new Intent(ShopkeeperhomeActivity.this, UserAboutUs.class);
+            startActivity(i);
 
         }else if (item.getItemId() == R.id.menumainmenushopkeeperhomecontactus){
             Intent i = new Intent(ShopkeeperhomeActivity.this, ContactuspageActivity.class);
