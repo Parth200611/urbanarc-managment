@@ -71,6 +71,7 @@ public class urls {
     public static String getOrderdelivery=address+"getOrderdelivery.php";
     public static String hisAdd=address+"his.php";
     public static String delFinal=address+"delFinal.php";
+    public static String getHis=address+"getHis.php";
 
 
 
