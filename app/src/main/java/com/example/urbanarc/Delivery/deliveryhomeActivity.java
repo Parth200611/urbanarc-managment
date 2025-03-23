@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import com.example.urbanarc.R;
+import com.example.urbanarc.User.ContactuspageActivity;
+import com.example.urbanarc.User.UserFeedBackActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class deliveryhomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
@@ -27,7 +29,7 @@ public class deliveryhomeActivity extends AppCompatActivity implements BottomNav
         getWindow().setNavigationBarColor(ContextCompat.getColor(deliveryhomeActivity.this,R.color.white));
         bottomNavigationView = findViewById(R.id.bottomnevigationdeliveryhome);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.menudeliverybottomnevigationhome);
+        bottomNavigationView.setSelectedItemId(R.id.menudeliverybottomnevigationorders);
 
     }
 
@@ -38,9 +40,7 @@ public class deliveryhomeActivity extends AppCompatActivity implements BottomNav
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menudeliverybottomnevigationhome){
-            getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutdeliveryhome, deliveryhomeFragment).commit();
-        }else if(item.getItemId()==R.id.menudeliverybottomnevigationorders){
+        if(item.getItemId()==R.id.menudeliverybottomnevigationorders){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutdeliveryhome, deliveryordersFragment).commit();
         }else if(item.getItemId()==R.id.menudeliverybottomnevigationorderhistory){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutdeliveryhome,deliveryorderhistoryFragment).commit();
@@ -58,15 +58,13 @@ public class deliveryhomeActivity extends AppCompatActivity implements BottomNav
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuDeliverymainmenuorders){
-
-        }else if (item.getItemId() == R.id.menuDeliverymainmenuMyprofil){
+         if (item.getItemId() == R.id.menuDeliverymainmenuMyprofil){
             Intent i = new Intent(deliveryhomeActivity.this,deliveryMyprofilActivity.class);
             startActivity(i);
 
-        }else if (item.getItemId() == R.id.menuDeliverymainmenuReport){
-
         }else if (item.getItemId() == R.id.menuDeliverymainmenuHelp){
+             Intent i = new Intent(deliveryhomeActivity.this, ContactuspageActivity.class);
+             startActivity(i);
 
         }
         return true;

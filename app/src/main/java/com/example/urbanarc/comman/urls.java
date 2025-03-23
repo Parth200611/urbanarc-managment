@@ -68,5 +68,10 @@ public class urls {
     public static String addFinalOrder=address+"addFinalOrder.php";
     public static String removeorders=address+"removeorders.php";
 
+    public static String getOrderdelivery=address+"getOrderdelivery.php";
+    public static String hisAdd=address+"his.php";
+    public static String delFinal=address+"delFinal.php";
+
+
 
 }
