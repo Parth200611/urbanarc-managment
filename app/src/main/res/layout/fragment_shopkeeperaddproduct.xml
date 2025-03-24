@@ -24,6 +24,19 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Adding products, adding value! Keep building your perfect cart.Just a few more details and you're all set."
+            android:textSize="14sp"
+            android:id="@+id/addProductQuote"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/gray"
+            android:layout_marginStart="16dp"
+
+            android:layout_below="@+id/addProduct"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Select Category"
             android:textSize="16dp"
             android:layout_marginTop="16dp"
@@ -34,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/serch"
+            android:background="@drawable/registrationshape"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"/>
         <TextView
@@ -48,13 +61,18 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:hint="Shop Name"
+            android:background="@drawable/registrationshape"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_margin="8dp"
-            android:hint="Shop Name"
+            android:padding="10dp"
+            android:inputType="text"
+
+
             android:id="@+id/etshopname"
-            android:background="@drawable/serch"
-            android:padding="12dp"
+
             /> <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,13 +84,17 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:hint="Product Name"
+            android:background="@drawable/registrationshape"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_margin="8dp"
-            android:hint="Product Name"
+            android:padding="10dp"
+            android:inputType="text"
+
+
             android:id="@+id/etProductname"
-            android:background="@drawable/serch"
-            android:padding="12dp"
             /> <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,15 +104,20 @@
             android:layout_marginStart="16dp"
             />
         <EditText
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:hint="Product Price"
+            android:background="@drawable/registrationshape"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_margin="8dp"
-            android:hint="Product Price"
+            android:padding="10dp"
+            android:inputType="text"
+
+
             android:id="@+id/etProductPrice"
-            android:background="@drawable/serch"
-            android:padding="12dp"
             /><TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,14 +128,18 @@
             />
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
+
+            android:hint="Product View "
+            android:background="@drawable/registrationshape"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_margin="8dp"
-            android:hint="Product Discription"
+            android:padding="10dp"
+            android:inputType="text"
+
+
             android:id="@+id/etProductdiscription"
-            android:background="@drawable/serch"
-            android:padding="12dp"
             /><TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -120,13 +151,17 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:hint="Product Offer"
+            android:background="@drawable/registrationshape"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_margin="8dp"
-            android:hint="Product Offer"
+            android:padding="10dp"
+            android:inputType="text"
+
+
             android:id="@+id/etProductOffer"
-            android:background="@drawable/serch"
-            android:padding="12dp"
             /><TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -138,13 +173,17 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:hint="Product Offer"
+            android:background="@drawable/registrationshape"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_margin="8dp"
-            android:hint="Product Rating"
+            android:padding="10dp"
+            android:inputType="text"
+
+
             android:id="@+id/etProductRating"
-            android:background="@drawable/serch"
-            android:padding="12dp"
             /><TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -156,13 +195,17 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
+            android:hint="Product Offer"
+            android:background="@drawable/registrationshape"
+            android:layout_marginTop="2dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_margin="8dp"
-            android:hint="Product Delivery"
+            android:padding="10dp"
+            android:inputType="text"
+
+
             android:id="@+id/etDelivery"
-            android:background="@drawable/serch"
-            android:padding="12dp"
             /><TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -186,7 +229,7 @@
             android:text="Add Image"
             android:id="@+id/btnAddImage"
             android:layout_marginStart="16dp"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/yellow"
             android:textColor="@color/white"
             />
         <androidx.appcompat.widget.AppCompatButton
@@ -198,7 +241,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="50dp"
             android:id="@+id/btnAddProduct"
-            android:backgroundTint="@color/green"
+            android:backgroundTint="@color/yellow"
             android:textColor="@color/white"
             />
 
