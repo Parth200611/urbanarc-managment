@@ -41,10 +41,7 @@ public class adminhomeActivity extends AppCompatActivity implements BottomNaviga
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutadminhome,adminhomeFragment).commit();
         }else if (item.getItemId() == R.id.menubottomnevigationadminmanageorder){
             getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutadminhome,adminmanageordersFragment).commit();
-        }else{
-            getSupportFragmentManager().beginTransaction().replace(R.id.FrameLayoutadminhome, adminmanageuserFragment).commit();
         }
-
         return true;
     }
 
@@ -74,8 +71,6 @@ public class adminhomeActivity extends AppCompatActivity implements BottomNaviga
         }else if (item.getItemId()==R.id.menuAdminmainmenufeedback){
             Intent i = new Intent(adminhomeActivity.this,AdminGetUserFeedBackActivity.class);
             startActivity(i);
-
-        }else if (item.getItemId()==R.id.menuAdminmainmenuReport){
 
         }else if (item.getItemId()==R.id.menuAdminmainmenuMyprofil){
             Intent i = new Intent(adminhomeActivity.this,adminMyprofilActivity.class);

@@ -10,11 +10,7 @@
         android:title="Orders"
         android:icon="@drawable/baseline_all_inbox_24"
         />
-  <item
-        android:id="@+id/menubottomnevigationmanageaccount"
-        android:title="Users"
-        android:icon="@drawable/baseline_manage_accounts_24"
-        />
+
 
 
 
