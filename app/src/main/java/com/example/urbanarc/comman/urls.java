@@ -72,6 +72,8 @@ public class urls {
     public static String hisAdd=address+"his.php";
     public static String delFinal=address+"delFinal.php";
     public static String getHis=address+"getHis.php";
+    public static String delveryimage=address+"delveryimage.php";
+
 
 
 

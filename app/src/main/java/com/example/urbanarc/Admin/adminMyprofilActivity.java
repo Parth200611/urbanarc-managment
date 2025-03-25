@@ -5,6 +5,8 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -42,6 +44,9 @@ public class adminMyprofilActivity extends AppCompatActivity {
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     String strusername;
+    private  int pick_image_request=789;
+    Bitmap bitmap;
+    Uri filepath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
